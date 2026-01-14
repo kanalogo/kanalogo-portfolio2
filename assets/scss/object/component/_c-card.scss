@@ -1,0 +1,699 @@
+@use "../../global" as *;
+
+  //ビジネスのカード　　-------------------------------------------
+
+  .c-bl__card {
+    background-color: $color-bg-thin;
+    border-radius: rm(4);
+    color: $color-text-accent;
+    width: 100%;
+    min-width: 608px;
+    min-height: 806px;
+    transition: color 0.3s ease,border-color 0.3s ease;
+   
+
+    @include mq(sp) {
+        min-width: 312px;
+         min-height: 653px;
+       }
+
+       
+       }
+  
+  .c-bl__card-inner {
+    padding: rm(28);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    @include mq(sp) {
+        padding: rm(12);
+       }
+  }
+  .c-bl__card-desc {
+    @include font(16, 500, 1, 1.2);
+    line-height: 1.6;
+    font-style: italic;
+    font-family: $ff-en;
+    text-transform: uppercase;
+    @include mq(sp) {
+       font-size: 12px;
+       }
+  }
+  .c-bl__card-title {
+    @include font(24, 700, 1, 1.2);
+    line-height: 1.6;
+    font-family: $ff;
+    @include mq(sp) {
+        font-size: 18px;
+        }
+    
+    span {
+        font-style: italic;
+    font-family: $ff-en;
+    font-size: 28px;
+    margin-right: 12px;
+    @include mq(sp) {
+        font-size: 20px;
+        }
+    }
+  }
+  .c-bl__card-text {
+    @include font(18, 700, 1, 1.2);
+    line-height: 1.8;
+    @include mq(sp) {
+        font-size: 14px;
+        }
+
+   
+    
+  }
+  .c-bl__card-image {
+    aspect-ratio: 552 / 310;
+    margin-top: 20px;
+    max-height: 310px;
+    @include mq(sp) {
+        max-height: 162px;
+        margin-top: 12px;
+        }
+    img {
+        object-fit: cover
+    }
+
+    & + div {
+        margin-top: 20px;
+        @include mq(sp) {
+            margin-top: 15px;
+            }
+    }
+
+  }
+  .c-bl__card-div {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
+  .c-bl__card-list {
+   
+        
+    li {
+    @include font(16, 500, 1, 1.2);
+    line-height: 1.7;
+    list-style: disc;
+    margin-left: 1.5em;
+    color: #404559;
+
+    &.hidden {
+        list-style: disc #fff;
+    }
+
+    
+    @include mq(sp) {
+        font-size: 14px;
+        }
+    }
+
+    & + p {
+        margin-top: 24px;
+        @include mq(sp) {
+            margin-top: 31px;
+            }
+    }
+
+    & + button {
+        margin-top: auto;
+    }
+    
+  }
+
+  .c-bl__modal-btn {
+    position: relative;
+    border: 2px solid transparent;
+    border-radius: 4px;
+    overflow: hidden;
+    &::before {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        scale: 0 0;
+        transform-origin: left bottom;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        transition: scale 0.3s ease;
+        z-index: 1;
+      }
+   
+      
+    @include mq(sp) {
+        padding-inline: rm(21);
+        }
+
+        @media (hover: hover) {
+            &:hover {
+                border-color: $color-text-accent;
+                cursor: pointer;
+                &::before {
+                    scale: 1 1;
+                }
+              a {
+                color: $color-text-accent;
+                
+                &::before,
+                &::after {
+                  background-color: #0961B6;
+                }
+              }
+            
+            }
+          }
+
+        a {
+            width: 100%;
+            height: auto;
+            display: block;
+            padding-block: rm(21);
+            padding-inline: rm(40);
+            color: #fff;
+            background-color: $color-text-accent;
+            text-align: left;
+            position: relative;
+            cursor: pointer;
+            margin-top: auto;
+    
+            &::before {
+                content: '';
+                width: 14px;
+                height: 3px;
+                background-color: #fff;
+                position: absolute;
+                top: 50%;
+                translate: 0 -50%;
+                right: 45px;
+                z-index: 3;
+               
+              }
+              &::after {
+                content: '';
+                height: 14px;
+                width: 3px;
+                background-color: #fff;
+                position: absolute;
+                top: 50%;
+                translate: 0 -50%;
+                right: 50px;
+               z-index: 3;
+              }
+        }
+   
+
+   
+
+    span {
+        @include font(16, 700, 1, 0);
+    line-height: 1.4;
+    position: relative;
+    z-index: 3;
+   
+    }
+  }
+
+
+  //チャレンジのカード　　-------------------------------------------
+
+  .c-ch__card {
+     position: relative;  
+      padding-block: rm(113) rm(28);
+      padding-inline: rm(24);
+      background-color: #F4FBFFB2;
+      border-bottom: 12px solid #37A4DB;
+      @include mq(sp) {
+        padding-block: rm(105) rm(14);
+       }
+
+      &.--deep {
+        .c-ch__card-top {
+            background-color: #2766AE;
+        }
+        border-color:#2766AE ;
+      }
+      &.--green {
+        .c-ch__card-top {
+            background-color: $stage-color-green;
+        }
+        border-color:$stage-color-green ;
+      }
+      &.--bk {
+        .c-ch__card-top {
+            background-color: $stage-color-dark;
+        }
+        border-color:$stage-color-dark ;
+      }
+
+      &:nth-of-type(1),
+      &:nth-of-type(3) {
+        margin-top: 64px;
+        @include mq(sp) {
+           margin-top: 0;
+           }
+      }
+      &:nth-of-type(2),
+      &:nth-of-type(4) {
+        margin-bottom: 64px;
+        @include mq(sp) {
+            margin-bottom: 0;
+           }
+      }
+     
+  }
+  .c-ch__card-top {
+    padding-block: rm(12);
+    padding-inline: rm(28);
+    display: flex;
+    flex-direction: column;
+    row-gap: rm(4);
+    background-color: $stage-color-blue;
+    color: #fff;
+    position: absolute;
+    width: fit-content;
+    height: auto;
+    top: 0;
+    left: 0;
+  }
+  .c-ch__card-desc {
+    @include font(18, 500, 1, 0);
+    line-height: 1;
+    font-style: italic;
+    font-family: $ff-en;
+    @include mq(sp) {
+        font-size: 15px;
+       }
+    span {
+        font-size: 24px;
+        @include mq(sp) {
+           font-size: 20px;
+           }
+    }
+  }
+
+  .c-ch__card-title {
+    @include font(24, 500, 1, 0);
+    line-height: 1.6;
+    @include mq(sp) {
+        font-size: 18px;
+        }
+   
+  }
+
+  .c-ch__card-text {
+    @include font(16, 500, 1, 0);
+    line-height: 1.7;
+    color: $color-text;
+    @include mq(sp) {
+        font-size: 15px;
+        }
+
+    & + picture {
+        margin-top: 41px;
+        @include mq(sp) {
+            margin-top: 21px;
+            }
+    }
+  
+  }
+  .c-ch__card-image {
+aspect-ratio: 534 / 268;
+@include mq(sp) {
+    min-height: 216px;
+    max-width: 100%;
+    aspect-ratio: 294 / 216;
+    }
+
+img {
+    object-fit: cover;
+}
+  }
+
+  //メンバーのカード　　-------------------------------------------
+  .c-member__card {
+    position: relative;
+  }
+  .c-member__container {
+    display: flex;
+    flex-direction: column;
+    row-gap: rm(20);
+  }
+  .c-member__image {
+    position: relative;
+
+    picture {
+        aspect-ratio: 386 / 514;
+        box-shadow: 0 5px 15px 0 rgba(26, 150, 239, 0.15);
+
+        img {
+            object-fit: cover;
+        }
+    }
+  }
+  .c-member__block {
+    position: absolute;
+    left: 0;
+    bottom: 22px;
+    display: flex;
+    flex-direction: column;
+    
+    
+  }
+  .p-member__desc {
+    @include font(20, 700, 1, 0);
+    line-height: 1.5;
+    color: #023E78;
+    padding: 4px 16px;
+    background-color: #fff;
+    width: fit-content;
+    display: inline-block;
+    @include mq(sp) {
+        font-size: 19px;
+        letter-spacing: 0.08em;
+        }
+
+    & + p {
+        margin-top: 10px;
+    }
+
+    span {
+        font-size: 20px;
+    }
+  }
+  .c-member__copy {
+    @include font(56, 500, 1, 1.4);
+    line-height: 1.5;
+    font-family: $ff-en;
+    color: #023E78;
+    position: absolute;
+    font-style: italic;
+    right: 10px;
+    top: 5px;
+    translate: 0% -50%;
+    z-index: 6;
+  }
+
+  .c-member__text {
+    background-color: #023E78;
+    color: #fff;
+    padding: 12px 16px;
+    min-height: 204px;
+    @include mq(sp) {
+        padding: 12px 7px;
+        }
+    
+  }
+
+  .c-member__txt {
+    @include font(15, 500, 1, 1.3);
+    line-height: 2;
+  }
+
+  .member__swiper-container,
+.member__swiper,
+.member__swiper-wrapper,
+.member__swiper-slide {
+  position: relative;
+}
+.member__swiper {
+    overflow: hidden;
+    padding-block: rm(23);
+    @include mq(sp) {
+        padding-block: rm(20);
+        }
+}
+
+/* 位置のreset */
+.swiper-button-prev,
+.swiper-button-next,
+.swiper-pagination-bullets.swiper-pagination-horizontal {
+  top: unset;
+  bottom: unset;
+  left: unset;
+  right: unset;
+  margin: 0;
+  padding: 0;
+}
+
+.swiper-button-prev::after,
+.swiper-button-next::after {
+  content: ""; /* デフォルトのものを初期化 */
+  width: 15px;
+  height: 15px;
+  border-top: 2px solid #0961B6;
+  border-right: 2px solid #0961B6;
+  rotate: 45deg;
+  transition: border 0.3s ease;
+  @include mq(sp) {
+    width: 8px;
+    height: 8px;
+    border-width: 1px;
+    }
+}
+.swiper-button-next::after {
+    margin-right: 10px;
+    @include mq(sp) {
+       margin-right: 3px;
+        }
+}
+.swiper-button-prev::after {
+    rotate: 225deg;
+    margin-left: 10px;
+    @include mq(sp) {
+        margin-left: 3px;
+        }
+}
+.swiper-button-prev,
+.swiper-button-next {
+    top: calc(100% + 60px);
+  right: 3%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: 2px solid #0961B6;
+  cursor: pointer;
+  transition: border 0.3s ease,background-color 0.3s ease;
+  @include mq(lg) {
+    top: calc(100% + 25px);
+    width: 80px;
+    height: 80px;
+    right: 8%;
+    
+    }
+  
+
+  @include mq(sp) {
+     width: 60px;
+    height: 60px;
+    border-width: 1px;
+     top: calc(100% + 58px);
+     right: 16px;
+    
+    }
+    @include mq(sp-lg) {
+        width: 40px;
+        height: 40px;
+        
+        }
+
+  @media (hover: hover) {
+    &:hover {
+      border-color: #fff;
+      background-color: #023E78;
+
+      &::after {
+        border-color: #fff;
+      }
+    }
+  }
+}
+.swiper-button-prev {
+    right: 15%;
+    @include mq(sp) {
+       right: 96px;
+        }
+        @include mq(sp-lg) {
+            right: 66px;
+            
+            }
+    
+}
+.swiper-pagination-progressbar.swiper-pagination-horizontal {
+    top: calc(100% + 48px);
+    left: 38%;
+    translate: -50%;
+    width: min(976px, 75%);
+    height: 7px;
+    background: #d9d9d9;
+    border-radius: 20px;
+
+    @include mq(sp) {
+        top: calc(100% + 12px);
+    left: 48%;
+    width: min(976px, 95%);
+        }
+  }
+  
+  /* activeな部分 */
+  .swiper-pagination-progressbar .swiper-pagination-progressbar-fill {
+    background: #0961B6;
+    border-radius: 20px;
+  }
+
+
+    //環境のリスト　-------------------------------------------
+  .c-culture__block {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-block: rm(28);
+        padding-inline: rm(34);
+        border-bottom: 2px solid #C4CCD7;
+        color: #fff;
+        @include mq(sp) {
+            flex-direction: column;
+            gap: 36px;
+            padding-inline: rm(0);
+             }
+
+        &:last-child  {
+            border-bottom: none;
+        }
+
+        dt,
+        dd {
+            width: 50%;
+            @include mq(sp) {
+                width: 100%;
+                 }
+        }
+  }
+
+  .c-culture__wrap {
+    display: flex;
+    align-items: center;
+    column-gap: rm(40);
+    @include mq(sp) {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+        
+         }
+  }
+  .c-culture__icon {
+    width: 63px;
+    height: 63px;
+
+    img {
+        object-fit: contain;
+    }
+  }
+  .c-culture_ttl {
+    display: flex;
+    flex-direction: column;
+    row-gap: rm(12);
+    @include mq(sp) {
+        row-gap: 0;
+         }
+  }
+  .c-culture__top {
+    @include font(24, 700, 1, 0);
+    line-height: 1.6;
+    color: #023E78;
+    @include mq(sp) {
+       font-size: 18px;
+         }
+  }
+  .c-culture__bottom {
+    @include font(14, 500, 1, 1.3);
+    line-height: 1.6;
+    font-family: $ff-en;
+    font-style: italic;
+    color: #023E78;
+    @include mq(sp) {
+        font-size: 13px;
+          }
+  }
+  .c-culture__text {
+    @include font(16, 500, 1, 0);
+    line-height: 1.7;
+    color: $color-text;
+    @include mq(sp) {
+        font-size: 15px;
+          }
+
+  }
+
+  .c-cta__title {
+    @include font(56, 500, 1, 1.3);
+    line-height: 1.5;
+    font-style: italic;
+    font-family: $ff-en;
+    text-align: center;
+    text-transform: uppercase;
+    @include mq(sp) {
+        font-size: 32px
+         }
+  }
+  .c-cta__text {
+    @include font(16, 500, 1, 0);
+    line-height: 1.7;
+    @include mq(sp) {
+        font-size: 14px
+         }
+
+    & + button {
+        margin-top: 13px;
+    }
+  }
+  .c-cta__image {
+    position: absolute;
+    top: 0;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    z-index: 10;
+    box-shadow: 0 4px 20px 0 rgba(0,0,0, 0.2);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    @include mq(sp) {
+        display: none;
+         }
+    img {
+        width: 100%;
+		height: 100%;
+		object-fit: cover;
+        object-position: center;
+        display: block;
+        
+        
+    }
+    @media (hover: hover) {
+        &:hover {
+            opacity: 0.7;
+      
+      }
+}
+  
+    
+
+  
+
+    &.--img-left {
+        left: 0;
+        transform-origin: left center;
+     
+}
+    &.--img-right {
+        right: 0;
+        transform-origin: right center;
+        
+    }
+  
+  }

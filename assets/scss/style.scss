@@ -9,16 +9,23 @@
 @use "layout/l-inner";
 @use "layout/l-footer";
 @use "layout/l-section";
+@use "layout/l-bg";
 
 //Component
 @use "object/component/c-btn";
 @use "object/component/c-animated";
+@use "object/component/c-modal";
+@use "object/component/c-card";
+@use "object/component/c-swiper";
+@use "object/component/c-head";
 
 //Project
 @use "object/project/p-header";
 @use "object/project/p-drawer";
 @use "object/project/p-footer";
-@use "object/project/p-test";
+@use "object/project/p-main";
+@use "object/project/p-single";
+
 
 //utility
 @use "object/utility/u-disp";

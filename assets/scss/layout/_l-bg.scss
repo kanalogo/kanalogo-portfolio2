@@ -1,0 +1,73 @@
+@use "../global" as *;
+
+.l-ch__bg {
+    position: absolute;
+    top: 49px;
+    right: 0;
+    width: 60%;
+    height: auto;
+    translate: 0;
+    z-index: -1;
+}
+.l-busi__bg {
+    position: absolute;
+   bottom: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+    translate: 0;
+    z-index: -1;
+    display: flex;
+    align-items: center;
+
+    img {
+        object-fit: contain;
+    }
+}
+.l-mem__bg {
+    position: absolute;
+    top: 0px;
+    left: 0;
+    width: 62%;
+    height: auto;
+    translate: 0;
+    z-index: 1;
+    rotate: 180deg;
+    opacity: 0.4;
+}
+.l-cul__bg {
+    position: absolute;
+    top: 45%;
+   right: 0;
+    width: 55%;
+    height: auto;
+    translate: 0;
+    z-index: 1;
+    
+    
+}
+.l-faq__bg {
+    position: absolute;
+    bottom: -125px;
+    left: -172px;
+    width: 55%;
+    height: auto;
+    translate: 0;
+    z-index: 1;
+    rotate: 180deg;
+    opacity: 0.8;
+    
+    
+}
+.l-foot__bg {
+    position: absolute;
+    bottom: -68%;
+    right: 0;
+    width: 50%;
+    height: auto;
+    translate: 0;
+    z-index: 1;
+    
+    
+    
+}

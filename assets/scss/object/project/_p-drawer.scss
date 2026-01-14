@@ -9,32 +9,38 @@
   flex-direction: column;
   justify-content: space-between;
 
-  top: 17px;
-  right: 20px;
-  width: 24px;
-  height: 16px;
+  top: 26px;
+  right: 21px;
+  width: 40px;
+  height: 11px;
+  z-index: 344;
+  cursor: pointer;
+  transition: right 0.3s ease;
+  cursor: pointer;
   @include mq(pc) {
     display: none;
+  }
+  &.js-active {
+    top: 21px;
+   right: 30px;
   }
 }
 .p-drawer__icon--bar {
   width: 100%;
-  height: 1px;
-  background: #000;
+  height: 2.8px;
+  background: #fff;
 }
 
 //メニューが開いている時 ========
 .p-drawer__icon.js-show {
+  
   .p-drawer__icon--bar:nth-of-type(1) {
-    rotate: 45deg;
-    translate: 0 7.5px;
+    rotate: 22deg;
+    translate: 0 3.5px;
   }
   .p-drawer__icon--bar:nth-of-type(2) {
-    display: none;
-  }
-  .p-drawer__icon--bar:nth-of-type(3) {
-    rotate: -45deg;
-    translate: 0 -7.5px;
+    rotate: -22deg;
+    translate: 0 -4.5px;
   }
 }
 
@@ -46,10 +52,10 @@
   
   top: 0;
   right: 0;
-  width: 278px;
+  width: 100%;
   height: 100vh;
   height: 100svh;
-  background: #b6e7f3;
+  background-image: linear-gradient(to left, #0291D9, #023E78);
 }
 .p-drawer__icon--bar {
   transition: all 0.5s ease;
@@ -60,7 +66,7 @@
   translate: 101%;
   transition: translate 0.5s ease;
 
-  &.js-show {
+  &.is-active {
     translate: 0;
   }
 }
@@ -68,23 +74,47 @@
   width: 100%;
   height: fit-content;
 
-  padding-block: 88px 40px;
-  padding-left: 34px;
+  padding-block: 19px 10px;
+  padding-inline: 21px;
 }
 .p-drawer__list {
   display: flex;
   flex-direction: column;
-  row-gap: 32px;
-  margin-bottom: 40px;
+  margin-top: 41px;
+  margin-left: 8px;
   li a {
-    font-size: 20px;
-    font-weight: 400;
+    @include font(16, 500, 1, 0);
+    line-height: 1.4;
+    padding-block: rm(16);
+    display: block;
+    border-bottom: 1px solid #fff;
+    position: relative;
+
+    @media (hover: hover) {
+      &:hover {
+        &::before {
+          right: 8px;
+        }
+      }
+    }
+
+    &::before {
+      content: '';
+      width: 12px;
+      height: 12px;
+      border-top: 2px solid #fff;
+      border-right: 2px solid #fff;
+      rotate: 45deg;
+      position: absolute;
+      top: 50%;
+      translate: 0 -50%;
+      right: 12px;
+      transition: right 0.3s ease;
+    }
   }
 }
-.p-drawer__btn {
-  display: inline-block;
-  padding: 6px 30px;
-  background: #fff;
-  font-size: 20px;
-  font-weight: 400;
+.p-drawer__nav {
+  display: flex;
+  flex-direction: column;
+  row-gap: rm(32);
 }

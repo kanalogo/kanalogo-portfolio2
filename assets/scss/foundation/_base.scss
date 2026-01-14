@@ -10,8 +10,9 @@ html {
 }
 
 body {
-  color: $color-text;
+  color: #fff;
   font-family: $ff;
+  background-image: linear-gradient(to left, #0291D9,#023E78 );
 }
 
 a {
@@ -52,6 +53,10 @@ input,
 textarea,
 select {
   font: inherit;
+}
+
+picture {
+  display: block;
 }
 
 @media (min-width: px($breakpoint)) {

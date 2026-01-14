@@ -1,2 +1,112 @@
 @use "../../global" as *;
 
+.p-footer__logo {
+    width: 280px;
+    
+    transition: opacity 0.3s ease;
+    @media (hover: hover) {
+      &:hover {
+        opacity: 0.7;
+        cursor: pointer;
+      }
+    }
+    img {
+        object-fit: contain;
+    }
+}
+.p-footer__left {
+    display: flex;
+    flex-direction: column;
+    row-gap: rm(48);
+    @include mq(sp) {
+        row-gap: rm(32);
+         }
+}
+.p-footer__desc {
+    li {
+        @include font( 16,500 ,1 ,0 );
+        line-height: 1.7;
+        
+    }
+}
+.p-footer__copy {
+    @include font( 12,500 ,1 ,0 );
+    line-height: 1.5;
+    @include mq(sp) {
+        position: absolute;
+        left: 20px;
+        bottom: -42px;
+        white-space: nowrap;
+        
+         }
+}
+.p-footer__right {
+    display: flex;
+    flex-direction: column;
+    row-gap: rm(98);
+    margin-top: 32px;
+    @include mq(sp) {
+        row-gap: rm(64);
+        margin-top: 0;
+         }
+}
+
+.p-footer__top {
+    display: flex;
+    column-gap: 20px;
+    @include mq(sp) {
+       flex-direction: column;
+       gap: 18px;
+         }
+    
+}
+.p-footer__nav {
+    width: 250px;
+    
+    li {
+        @include font( 18,700 ,1 ,0 );
+        line-height: 1.4;
+        position: relative;
+        & + li {
+            margin-top: 18px;
+            @include mq(sp) {
+                margin-top: 27px;
+                  }
+        }
+        @media (hover: hover) {
+            &:hover {
+             &::before {
+                scale: 1 1;
+             }
+            }
+          }
+
+        &::before {
+
+          content: '';
+          width: 100%;
+          height: 1px;
+        background-color: #0961B6;
+          position: absolute;
+          bottom: -8px;
+          transform-origin: top left;
+          scale: 0 1;
+        transition: scale 0.5s ease;
+        }
+    }
+    
+}
+.p-footer__list {
+    display: flex;
+    column-gap: rm(36);
+    
+    li {
+        width: 40px;
+        height: 41px;
+
+        img {
+            object-fit: contain;
+        }
+    }
+}
+

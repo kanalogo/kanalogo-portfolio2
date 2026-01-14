@@ -13,3 +13,10 @@
     }
   }
 }
+
+.mt-64 {
+  margin-top: 64px;
+  @include mq(sp) {
+    margin-top: 40px;
+       }
+}

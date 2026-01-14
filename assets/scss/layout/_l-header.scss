@@ -1,1 +1,55 @@
 @use "../global" as *;
+
+.l-header__inner {
+   padding-block: rm(12);
+   padding-inline: rm(40);
+   display: flex; 
+   justify-content: space-between;
+   align-items: center;
+
+   @include mq(sp) {
+    padding-inline: rm(16);
+}
+}
+.l-header__list {
+    display: flex;
+    align-items: center;
+    column-gap: rm(36);
+
+    
+}
+.l-header__item {
+    @include font(16, 500,1 ,0 );
+    line-height: 1.4;
+    position: relative;
+
+    &::before {
+      content: '';
+      width: 100%;
+      height: 1px;
+      background-color: #fff;
+      bottom: -4px;
+      position: absolute;
+      scale: 0 1;
+      transition: scale 0.3s ease;
+    }
+
+    @media (hover: hover) {
+        &:hover {
+          &::before {
+            scale: 1 1;
+          }
+        }
+      }
+}
+.l-header__nav {
+    display: flex;
+    align-items: center;
+    column-gap: rm(36);
+
+    @include mq(sp) {
+        display: none;
+      }
+}
+
+

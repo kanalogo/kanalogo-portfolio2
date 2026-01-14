@@ -1,6 +1,224 @@
 @use "../global" as *;
 
 .l-main {
-  padding-block-start: rm(72);
-  min-height: 100vh;
+  margin-top: rm(128);
+  // min-height: 100vh;
+  @include mq(sp) {
+    margin-top: rm(112);
+  }
+ 
+  
+}
+
+.l-mv__grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  gap: 20px;
+  
+  // animation: mv_animation 14s  ease forwards infinite ;
+}
+.l-mv__scroll-animation {
+  --images-width: 0px;
+	--image-gap: 12px;
+
+	width: fit-content;
+	display: flex;
+	gap: var(--image-gap);
+	animation: mv_animation 10s linear both infinite;
+  opacity: 0;
+  translate: 0px 40px;
+  visibility: hidden;
+  overflow-y: hidden;
+  transition: opacity 1s ease, translate 1s ease;
+  height: 556px;
+
+  &.is-active {
+    opacity: 1;
+    translate: 0 0;
+  visibility: visible;
+  }
+}
+
+@keyframes mv_animation {
+  from {
+    translate: 0 0;
+  }
+
+  to {
+    translate: calc(-1 * (var(--images-width) + var(--image-gap))) 0;
+  }
+}
+
+.l-fv__container {
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  margin-right: calc(50% - 50vw);
+
+  @include mq(sp) {
+   flex-direction: column;
+   gap: 127px;
+  }
+}
+
+.l-bussiness__container {
+  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  row-gap: rm(40);
+  @include mq(sp) {
+    margin-top: 33px;
+    }
+}
+.l-btn__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: rm(16);
+  max-width: 100%;
+
+  @include mq(sp) {
+    grid-template-columns: repeat(2, 1fr);
+    gap: rm(12);
+   }
+}
+.l-bl__card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: rm(24);
+  margin-right: calc(50% - 50vw);
+}
+.l-bl__card-container {
+  margin-right: calc(50% - 50vw);
+}
+
+.l-ch__grid {
+  margin-top: 62px;
+  display: grid;
+ grid-template-columns: repeat(2, 1fr);
+ column-gap: rm(72);
+ row-gap: rm(22);
+ @include mq(sp) {
+  grid-template-columns: repeat(1, 1fr);
+  gap: rm(28);
+  margin-top: 32px;
+ }
+}
+
+.l-member__container {
+  margin-block: rm(48) rm(64);
+  margin-right: calc(50% - 50vw);
+}
+.l-culture__container {
+  padding-inline: rm(40);
+  background-color: #fff;
+  backdrop-filter: blur(32px);
+  
+  @include mq(sp) {
+    padding-inline: rm(16);
+      }
+
+  &.--bg-blur {
+    
+    background: rgb(255 255 255 / 0.3);
+    backdrop-filter: blur(8px);
+    margin-top: 8px;
+    position: absolute;
+    z-index: 66;
+    @include mq(sp) {
+      position: static;
+        }
+  
+    
+  }
+}
+
+.l-culture__image-wrap {
+  position: relative;
+  margin-block: rm(120);
+  margin-inline: calc(50% - 50vw);
+  overflow: hidden;
+  z-index: 3;
+  @include mq(sp) {
+   margin-block: rm(86);
+      }
+
+  picture {
+    aspect-ratio: 1440 / 380;
+    height: 100%;
+    @include mq(sp) {
+     min-height: 380px;
+     aspect-ratio: 390 / 380;
+         }
+    img {
+      object-fit: cover;
+      width: 100%;
+    height: calc(100% + 200px); //ここを変えます
+    }
+  }
+  
+}
+
+.l-faq__container {
+  display: flex;
+  justify-content: space-between;
+  @include mq(sp) {
+   flex-direction: column;
+   gap: 40px;
+    }
+}
+.l-cta__container {
+  padding-block: rm(112);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  perspective-origin: center center;
+   perspective: 3000px;
+   overflow: hidden;
+   @include mq(sp) {
+    padding-block: 0;
+     }
+
+    &.is-active {
+      .--img-left {
+        transform: rotateY(58deg) ;
+        
+      }
+      .--img-right {
+        transform: rotateY(-58deg) ;
+      }
+    }
+
+}
+.l-cta__block {
+  display: flex;
+  flex-direction: column;
+  row-gap: rm(38);
+  text-align: center;
+  @include mq(sp) {
+    row-gap: rm(24);
+     }
+}
+
+.l-modal-bg {
+  width: 100vw;
+  height: 100vh;
+  background-color: #023E7880;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease,visibilityy 0.3s ease;
+
+  &.is-active {
+    z-index: 221;
+  opacity: 1;
+  visibility: visible;
+  }
 }

@@ -1,13 +1,13 @@
 @use "../../global" as *;
 
 @include mq(pc) {
-  .u-sp {
+  .sp-only {
     display: none !important;
   }
 }
 
 @include mq(sp) {
-  .u-pc {
+  .pc-only {
     display: none !important;
   }
 }

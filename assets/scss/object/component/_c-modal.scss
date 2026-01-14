@@ -1,0 +1,240 @@
+@use "../../global" as *;
+
+.c-member__modal{
+    padding: 48px;
+    border-radius: 12px;
+    background-color: #fff;
+    border: 1px solid #023E78;
+    color: #023E78;
+    width: min(1200px, 92%);
+ 
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -8;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease,visibility 0.3s ease;
+
+    @include mq(sp) {
+        padding: 64px 16px 16px;
+      }
+
+    &.is-active {
+        z-index: 333;
+    opacity: 1;
+    visibility: visible; 
+    }
+}
+.c-member__modal-inner {
+    overflow-y: scroll;
+    max-height: 100vh;
+}
+.c-member__modal-block {
+    position: absolute;
+    top: 53px;
+    right: 44px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    row-gap: rm(8);
+    @include mq(sp) {
+        flex-direction: row-reverse;
+        top: 22px;
+        right: 16px;
+        align-items: start;
+        column-gap: 8px;
+       }
+}
+.c-member__modal-close {
+    width: 36px;
+    height: 36px;
+    border-radius: 4px;
+    background-color: #023E78;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      width: 21px;
+      height: 2px;
+      background-color: #fff;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      translate: -50% -50%;
+    }
+    &::before {
+      rotate: 45deg;
+    }
+    &::after {
+      rotate: -45deg;
+    }
+}
+.c-member__modal-closeText {
+    @include font(16, 500, 1, 0);
+    line-height: 1.7;
+    @include mq(sp) {
+        font-size: 12px;
+       }
+}
+.c-member__modal-desc {
+    @include font(18, 500, 1, 0);
+    line-height: 1.6;
+    font-style: italic;
+    font-family: $ff-en;
+    color: $color-text-accent;
+    @include mq(sp) {
+        font-size: 14px;
+       }
+}
+.c-member__modal-title {
+    @include font(28, 700, 1, 0);
+    line-height: 1.6;
+    @include mq(sp) {
+       font-size: 20px;
+      }
+
+    span {
+        font-size: 30px;
+        font-weight: 500;
+        margin-right: 16px;
+        font-style: italic;
+    font-family: $ff-en;
+    color: $color-text-accent;
+    @include mq(sp) {
+        font-size: 18px;
+        margin-left: 1px;
+       }
+    }
+}
+.c-member__modal-title-1 {
+    @include font(18, 700, 1, 0);
+    line-height: 1.6;
+    @include mq(sp) {
+        font-size: 15px;
+      }
+}
+.c-member__modal-text {
+
+    li{
+    @include font(16, 500, 1, 0);
+    line-height: 1.7;
+    list-style: disc;
+    margin-left: 1em;
+    color: $color-text;
+    @include mq(sp) {
+        font-size: 15px;
+        margin-left: 2em;
+      }
+    }
+}
+.c-member__modal-list {
+    display: flex;
+    padding-block: rm(12);
+    border-bottom: 1px solid #C4CCD7;
+
+    @include mq(sp) {
+        flex-direction: column;
+        gap: 10px;
+      }
+
+    &:first-of-type {
+        margin-top: 40px;
+        @include mq(sp) {
+            margin-top: 12px;
+
+          }
+    }
+    &:last-of-type {
+        margin-bottom: 40px;
+        @include mq(sp) {
+            margin-bottom: 12px;
+          }
+    }
+
+    dt,dd {
+        width: 50%;
+        @include mq(sp) {
+            width: 100%;
+          }
+        
+    }
+    
+}
+
+.c-modal-btn {
+    width: 100%;
+    display: block;
+    padding-block: rm(21);
+    padding-inline: rm(40);
+    color: #fff;
+    background-color: $color-text-accent;
+    border-radius: 4px;
+    border: 2px solid #023E78;
+    text-align: center;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    z-index: 3;
+
+    @media (hover: hover) {
+        
+         &:hover {
+            color: $color-text-accent;
+         &::after {
+            scale: 1 1;
+          }
+          span {
+            &::before {
+                border-color: #023E78;
+            }
+          }
+        }
+      }
+
+    &::after {
+        content: '';
+        width: 100%;
+        height: 100%;
+        background-color: #fff;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+        transform-origin: bottom left;
+        scale: 0 0;
+        transition: scale 0.3s ease;
+      }
+   
+
+    span {
+        @include font(20, 700, 1, 0);
+    line-height: 1;
+    position: relative;
+    display: inline-block;
+
+    &::before {
+        content: '';
+        width: 15px;
+        height: 15px;
+        border-top: 2px solid #fff;
+        border-right: 2px solid #fff;
+        rotate: 45deg;
+        position: absolute;
+        top: 50%;
+        translate: 0 -50%;
+        right: -36px;
+        transition: border 0.3s ease;
+      }
+      
+    
+    }
+
+  
+   
+  }

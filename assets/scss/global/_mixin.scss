@@ -7,7 +7,7 @@
 
 $breakpoints: (
   "sp": "screen and (max-width: #{$breakpoint - 1px})",
-	"sp-lg": "(min-width: #{$sp-inner-sum * 1px})",
+	"sp-lg": "(max-width: #{$sp-camp * 1px})",
   "pc": "(min-width: #{$breakpoint * 1px})",
   "lg": "(min-width: #{$pc-inner-sum * 1px})"
 ) !default;

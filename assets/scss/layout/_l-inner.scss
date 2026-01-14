@@ -17,6 +17,7 @@
 
 .l-inner__narrow {
   max-width: rm($pc-narrow-inner);
+  padding: 0 0;
   @include mq(sp) {
     padding: 0 rm($sp-sidePadding);
     max-width: px($sp-inner);

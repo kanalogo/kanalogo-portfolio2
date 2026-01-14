@@ -1,2 +1,28 @@
 @use "../global" as *;
 
+
+
+.l-footer {
+    padding-block: rm(128) rm(58);
+    background-color: #E4EAF1;
+    color: $color-text;
+    overflow: hidden;
+    position: relative;
+
+    @include mq(sp) {
+        padding-block: rm(34) rm(92);
+      }
+}
+.l-footer__container {
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+    z-index: 3;
+   
+
+    @include mq(sp) {
+        flex-direction: column;
+        align-items: left;
+        row-gap: 57px;
+      }
+}

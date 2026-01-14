@@ -1,1 +1,138 @@
 @use "../../global" as *;
+
+
+  //ビジネスのボタン　　-------------------------------------------
+
+.c-bl__btn {
+  
+  
+  display: block;
+  padding-block: rm(20);
+  border-radius: rm(4);
+  background-color: $color-bg-thin;
+  border: 2px solid $color-bg-blue;
+  color: $color-text-accent;
+  cursor: pointer;
+
+
+  @include mq(sp) {
+  padding: 8px;
+  width: min(171px, 100%);
+  width: 100%;
+  }
+
+  &.is-active {
+    background-color: $color-text-accent;
+    border-color: #fff;
+    color: #fff;
+  }
+ 
+}
+.c-bl__btn-container {
+  display: flex;
+  flex-direction: column;
+  margin-inline: auto;
+  width: fit-content;
+  row-gap: rm(4);
+  text-align: left;
+  @include mq(sp) {
+    margin-inline: 0;
+   }
+}
+.c-bl__btn-top {
+  @include font(14, 500, 1, 0);
+  line-height: 1.6;
+ font-style: italic;
+ font-family: $ff-en;
+ text-align: left;
+ text-transform: uppercase;
+
+ @include mq(sp) {
+  font-size: 8px
+ }
+}
+.c-bl__btn-bottom {
+  @include font(18, 700, 1, 0);
+  line-height: 1.6;
+  text-align: left;
+  font-family: $ff;
+
+  @include mq(sp) {
+    font-size: 13px;
+  }
+ span {
+  font-size: 20px;
+  font-style: italic;
+  font-family: $ff-en;
+  margin-right: 12px;
+  @include mq(sp) {
+    display: block;
+    margin-right: 0;
+    font-size: 13px;
+  }
+ }
+ 
+}
+
+  //CTAのボタン　　-------------------------------------------
+.c-cta__btn {
+  margin-top: 13px;
+  display: inline-block;
+  
+  
+
+  a {
+    display: inline-block;
+  @include font(24, 500, 1, 1.4);
+  line-height: 1.5;
+  position: relative;
+  padding-block: rm(16);
+  padding-inline: rm(64) rm(92);
+  border-radius: 100vmax;
+  border: 2px  solid #fff;
+  text-transform: uppercase;
+  overflow: hidden;
+  cursor: pointer;
+  @include mq(sp) {
+    font-size: 18px
+     }
+
+  @media (hover: hover) {
+    
+    &:hover {
+  
+      &::after {
+        scale: 1 1;
+      }
+    }
+  }
+
+  &::before {
+    content: '';
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: #FFF400;
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    right: 41px;
+  }
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background-color: #023E78;
+    border-radius: 100vmax;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    scale: 0 0;
+    transform-origin: bottom left;
+    transition: scale 0.3s ease;
+
+   
+  }
+}
+}
