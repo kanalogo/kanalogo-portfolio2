@@ -1,32 +1,43 @@
 @use "../../global" as *;
 
+
+.c-culture__modal-area {
+  
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  z-index: -8;
+  width: min(1200px, 80%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease,visibility 0.3s ease;
+  
+  &.is-active {
+    z-index: 333;
+    opacity: 1;
+    visibility: visible; 
+}
+}
 .c-member__modal{
     padding: 48px;
     border-radius: 12px;
     background-color: #fff;
     border: 1px solid #023E78;
     color: #023E78;
-    width: min(1200px, 92%);
- 
+    display: grid;
+    width: 94%;
+    margin-inline: auto;
+    place-items: center;
+  position: relative;
     height: auto;
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    translate: -50% -50%;
-    z-index: -8;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease,visibility 0.3s ease;
+  
 
     @include mq(sp) {
         padding: 64px 16px 16px;
       }
 
-    &.is-active {
-        z-index: 333;
-    opacity: 1;
-    visibility: visible; 
-    }
+   
 }
 .c-member__modal-inner {
     overflow-y: scroll;
@@ -86,7 +97,7 @@
     line-height: 1.6;
     font-style: italic;
     font-family: $ff-en;
-    color: $color-text-accent;
+    color: $stage-color-dark;
     @include mq(sp) {
         font-size: 14px;
        }
@@ -125,7 +136,7 @@
     line-height: 1.7;
     list-style: disc;
     margin-left: 1em;
-    color: $color-text;
+    color: $stage-color-dark;
     @include mq(sp) {
         font-size: 15px;
         margin-left: 2em;
@@ -179,21 +190,13 @@
     overflow: hidden;
     position: relative;
     cursor: pointer;
-    transition: color 0.3s ease;
+    transition: scale 0.3s ease,opacity 0.3s ease-in,translate 0.3s ease-in;
     z-index: 3;
 
     @media (hover: hover) {
         
-         &:hover {
-            color: $color-text-accent;
-         &::after {
-            scale: 1 1;
-          }
-          span {
-            &::before {
-                border-color: #023E78;
-            }
-          }
+        &:hover {
+            scale: 1.2;
         }
       }
 
@@ -237,4 +240,57 @@
 
   
    
+  }
+  .js-modal-btn {
+    opacity: 0;
+    translate: 0 20px;
+    transition: scale 0.3s ease,opacity 0.3s ease-in,translate 0.3s ease-in;
+  }
+  .js-modal-btn.is-active {
+    opacity: 1;
+    translate: 0 ;
+  }
+
+// 料金表のモーダル　　　　　　------------------------------------------
+ 
+.c-culture__modal-btn {
+    
+    position: absolute;
+    bottom: -80px;
+    right: 40px;
+    z-index: 33;
+  }
+  .c-culture__modal-link {
+    display: inline-block;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: #fff;
+    color: $stage-color-dark;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: scale 0.3s ease-in-out;
+    @media (hover: hover) {
+        
+      &:hover {
+          scale: 1.05;
+      }
+    }
+   
+   
+    span {
+      @include font(12, 500, 1, 0);
+      margin-top: 30px;
+    }
+    &::before {
+      content: '+';
+      position: absolute;
+      top: 40%;
+      left: 50%;
+      translate: -50% -50%;
+      color: $stage-color-dark;
+      z-index: 34;
+      font-size: 32px;
+    }
   }

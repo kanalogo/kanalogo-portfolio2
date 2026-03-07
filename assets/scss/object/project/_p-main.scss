@@ -36,8 +36,13 @@
 
   .p-mv {
     position: relative;
-    padding-bottom: rm(80);
+    padding-bottom: rm(0);
+    max-width: 90%;
+    border-radius: 60px 0 0 60px;
+   margin-left: auto;
     overflow-x: hidden;
+    z-index: 3;
+
     @include mq(sp) {
 			padding-bottom: rm(76);
 		}
@@ -79,28 +84,38 @@
     //　ファーストビュー　の　セクション　-------------------------------------------
 
     .p-fv {
-      padding-block: rm(213) rm(138);
+      padding-block: rm(138) rm(138);
       position: relative;
       overflow-x: hidden;
+      background-image: linear-gradient(to left, #0291D9,#023E78 );
+      z-index: 1;
       @include mq(sp) {
         padding-block: rm(68) rm(163);
       }
     }
-    .p-fv__tetx {
-      span span {
-      @include font(18, 500, 1, 0);
+    .p-fv__text {
+      
+      @include font(20, 500, 1, 0);
       line-height: 2.2;
+      color: #fff;
+      .char {
+        //初期の状態
+        opacity: 0;
+      }
       // box-shadow: 0 0 0 64px #00000040;
       @include mq(sp) {
         font-size: 15px;
       }
-    }
+    
       & + p {
-        margin-top: 80px;
+        margin-top: 40px;
         @include mq(sp) {
           margin-top: 48px;
         }
       }
+    }
+    .p-fv__text-wrap {
+      margin-top: 60px;
     }
 
 
@@ -124,13 +139,17 @@
       padding-block: 0;
       overflow-x: hidden;
       position: relative;
+      background-image: linear-gradient(to left, #0291D9,#023E78 );
+      z-index: 1;
     }
 
     // 挑戦できるステージ　の　セクション　------------------------------------------
     .p-challenge {
       position: relative;
       overflow-x: hidden;
-      padding-block: rm(242) rm(122);
+      padding-block: rm(40) rm(122);
+      background-image: linear-gradient(to left, #0291D9,#023E78 );
+      z-index: 1;
       @include mq(sp) {
         padding-block: rm(123) rm(80);
         }
@@ -142,39 +161,151 @@
       color: $color-text;
       overflow-x: hidden;
       position: relative;
+      z-index: 1;
+      
+    
       @include mq(sp) {
         padding-block: rm(80) rm(176);
         }
     }
+    .view-wrapper {
+      margin-right: calc(50% - 50vw);
+      overflow: hidden;
+    }
+   
        // 働く環境の　セクション　------------------------------------------
 
        .p-culture {
-        padding-block: rm(120) 736px;
+        padding-block: rm(120) 1680px;
         background-color: #F2F4F6;
         overflow-x: hidden;
         position: relative;
+        z-index: 1;
         @include mq(sp) {
           padding-block: rm(32);
           }
        }
+       .p-culture__profile-link {
+        display: block;
+        @include font(16, 700, 1, 0);
+        line-height: 1.6;
+        color: $stage-color-dark;
+        text-align: right;
+        position: relative;
+        margin-bottom: 40px;
+
+        a {
+          line-height: 2;
+          text-decoration: underline;
+        }
+
+        .fa-arrow-right {
+          @include font(18, 700, 1, 0);
+          color: $stage-color-dark;
+          margin-left: 1em;
+        }
+
+        @media (hover: hover) {
+        
+          &:hover {
+            .fa-arrow-right {
+              animation: arrow-animation 1s ease both;
+            }
+          }
+        }
+       }
+      
+       @keyframes arrow-animation {
+         0% {
+           translate: 0;
+         }
+         50% {
+          translate: 8px;
+        }
+         100% {
+          translate: 0;
+         }
+       }
+
+       
 
 
    // よくある質問の　セクション　------------------------------------------
 
   .p-faq {
-    padding-block: rm(136) rm(184);
+    padding-block: rm(136) 0;
+    height: 916px;
     background-color: #E4EAF1;
     overflow: hidden;
     position: relative;
+    z-index: 1;
     @include mq(sp) {
       padding-block: rm(178);
       }
   }
+
+  .c-faq__list-content {
+    width: min(1100px, 100%);
+    margin-right: calc(50% - 50vw);
+    position: relative;
+
+  }
   .c-faq__list {
-    width: min(880px, 100%);
+    background-color: #fff;
+    border-radius: 40px 0 0 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
     display: flex;
     flex-direction: column;
-    row-gap: rm(24);
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+    translate: 0;
+    transition: opacity 0.5s ease, translate 0.5s ease;
+    &.js-show {
+      opacity: 1;
+      visibility: visible;
+      height: 916px;
+      translate: 0;
+    }
+    
+  }
+
+  .c-faq__title-wrap {
+    display: flex;
+    flex-direction: column;
+    row-gap: 180px;
+  }
+  .c-faq__btn-wrap {
+    display: flex;
+    flex-direction: column;
+    row-gap: 30px;
+    position: relative;
+    z-index: 10;
+  }
+
+  .c-faq__button {
+    width: 230px;
+    display: block;
+     padding-block: 20px;
+      @include font(18, 500, 1, 0);
+      line-height: 1.6;
+      color: #023E78;
+      border: 1px solid $stage-color-dark;
+    
+
+    &[aria-selected="true"] {
+      
+        background-color: #fff;
+      
+    }
+    @media(any-hover: hover) {
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 .faq {
   padding-block: 100px;
@@ -194,12 +325,22 @@ summary {
   border-top: 1px solid #000;
 }
 .faq__item {
-  background-color: #fff;
+ 
   color: $color-text;
   font-size: 16px;
   line-height: normal;
-  padding-left: 20px;
+  padding-left: 30px;
   position: relative;
+ 
+  &:first-of-type {
+    padding-top: 40px;
+    border-radius: 40px 0 0 0;
+  }
+  &:last-of-type {
+    .faq__answer {
+      border-bottom: none;
+    }
+  }
   
   &::after {
     content: '';
@@ -207,8 +348,8 @@ summary {
     top: 28px;
     right: 0;
     rotate: 135deg;
-    border-top: 2px solid $color-text-accent;
-    border-right: 2px solid $color-text-accent;
+    border-top: 2px solid $stage-color-green;
+    border-right: 2px solid $stage-color-green;
     transition: rotate 0.3s ease;
     @include mq(sp) {
       top: 19px;
@@ -243,9 +384,9 @@ details[open].faq__item::after {
   list-style: none;
   position: relative;
   padding-inline: 65px 50px;
-  @include font(20, 700, 1, 0);
+  @include font(18, 400, 1, 0);
   line-height: 1.6;
-  color: $color-text;
+  color: #222;
   @include mq(sp) {
     font-size: 15px;
     padding-inline: 48px 56px;
@@ -255,8 +396,9 @@ details[open].faq__item::after {
     position: absolute;
     top: 70%;
     translate: 0 -50%;
-    left: 8px;
+    left: 12px;
     font-size: 28px;
+    color: #fff;
     line-height: 24px;
     width: 36px;
     height: 39px;
@@ -272,9 +414,10 @@ details[open].faq__item::after {
     top: 50%;
     translate: 0 -50%;
     left: 0;
-    width: 36px;
-    height: 39px;
-    background-color: #FFF40066;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    background-color: $stage-color-green;
     z-index: 2;
     @include mq(sp) {
       width: 28px;
@@ -285,42 +428,318 @@ details[open].faq__item::after {
 .faq__answer {
   padding-block: 16px;
   padding-inline: rm(20);
-  border-top: 2px solid #C4CCD7;
+  border-bottom: 2px solid #C4CCD7;
   width: 97%;
   @include mq(sp) {
     padding-block: 8px;
     padding-inline: 0;
+  }
+
+  &::last-child {
+    border: none;
   }
 }
 .faq__answer-text {
   list-style: none;
   position: relative;
   padding-inline: 47px 20px;
-  @include font(16, 700, 1, 0);
+  @include font(16, 400, 1, 0);
   line-height: 2;
-  color: $color-text-accent;
+  color: #222;
   @include mq(sp) {
     font-size: 15px;
     padding-inline: 0px;
   }
  
+  &::before {
+    content: 'A';
+    position: absolute;
+    top: 58%;
+    translate: 0 -50%;
+    left: -7px;
+    font-size: 28px;
+    font-weight: 700;
+    color: $stage-color-green;
+    line-height: 24px;
+    width: 36px;
+    height: 39px;
+   
+    z-index: 3;
+    @include mq(sp) {
+      font-size: 22px;
+    }
+  }
+  &::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    left: -20px;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    border: 2px solid $stage-color-green;
+    z-index: 2;
+    @include mq(sp) {
+      width: 28px;
+      height: 28px;
+    }
+  }
 }
 
-  // CTAの　セクション　------------------------------------------
+  // お問い合わせの　セクション　------------------------------------------
 
-  .p-cta {
-    height: 636px;
+  .p-contact {
+    height: auto;
     width: 100%;
+    padding-block: rm(80) rm(80);
+    background-color: #F2F4F6;
+    position: relative;
+    border-radius: 0 0px 60px 60px;
+    z-index: 1;
 
-    background-image: linear-gradient(to right,#0291D9,#023E78 );
-    color: #fff;
-    
-    @include mq(sp) {
+      @include mq(sp) {
       height: 403px;
       padding-block: rm(56);
        }
        
   }
-  .c-cta__block {
+  
+  // ===================================
+  // 全体設定
+  // ===================================
+  input[type=text],
+  input[type=email],
+  select,
+  textarea {
+    border-radius: 0;
+    width: 100%;
+    height: 40px;
+    border-width: 1px;
+    padding: 8px;
+  
+    &::placeholder {
+      padding: 8px;
+    }
+  }
+  
+  //テキストエリア
+  textarea {
+    resize: vertical;
+    height: 300px;
+    padding: 8px;
+  }
+  
+  // ===================================
+  // セレクトボックス
+  // ===================================
+  select {
+    //矢印を消す
+    -webkit-appearance: none;
+    appearance: none;
+    padding: 8px;
+  }
+  .contact__select-wrap {
+    position: relative;
+  
+  }
+  option {
+    padding: 8px;
+  }
+  
+  // ===================================
+  // チェックボックス
+  // ===================================
+  //デフォルトのものを消す
+  input[type=checkbox] {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+  }
+  //チェックボックスカスタマイズ ====================
+  //チェックされた時の挙動
+  input[type=checkbox]:checked + span {
+    &::after {
+      opacity: 1;
+    }
+  }
+  //カスタマイズ
+  .contact__data-checkbox {
+    //全体のcss
+  
+    //各項目のcss
+    span {
+      display: inline-block;
+  
+      position: relative;
+      //frame
+      &::before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        translate: 0 -50%;
+        left: -2em;
+        width: 24px;
+        height: 24px;
+        border: 1px solid $stage-color-dark;
+        border-radius: 4px;
+        
+      }
+      //active
+      &::after {
+        content: '';
+        position: absolute;
+        width: 30px;
+        height: 30px;
+        background-image: url('./../img/check-mark.png');
+        background-repeat: no-repeat;
+        background-size: contain;
+        top: -18px;
+        left: -34px;
+        z-index: 10;
+        opacity: 0;
+      }
+    }
+  }
+  
+  // ===================================
+  // ラジオボタン
+  // ===================================
+  //デフォルトのものを消す
+  input[type=radio] {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+  }
+  //ラジオボタンカスタマイズ ====================
+  //選択された時の挙動
+  input[type=radio]:checked + span {
+  
+  }
+  //カスタマイズ
+  .contact__data-radio {
+    //全体のcss
+  
+    //各項目のcss
+    span {
+      display: inline-block;
+  
+      position: relative;
+      //frame
+      &::before {
+        content: '';
+        position: absolute;
+        
+      }
+      //active
+      &::after {
+        content: '';
+        position: absolute;
+  
+        opacity: 0;
+      }
+    }
+  }
+  
+  // ===================================
+  // 送信ボタン
+  // ===================================
+  //ブラウザによって異なるデフォルト設定を初期化
+  input[type="submit"],
+  input[type="button"] {
+    border-radius: 0px;
+    -webkit-box-sizing: content-box;
+    -webkit-appearance: button;
+    appearance: button;
+    border: none;
+    box-sizing: border-box;
+    cursor: pointer;
+    background: transparent;
+  }
+  input[type="submit"]::-webkit-search-decoration,
+  input[type="button"]::-webkit-search-decoration {
+    display: none;
+  }
+  //ボタンを中央寄せに(ケースによる)
+  .row.jc-center {
+    justify-content: center;
+  }
+  
+  // 送信ボタンのカスタマイズ====================
+  .contact__submit {
+    text-align: center;
+    input[type=submit] {
+      display: inline-block;
+  
+    }
+  }
+  .p-contact__top-desc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .contact__desc {
+    @include font(16, 500, 1, 0);
+    line-height: 1.6;
+    color: $stage-color-dark;
+    margin-right: 22%;
+  }
+
+  .contact__head {
+    color: $stage-color-dark;
+    @include font(18, 500, 1, 0);
+    span {
+      @include font(14, 700, 1, 0);
+      color: red;
+      margin-left: 0.5em;
+    }
+  }
+  .contact__row {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 20px;
+  }
+  .contact__head {
+    flex-basis: 250px;
     
   }
+  .contact__data {
+    flex-basis: 100%;
+  }
+  .contact__form {
+    margin-top: 40px;
+  }
+  .contact__submit {
+    @include font(16, 700, 1, 0);
+    line-height: 1.6;
+    width: 200px;
+    margin-inline: auto;
+    text-align: center;
+    display: block;
+    padding-block: 8px;
+    padding-inline: 16px;
+    border: 2px solid $stage-color-dark;
+
+    input {
+    color: $stage-color-dark;
+    }
+    
+  }
+  .contact__acceptance {
+    color: $stage-color-dark;
+    margin-block: rm(60) rm(80);
+    display: flex;
+    justify-content: center;
+    @include font(16, 700, 1, 0);
+
+    a {
+      text-decoration: underline;
+    }
+  }
+  .option_first {
+    padding: 8px;
+  }
+  

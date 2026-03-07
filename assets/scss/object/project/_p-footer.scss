@@ -2,7 +2,8 @@
 
 .p-footer__logo {
     width: 280px;
-    
+    scale: 1.2;
+    translate: 21px 0;
     transition: opacity 0.3s ease;
     @media (hover: hover) {
       &:hover {
@@ -26,12 +27,14 @@
     li {
         @include font( 16,500 ,1 ,0 );
         line-height: 1.7;
+        color: $stage-color-dark;
         
     }
 }
 .p-footer__copy {
     @include font( 12,500 ,1 ,0 );
     line-height: 1.5;
+    color: $stage-color-dark;
     @include mq(sp) {
         position: absolute;
         left: 20px;
@@ -67,6 +70,7 @@
         @include font( 18,700 ,1 ,0 );
         line-height: 1.4;
         position: relative;
+        color: $stage-color-dark;
         & + li {
             margin-top: 18px;
             @include mq(sp) {

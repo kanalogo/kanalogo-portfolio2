@@ -10,15 +10,16 @@
     <meta name="description" content="Global Standardの採用サイト。ビジネス研修・海外留学サポートなど、教育を通じて人と世界をつなぐ仕事に挑戦しませんか。研修コンサルタント、運営スタッフ、講師など各職種で募集中です。" />
 
     <!-- ogp -->
-    <meta property="og:url" content="" />
+    <meta property="og:url" content="https://kanalogo.sakura.ne.jp/global/" />
     <meta property="og:type" content="website" />
     <meta property="og:title" content="挑戦が世界を変える ー Global Standard 採用サイト" />
     <meta property="og:description" content="Global Standardの採用サイト。ビジネス研修・海外留学サポートなど、教育を通じて人と世界をつなぐ仕事に挑戦しませんか。研修コンサルタント、運営スタッフ、講師など各職種で募集中です。" />
     <meta property="og:site_name" content="コンサルサービスのメディアサイト「デイマガ" />
-    <meta property="og:image" content="./assets/img/ogp.png" />
+    <meta property="og:image" content="https://kanalogo.sakura.ne.jp/global//assets/img/ogp.png" />
     <meta property="og:locale" content="ja_JP" />
-    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:card" content="https://kanalogo.sakura.ne.jp/global//assets/img/ogp.png" />
     <meta name="twitter:description" content="Global Standardの採用サイト。ビジネス研修・海外留学サポートなど、教育を通じて人と世界をつなぐ仕事に挑戦しませんか。研修コンサルタント、運営スタッフ、講師など各職種で募集中です。" />
+    <meta name=”robots” content=”noindex,nofollow”>
 
     <!-- favicon -->
     <link rel="icon" href="./assets/img/favicon.ico" type="image/svg+xml" />
@@ -31,11 +32,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
 
         <!-- fontawesome -->
-    <script src="https://kit.fontawesome.com/91f1142cd5.js" crossorigin="anonymous" defer></script>
+        <script src="https://kit.fontawesome.com/91f1142cd5.js" crossorigin="anonymous" defer></script>
 
     <!-- css -->
     <link rel="stylesheet" href="./assets/css/lib/swiper-bundle.min.css" />
     <link rel="stylesheet" href="./assets/scss/style.css?ver1.0" />
+
+     <!-- split type -->
+  <script src="https://unpkg.com/split-type"></script>
 
     <!-- GSAP -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -43,27 +47,30 @@
   </head>
 
   <body>
-    <header class="l-header p-header" id="header">
+    <header class="l-header p-header l-inner" id="header">
       <div class="l-header__inner">
         <a href="" class="p-header__logo">
           <h1>
           <picture>
-            <img src="./assets/img/header-logo.png" alt="" width="320" height="59">
+            <img src="./assets/img/kanalogo-top-logo2.png" alt="" width="320" height="59">
           </picture>
         </h1>
         </a>
      
         <nav class="l-header__nav">
           <ul class="l-header__list">
-            <li class="l-header__item"><a href="#message">メッセージ</a></li>
-            <li class="l-header__item"><a href="#business">私たちの仕事</a></li>
-            <li class="l-header__item"><a href="#member">先輩社員の声</a></li>
-            <li class="l-header__item"><a href="#culture">働く環境</a></li>
+            <li class="l-header__item "><a href="#works" class="js-link">製作実績</a></li>
+            <li class="l-header__item "><a href="#about" class="js-link">私について</a></li>
+            <li class="l-header__item "><a href="profile.html" class="js-link">プロフィール</a></li>
+            <li class="l-header__item "><a href="#flow" class="js-link">流れについて</a></li>
+            <li class="l-header__item "><a href="#faq" class="js-link">よくある質問</a></li>
           </ul>
-          <button class="p-header__btn"><a href="#entry" class="">Entry</a></button>
+          <button class="p-header__btn"><a href="#contact" class="js-link">お問い合わせ</a></button>
         </nav>
       </div>
     </header>
+
+    <span id="js-cursor" class="c-cursor">+</span>
 
     <button class="p-drawer__icon">
 			<div class="p-drawer__icon--bar"></div>
@@ -88,14 +95,16 @@
 		
 			</div>
 		</div>
-
+    
+   
 
     <main class="l-main">
+      <div class="l-mv__block">
       <section class="p-mv">
         <div class="l-inner">
           <h2 class="c-heading__mv">
-            <span class="section__title-en">Your Challenge</span>
-            <span class="section__title-en pc-only">Will Change The World</span>
+            <span class="section__title-en">Your Bussiness</span>
+            <span class="section__title-en pc-only">Will Change The success</span>
             <span class="section__title-en sp-only">Will Change</span>
             <span class="section__title-en sp-only">The World</span>
           </h2>
@@ -126,877 +135,426 @@
         </div><!-- /.l-mv__scroll-item -->
         </div>
       </section>
+    </div><!-- /.l-mv__block -->
 
       <section class="p-fv" id="message">
         <div class="l-busi__bg"><img src="./assets/img/w-bg.png" alt="">
           <img src="./assets/img/w-bg.png" alt=""></div><!-- /.l-ch__bg -->
         <div class="l-inner">
           <div class="l-fv__container">
+            <h2 class="c-fv__headingLv2">
+              <span>実装だけで終わらせない <br>成果につなげるホームページを</span></h2><!-- /.c-fv__heading -->
             <div class="p-fv__text-wrap">
-              <p class="p-fv__tetx">
-                <span class="text-flow__line">
-                  <span class="text-flow__cover" style="--delay: 1s;">私たちは教育を通じて、</span>
-                
-                  <span class="text-flow__base" aria-hidden="true">私たちは教育を通じて、</span>
-                </span> <br>
-                <span class="text-flow__line">
-                  <span class="text-flow__cover" style="--delay: 1.3s;">日本から世界へ羽ばたくビジネスパーソンを数多く育ててきました。、</span>
-                
-                  <span class="text-flow__base" aria-hidden="true">日本から世界へ羽ばたくビジネスパーソンを数多く育ててきました。</span>
-                </span> <br>
-    
-                <span class="text-flow__line">
-                  <span class="text-flow__cover" style="--delay: 1.8s;">アジアをはじめとする海外拠点にも活動の場を広げ、</span>
-                
-                  <span class="text-flow__base" aria-hidden="true">アジアをはじめとする海外拠点にも活動の場を広げ、</span>
-                </span> <br>
-                <span class="text-flow__line">
-                  <span class="text-flow__cover" style="--delay: 2.0s;">世界規模で人と人を結びつける存在を目指します</span>
-                
-                  <span class="text-flow__base" aria-hidden="true">世界規模で人と人を結びつける存在を目指します</span>
-                </span> 
-                </p><!-- /.p-fv__tetx -->
-
-                <p class="p-fv__tetx">
-                  <span class="text-flow__line">
-                    <span class="text-flow__cover" style="--delay: 2s;">あなたが持つ可能性は、まだ形になっていないかもしれません。</span>
-                  
-                    <span class="text-flow__base" aria-hidden="true">あなたが持つ可能性は、まだ形になっていないかもしれません。、</span>
-                  </span> <br>
-                  <span class="text-flow__line">
-                    <span class="text-flow__cover" style="--delay: 2.3s;">しかし、挑戦する意思さえあれば、</span>
-                  
-                    <span class="text-flow__base" aria-hidden="true">しかし、挑戦する意思さえあれば、。</span>
-                  </span> <br>
-                  <span class="text-flow__line">
-                    <span class="text-flow__cover" style="--delay: 2.5s;">そしてこれからは、</span>
-                  
-                    <span class="text-flow__base" aria-hidden="true">そしてこれからは、</span>
-                  </span> <br>
-                  <span class="text-flow__line">
-                    <span class="text-flow__cover" style="--delay: 2.8s;">その力は必ず世界を変える原動力になります。</span>
-                  
-                    <span class="text-flow__base" aria-hidden="true">その力は必ず世界を変える原動力になります。、</span>
-                  </span> 
+              <p class="p-fv__text">
+                企業やブランドの強みを丁寧にヒアリングし、<br>
+                伝わるデザインと分かりやすい構成でWebサイトを制作します。<br>
+                公開後の運用や改善も見据えた設計で、長く使えるサイトをご提供します。
                   </p><!-- /.p-fv__tetx -->
 
-                  <p class="p-fv__tetx">
-                    <span class="text-flow__line">
-                      <span class="text-flow__cover" style="--delay: 3s;">私たちは、挑戦する人を歓迎します。</span>
-                    
-                      <span class="text-flow__base" aria-hidden="true">私たちは、挑戦する人を歓迎します。</span>
-                    </span> <br>
-                    <span class="text-flow__line">
-                      <span class="text-flow__cover" style="--delay: 3.3s;">あなたの挑戦が、やがて世界の新しい価値をつくる。</span>
-                    
-                      <span class="text-flow__base" aria-hidden="true">あなたの挑戦が、やがて世界の新しい価値をつくる。</span>
-                    </span> <br>
-                    <span class="text-flow__line">
-                      <span class="text-flow__cover" style="--delay: 3.5s;">その未来を、私たちと共に描いていきませんか。</span>
-                    
-                      <span class="text-flow__base" aria-hidden="true">その未来を、私たちと共に描いていきませんか。</span>
-                    </span> 
-                    </p><!-- /.p-fv__tetx -->
+                  <p class="p-fv__text">
+                    ホームページ制作に加え、EC・採用・観光業など目的に応じた構成設計を重視。<br>
+                    単なるコーディングではなく、目的達成を見据えた実装を行います。<br>
+                    中長期的な運用も見据えた構築が可能です。
+                      </p><!-- /.p-fv__tetx -->
+
+      
                 
             </div><!-- /.p-fv__text-wrap -->
-            <div class="p-fv___image-wrap">
-              <img src="./assets/img/fv_bg.jpg" alt="" width="649" height="800">
             
-            </div><!-- /.p-fv___image-wrap -->
           </div><!-- /.l-fv__container -->
 
           </div>
           </section>
 
-          <section class="p-bussiness" id="business">
-            
-            <div class="l-inner">
-              <h2 class="c-heading__lv2"><span class="heading__en">Our Business</span> <span class="heading__ja">私たちの仕事</span></h2><!-- /.c-heading__lv2 -->
-
-              <div class="l-bussiness__container">
-                <div class="l-btn__grid">
-                  <button class="c-bl__btn is-active" data-slide="1">
-                    <div class="c-bl__btn-container">
-                    <p class="c-bl__btn-top">Business Training Consultant</p><!-- /.c-bl__btn-top -->
-                    <p class="c-bl__btn-bottom"> <span>01</span>研修コンサルタント</p><!-- /.c-bl__btn-bottom -->
-                  </div>
-                  </button><!-- /.c-bl__btn -->
-
-                  <button class="c-bl__btn" data-slide="2">
-                    <div class="c-bl__btn-container">
-                    <p class="c-bl__btn-top">Training Operations Staff</p><!-- /.c-bl__btn-top -->
-                    <p class="c-bl__btn-bottom"> <span>02</span>研修運営スタッフ</p><!-- /.c-bl__btn-bottom -->
-                  </div><!-- /.c-bl__container -->
-                  </button><!-- /.c-bl__btn -->
-
-                  <button class="c-bl__btn" data-slide="3">
-                    <div class="c-bl__btn-container">
-                    <p class="c-bl__btn-top">Study Abroad Coordinator</p><!-- /.c-bl__btn-top -->
-                    <p class="c-bl__btn-bottom"> <span>03</span>ビジネス留学サポーター</p><!-- /.c-bl__btn-bottom -->
-                    </div>
-                  </button><!-- /.c-bl__btn -->
-
-                  <button class="c-bl__btn" data-slide="4">
-                    <div class="c-bl__btn-container">
-                    <p class="c-bl__btn-top">Trainer / Instructor</p><!-- /.c-bl__btn-top -->
-                    <p class="c-bl__btn-bottom"> <span>04</span>講師</p><!-- /.c-bl__btn-bottom -->
-                    </div>
-                  </button><!-- /.c-bl__btn -->
-                </div><!-- /.l-btn__grid -->
-
-                <div class="l-bl__card-container">
-                  <div class="card__swiper-container">
-                    <div class="swiper card__swiper">
-                      <div class="swiper-wrapper card__swiper-wrapper">
-                        <div class="swiper-slide card__swiper-slide">
-                          <div class="c-bl__card">
-                            <div class="c-bl__card-inner">
-                              <p class="c-bl__card-desc">Business Training Consultant</p><!-- /.c-bl__card-desc -->
-                              <h3 class="c-bl__card-title"> <span>01</span>研修コンサルタント</h3><!-- /.c-bl__card-desc -->
-                              <picture class="c-bl__card-image">
-                                <img src="./assets/img/bussiness-1.jpg" alt="">
-                              </picture><!-- /.c-bl__card-image -->
-                              <div class="c-bl__card-div">
-                              <p class="c-bl__card-text">仕事内容</p><!-- /.c-bl__card-text -->
-                              <ul class="c-bl__card-list">
-                                <li>法人向けビジネス英語研修や異文化コミュニケーション研修の企画・運営</li>
-                                <li>クライアント企業へのヒアリングと課題分析</li>
-                                <li>研修プランの提案と改善</li>
-                              </ul><!-- /.c-bl__card-list -->
-                              <p class="c-bl__card-text">求める人物像</p><!-- /.c-bl__card-text -->
-                              <ul class="c-bl__card-list">
-                                <li>法人営業や人材育成に関わった経験を活かしたい方</li>
-                                <li>成果にこだわり、クライアントに価値を提供できる方</li>
-                               
-                              </ul><!-- /.c-bl__card-list -->
-        
-                              <button class="c-bl__modal-btn" data-modal="1">
-                                <a href="">
-                                <span>募集要項を詳しく見る</span>
-                                </a>
-                              </button><!-- /.c-bl__modal-btn -->
-                            </div><!-- /.c-bl__card-div -->
-                            </div><!-- /.c-bl__card-inner -->
-                          </div><!-- /.c-bl__card -->
-                        </div>
-
-                        <div class="swiper-slide card__swiper-slide">
-                          <div class="c-bl__card">
-                            <div class="c-bl__card-inner">
-                              <p class="c-bl__card-desc">Training Operations Staff</p><!-- /.c-bl__card-desc -->
-                              <h3 class="c-bl__card-title"> <span>02</span>研修運営スタッフ</h3><!-- /.c-bl__card-desc -->
-                              <picture class="c-bl__card-image">
-                                <img src="./assets/img/bussiness-2.jpg" alt="">
-                              </picture><!-- /.c-bl__card-image -->
-                              <div class="c-bl__card-div">
-                              <p class="c-bl__card-text">仕事内容</p><!-- /.c-bl__card-text -->
-                              <ul class="c-bl__card-list">
-                                <li>研修プログラムの進行管理、受講者フォロー</li>
-                                <li>講師との調整、教材準備、当日のサポート業務</li>
-                                <li>参加者からのフィードバック収集と改善提案</li>
-                              </ul><!-- /.c-bl__card-list -->
-                              <p class="c-bl__card-text">求める人物像</p><!-- /.c-bl__card-text -->
-                              <ul class="c-bl__card-list">
-                                <li>ホスピタリティを持ち、細やかな対応ができる方</li>
-                                <li>チームワークを重視し、現場を支えることにやりがいを感じられる方</li>
-                                <li class="hidden"></li>
-                              </ul><!-- /.c-bl__card-list -->
-        
-                              <button class="c-bl__modal-btn" data-modal="2">
-                                <a href="">
-                                <span>募集要項を詳しく見る</span>
-                                </a>
-                              </button><!-- /.c-bl__modal-btn -->
-                              </div>
-                            </div><!-- /.c-bl__card-inner -->
-                          </div><!-- /.c-bl__card -->
-                        </div>
-
-                        <div class="swiper-slide card__swiper-slide">
-                          <div class="c-bl__card">
-                            <div class="c-bl__card-inner">
-                              <p class="c-bl__card-desc">Study Abroad Coordinator</p><!-- /.c-bl__card-desc -->
-                              <h3 class="c-bl__card-title"> <span>03</span>ビジネス留学サポーター</h3><!-- /.c-bl__card-desc -->
-                              <picture class="c-bl__card-image">
-                                <img src="./assets/img/bussiness-3.jpg" alt="">
-                              </picture><!-- /.c-bl__card-image -->
-                              <div class="c-bl__card-div">
-                              <p class="c-bl__card-text">仕事内容</p><!-- /.c-bl__card-text -->
-                              <ul class="c-bl__card-list">
-                                <li>海外留学希望者へのカウンセリング、キャリア相談</li>
-                                <li>留学先の選定、現地手配、滞在サポート</li>
-                                <li>留学後のキャリアプランニング支援</li>
-                              </ul><!-- /.c-bl__card-list -->
-                              <p class="c-bl__card-text">求める人物像</p><!-- /.c-bl__card-text -->
-                              <ul class="c-bl__card-list">
-                                <li>国際経験を活かしたい方</li>
-                                <li>受講生一人ひとりの成長に寄り添える方</li>
-                                <li class="hidden"></li>
-                              </ul><!-- /.c-bl__card-list -->
-        
-                              <button class="c-bl__modal-btn" data-modal="3">
-                                <a href="">
-                                <span>募集要項を詳しく見る</span>
-                                </a>
-                              </button><!-- /.c-bl__modal-btn -->
-                              </div>
-                            </div><!-- /.c-bl__card-inner -->
-                          </div><!-- /.c-bl__card -->
-                        </div>
-
-                        <div class="swiper-slide card__swiper-slide">
-                          <div class="c-bl__card">
-                            <div class="c-bl__card-inner">
-                              <p class="c-bl__card-desc">Trainer / Instructor</p><!-- /.c-bl__card-desc -->
-                              <h3 class="c-bl__card-title"> <span>04</span>講師</h3><!-- /.c-bl__card-desc -->
-                              <picture class="c-bl__card-image">
-                                <img src="./assets/img/bussiness-4.jpg" alt="">
-                              </picture><!-- /.c-bl__card-image -->
-                              <div class="c-bl__card-div">
-                              <p class="c-bl__card-text">仕事内容</p><!-- /.c-bl__card-text -->
-                              <ul class="c-bl__card-list">
-                                <li>ビジネス英会話や異文化研修の講義を担当</li>
-                                <li>研修のカリキュラム設計・改善提案</li>
-                                <li>受講者の進捗確認とフィードバック</li>
-                              </ul><!-- /.c-bl__card-list -->
-                              <p class="c-bl__card-text">求める人物像</p><!-- /.c-bl__card-text -->
-                              <ul class="c-bl__card-list">
-                                <li>海外ビジネス経験や教育経験を持ち、伝える力を発揮できる方</li>
-                                <li>受講者に寄り添いながらも、挑戦を促すことができる方</li>
-                                <li class="hideen"></li>
-                              </ul><!-- /.c-bl__card-list -->
-        
-                              <button class="c-bl__modal-btn" data-modal="4">
-                                <a href="">
-                                <span>募集要項を詳しく見る</span>
-                                </a>
-                              </button><!-- /.c-bl__modal-btn -->
-                              </div>
-                            </div><!-- /.c-bl__card-inner -->
-                          </div><!-- /.c-bl__card -->
-                        </div>
-
-                      </div>
-                    </div>
-                    
-                  </div>
-                  
-
-                 
-                </div><!-- /.l-bl__card-grid -->
-              </div><!-- /.l-bussiness__container -->
-          </div>
-         </section>
-
-         <div class="l-modal-bg"></div><!-- /.l-modal-bg -->
-
-         <div class="c-member__modal" data-modal-num="1" id="1">
-          <div class="c-member__modal-inner">
-          <div class="c-member__modal-block">
-            <div class="c-member__modal-close"></div><!-- / -->
-            <p class="c-member__modal-closeText">募集要項を閉じる</p><!-- / -->
-          </div><!-- /.c-member__modal-block -->
-
-          <p class="c-member__modal-desc">Business Training Consultant</p><!-- / -->
-          <h3 class="c-member__modal-title"> <span>01</span>研修コンサルタントの募集要項</h3><!-- / -->
-          
-          <dl class="c-member__modal-list">
-            <dt class="c-member__modal-ttl">
-              <p class="c-member__modal-title-1">仕事内容</p><!-- / -->
-            </dt><!-- / -->
-            <dd class="c-member__modal-txt">
-              <ul class="c-member__modal-text">
-                <li>法人向けビジネス英語研修・異文化コミュニケーション研修の企画・運営</li>
-                <li>クライアント企業へのヒアリング、課題分析</li>
-                <li>研修プランの提案、改善案の策定</li>
-                <li>講師・研修運営スタッフとの連携</li>
-              </ul><!-- / -->
-            </dd><!-- / -->
-          </dl><!-- / -->
-          <dl class="c-member__modal-list">
-            <dt class="c-member__modal-ttl">
-              <p class="c-member__modal-title-1">応募資格</p><!-- / -->
-            </dt><!-- / -->
-            <dd class="c-member__modal-txt">
-              <ul class="c-member__modal-text">
-                <li>法人営業や人材育成に関わった経験をお持ちの方</li>
-                <li>コミュニケーション力を活かし、顧客課題に寄り添える方</li>
-              </ul><!-- / -->
-            </dd><!-- / -->
-          </dl><!-- / -->
-          <dl class="c-member__modal-list">
-            <dt class="c-member__modal-ttl">
-              <p class="c-member__modal-title-1">歓迎スキル・経験</p><!-- / -->
-            </dt><!-- / -->
-            <dd class="c-member__modal-txt">
-              <ul class="c-member__modal-text">
-                <li>英語を使った業務経験</li>
-                <li>教育・研修業界での実務経験</li>
-                <li>新しいプログラムを自ら企画した経験</li>
-              </ul><!-- / -->
-            </dd><!-- / -->
-          </dl><!-- / -->
-          <dl class="c-member__modal-list">
-            <dt class="c-member__modal-ttl">
-              <p class="c-member__modal-title-1">勤務地・勤務時間</p><!-- / -->
-            </dt><!-- / -->
-            <dd class="c-member__modal-txt">
-              <ul class="c-member__modal-text">
-                <li>大阪本社または東京支社（プロジェクトにより出張あり）</li>
-                <li>フレックスタイム制（コアタイム10:00〜15:00）</li>
-                <li>リモート勤務可（案件に応じて）</li>
-              </ul><!-- / -->
-            </dd><!-- / -->
-          </dl><!-- / -->
-          <dl class="c-member__modal-list">
-            <dt class="c-member__modal-ttl">
-              <p class="c-member__modal-title-1">給与・待遇</p><!-- / -->
-            </dt><!-- / -->
-            <dd class="c-member__modal-txt">
-              <ul class="c-member__modal-text">
-                <li>年収：450万〜800万円（経験・能力を考慮）</li>
-                <li>賞与年2回、インセンティブ制度あり</li>
-                <li>語学学習補助、資格取得支援制度</li>
-              </ul><!-- / -->
-            </dd><!-- / -->
-          </dl><!-- / -->
-
-          <dl class="c-member__modal-list">
-            <dt class="c-member__modal-ttl">
-              <p class="c-member__modal-title-1">休日・休暇</p><!-- / -->
-            </dt><!-- / -->
-            <dd class="c-member__modal-txt">
-              <ul class="c-member__modal-text">
-                <li>完全週休2日制（土日）・祝日</li>
-                <li>年末年始・夏季休暇</li>
-                <li>有給休暇・特別休暇</li>
-              </ul><!-- / -->
-            </dd><!-- / -->
-          </dl><!-- / -->
-          <button class="c-modal-btn">
-            <span>エントリーする</span>
-          </button><!-- /.c-bl__modal-btn -->
-          </div>
-        </div><!-- /.c-member__modal -->
-
-        <div class="c-member__modal" data-modal-num="2" id="2">
-          <div class="c-member__modal-inner">
-          <div class="c-member__modal-block">
-            <div class="c-member__modal-close"></div><!-- / -->
-            <p class="c-member__modal-closeText">募集要項を閉じる</p><!-- / -->
-          </div><!-- /.c-member__modal-block -->
-
-          <p class="c-member__modal-desc">Training Operations Staff</p><!-- / -->
-          <h3 class="c-member__modal-title"> <span>02</span>研修コンサルタントの募集要項</h3><!-- / -->
-          
-          <dl class="c-member__modal-list">
-            <dt class="c-member__modal-ttl">
-              <p class="c-member__modal-title-1">仕事内容</p><!-- / -->
-            </dt><!-- / -->
-            <dd class="c-member__modal-txt">
-              <ul class="c-member__modal-text">
-                <li>法人向けビジネス英語研修・異文化コミュニケーション研修の企画・運営</li>
-                <li>クライアント企業へのヒアリング、課題分析</li>
-                <li>研修プランの提案、改善案の策定</li>
-                <li>講師・研修運営スタッフとの連携</li>
-              </ul><!-- / -->
-            </dd><!-- / -->
-          </dl><!-- / -->
-          <dl class="c-member__modal-list">
-            <dt class="c-member__modal-ttl">
-              <p class="c-member__modal-title-1">応募資格</p><!-- / -->
-            </dt><!-- / -->
-            <dd class="c-member__modal-txt">
-              <ul class="c-member__modal-text">
-                <li>法人営業や人材育成に関わった経験をお持ちの方</li>
-                <li>コミュニケーション力を活かし、顧客課題に寄り添える方</li>
-              </ul><!-- / -->
-            </dd><!-- / -->
-          </dl><!-- / -->
-          <dl class="c-member__modal-list">
-            <dt class="c-member__modal-ttl">
-              <p class="c-member__modal-title-1">歓迎スキル・経験</p><!-- / -->
-            </dt><!-- / -->
-            <dd class="c-member__modal-txt">
-              <ul class="c-member__modal-text">
-                <li>英語を使った業務経験</li>
-                <li>教育・研修業界での実務経験</li>
-                <li>新しいプログラムを自ら企画した経験</li>
-              </ul><!-- / -->
-            </dd><!-- / -->
-          </dl><!-- / -->
-          <dl class="c-member__modal-list">
-            <dt class="c-member__modal-ttl">
-              <p class="c-member__modal-title-1">勤務地・勤務時間</p><!-- / -->
-            </dt><!-- / -->
-            <dd class="c-member__modal-txt">
-              <ul class="c-member__modal-text">
-                <li>大阪本社または東京支社（プロジェクトにより出張あり）</li>
-                <li>フレックスタイム制（コアタイム10:00〜15:00）</li>
-                <li>リモート勤務可（案件に応じて）</li>
-              </ul><!-- / -->
-            </dd><!-- / -->
-          </dl><!-- / -->
-          <dl class="c-member__modal-list">
-            <dt class="c-member__modal-ttl">
-              <p class="c-member__modal-title-1">給与・待遇</p><!-- / -->
-            </dt><!-- / -->
-            <dd class="c-member__modal-txt">
-              <ul class="c-member__modal-text">
-                <li>年収：450万〜800万円（経験・能力を考慮）</li>
-                <li>賞与年2回、インセンティブ制度あり</li>
-                <li>語学学習補助、資格取得支援制度</li>
-              </ul><!-- / -->
-            </dd><!-- / -->
-          </dl><!-- / -->
-
-          <dl class="c-member__modal-list">
-            <dt class="c-member__modal-ttl">
-              <p class="c-member__modal-title-1">休日・休暇</p><!-- / -->
-            </dt><!-- / -->
-            <dd class="c-member__modal-txt">
-              <ul class="c-member__modal-text">
-                <li>完全週休2日制（土日）・祝日</li>
-                <li>年末年始・夏季休暇</li>
-                <li>有給休暇・特別休暇</li>
-              </ul><!-- / -->
-            </dd><!-- / -->
-          </dl><!-- / -->
-          <button class="c-modal-btn">
-            <span>エントリーする</span>
-          </button><!-- /.c-bl__modal-btn -->
-          </div>
-        </div><!-- /.c-member__modal -->
-
-        <div class="c-member__modal" data-modal-num="3" id="3">
-          <div class="c-member__modal-inner">
-          <div class="c-member__modal-block">
-            <div class="c-member__modal-close"></div><!-- / -->
-            <p class="c-member__modal-closeText">募集要項を閉じる</p><!-- / -->
-          </div><!-- /.c-member__modal-block -->
-
-          <p class="c-member__modal-desc">Study Abroad Coordinator</p><!-- / -->
-          <h3 class="c-member__modal-title"> <span>03</span>ビジネス留学サポーターの募集要項</h3><!-- / -->
-          
-          <dl class="c-member__modal-list">
-            <dt class="c-member__modal-ttl">
-              <p class="c-member__modal-title-1">仕事内容</p><!-- / -->
-            </dt><!-- / -->
-            <dd class="c-member__modal-txt">
-              <ul class="c-member__modal-text">
-                <li>海外留学希望者へのカウンセリング、キャリア相談</li>
-                <li>留学先の選定、現地手配、滞在サポート</li>
-                <li>留学後のキャリアプランニング支援</li>
-              </ul><!-- / -->
-            </dd><!-- / -->
-          </dl><!-- / -->
-          <dl class="c-member__modal-list">
-            <dt class="c-member__modal-ttl">
-              <p class="c-member__modal-title-1">応募資格</p><!-- / -->
-            </dt><!-- / -->
-            <dd class="c-member__modal-txt">
-              <ul class="c-member__modal-text">
-                <li>国際経験を活かしたい方</li>
-                <li>一人ひとりの成長に寄り添える方</li>
-              </ul><!-- / -->
-            </dd><!-- / -->
-          </dl><!-- / -->
-          <dl class="c-member__modal-list">
-            <dt class="c-member__modal-ttl">
-              <p class="c-member__modal-title-1">歓迎スキル・経験</p><!-- / -->
-            </dt><!-- / -->
-            <dd class="c-member__modal-txt">
-              <ul class="c-member__modal-text">
-                <li>留学や海外勤務の経験</li>
-                <li>語学学校や留学エージェントでの実務経験</li>
-                <li>英語での業務遂行能力</li>
-              </ul><!-- / -->
-            </dd><!-- / -->
-          </dl><!-- / -->
-          <dl class="c-member__modal-list">
-            <dt class="c-member__modal-ttl">
-              <p class="c-member__modal-title-1">勤務地・勤務時間</p><!-- / -->
-            </dt><!-- / -->
-            <dd class="c-member__modal-txt">
-              <ul class="c-member__modal-text">
-                <li>大阪本社または東京支社</li>
-                <li>海外出張あり</li>
-                <li>フレックスタイム制（コアタイム10:00〜15:00）</li>
-              </ul><!-- / -->
-            </dd><!-- / -->
-          </dl><!-- / -->
-          <dl class="c-member__modal-list">
-            <dt class="c-member__modal-ttl">
-              <p class="c-member__modal-title-1">給与・待遇</p><!-- / -->
-            </dt><!-- / -->
-            <dd class="c-member__modal-txt">
-              <ul class="c-member__modal-text">
-                <li>年収：400万〜700万円（経験・能力を考慮）</li>
-                <li>賞与年2回、インセンティブ制度あり</li>
-                <li>留学・海外研修の割引制度</li>
-              </ul><!-- / -->
-            </dd><!-- / -->
-          </dl><!-- / -->
-
-          <dl class="c-member__modal-list">
-            <dt class="c-member__modal-ttl">
-              <p class="c-member__modal-title-1">休日・休暇</p><!-- / -->
-            </dt><!-- / -->
-            <dd class="c-member__modal-txt">
-              <ul class="c-member__modal-text">
-                <li>完全週休2日制（土日）・祝日</li>
-                <li>年末年始・夏季休暇</li>
-                <li>有給休暇・特別休暇</li>
-              </ul><!-- / -->
-            </dd><!-- / -->
-          </dl><!-- / -->
-          <button class="c-modal-btn">
-            <span>エントリーする</span>
-          </button><!-- /.c-bl__modal-btn -->
-          </div>
-        </div><!-- /.c-member__modal -->
-
-        <div class="c-member__modal" data-modal-num="4" id="4">
-          <div class="c-member__modal-inner">
-          <div class="c-member__modal-block">
-            <div class="c-member__modal-close"></div><!-- / -->
-            <p class="c-member__modal-closeText">募集要項を閉じる</p><!-- / -->
-          </div><!-- /.c-member__modal-block -->
-
-          <p class="c-member__modal-desc">Trainer / Instructor</p><!-- / -->
-          <h3 class="c-member__modal-title"> <span>04</span>講師の募集要項</h3><!-- / -->
-          
-          <dl class="c-member__modal-list">
-            <dt class="c-member__modal-ttl">
-              <p class="c-member__modal-title-1">仕事内容</p><!-- / -->
-            </dt><!-- / -->
-            <dd class="c-member__modal-txt">
-              <ul class="c-member__modal-text">
-                <li>ビジネス英会話や異文化研修の講義を担当</li>
-                <li>研修カリキュラムの設計・改善提案</li>
-                <li>受講者の進捗確認とフィードバック</li>
-              </ul><!-- / -->
-            </dd><!-- / -->
-          </dl><!-- / -->
-          <dl class="c-member__modal-list">
-            <dt class="c-member__modal-ttl">
-              <p class="c-member__modal-title-1">応募資格</p><!-- / -->
-            </dt><!-- / -->
-            <dd class="c-member__modal-txt">
-              <ul class="c-member__modal-text">
-                <li>教育や研修の経験をお持ちの方</li>
-                <li>教育や研修の経験をお持ちの方</li>
-                <li>人に伝えること、育てることにやりがいを感じる方</li>
-              </ul><!-- / -->
-            </dd><!-- / -->
-          </dl><!-- / -->
-          <dl class="c-member__modal-list">
-            <dt class="c-member__modal-ttl">
-              <p class="c-member__modal-title-1">歓迎スキル・経験</p><!-- / -->
-            </dt><!-- / -->
-            <dd class="c-member__modal-txt">
-              <ul class="c-member__modal-text">
-                <li>海外ビジネス経験</li>
-                <li>英語・日本語のバイリンガルスキル</li>
-                <li>企業研修や教育機関での講師経験</li>
-              </ul><!-- / -->
-            </dd><!-- / -->
-          </dl><!-- / -->
-          <dl class="c-member__modal-list">
-            <dt class="c-member__modal-ttl">
-              <p class="c-member__modal-title-1">勤務地・勤務時間</p><!-- / -->
-            </dt><!-- / -->
-            <dd class="c-member__modal-txt">
-              <ul class="c-member__modal-text">
-                <li>大阪本社・東京支社・提携先施設</li>
-                <li>研修スケジュールに応じて勤務</li>
-                <li>フレックスタイム制（一部リモート講義可）</li>
-              </ul><!-- / -->
-            </dd><!-- / -->
-          </dl><!-- / -->
-          <dl class="c-member__modal-list">
-            <dt class="c-member__modal-ttl">
-              <p class="c-member__modal-title-1">給与・待遇</p><!-- / -->
-            </dt><!-- / -->
-            <dd class="c-member__modal-txt">
-              <ul class="c-member__modal-text">
-                <li>年収：400万〜700万円（経験・能力を考慮）</li>
-                <li>賞与年2回、研修講師手当あり</li>
-                <li>社内研修無料受講、語学学習補助</li>
-              </ul><!-- / -->
-            </dd><!-- / -->
-          </dl><!-- / -->
-
-          <dl class="c-member__modal-list">
-            <dt class="c-member__modal-ttl">
-              <p class="c-member__modal-title-1">休日・休暇</p><!-- / -->
-            </dt><!-- / -->
-            <dd class="c-member__modal-txt">
-              <ul class="c-member__modal-text">
-                <li>完全週休2日制（土日）・祝日</li>
-                <li>研修日程に応じてシフト調整あり</li>
-                <li>年末年始・夏季休暇</li>
-              </ul><!-- / -->
-            </dd><!-- / -->
-          </dl><!-- / -->
-          <button class="c-modal-btn">
-            <span>エントリーする</span>
-          </button><!-- /.c-bl__modal-btn -->
-          </div>
-        </div><!-- /.c-member__modal -->
-
-      
+       
 
          <section class="p-challenge">
           <div class="l-ch__bg"><img src="./assets/img/w-bg.png" alt=""></div><!-- /.l-ch__bg -->
           <div class="l-inner">
-            <h2 class="c-heading__lv2 "><span class="heading__en">Your Challenge</span> <span class="heading__ja">挑戦できる4つのステージ</span></h2><!-- /.c-heading__lv2 -->
+            <h2 class="c-heading__lv2 "><span class="heading__en">SERVICE</span> <span class="heading__ja">事業内容</span></h2><!-- /.c-heading__lv2 -->
 
             <div class="l-ch__grid">
-              <div class="c-ch__card">
-                <div class="c-ch__card-top">
-                  <p class="c-ch__card-desc">STAGE <span>01</span></p><!-- /.c-ch__card-desc -->
-                  <h3 class="c-ch__card-title">学びながら成長する</h3><!-- /.c-ch__card-desc -->
-                </div><!-- /.c-ch__card-top -->
-                <p class="c-ch__card-text">入社後は、先輩やチームのサポートを受けながら、研修の流れを一通り経験します。<br>
-                  ビジネス英語や異文化コミュニケーションの社内講座はすべて無料。 <br>「英語に自信がない」「未経験だけど挑戦したい」という方も、安心してスタートできる環境です。</p><!-- /.c-ch__card-text -->
-                <picture class="c-ch__card-image">
-                  <img src="./assets/img/chal-1.jpg" alt="">
-                </picture><!-- /.c-ch__card-image -->
-              </div><!-- /.c-ch__card -->
+              <div class="card">
+                <a href="#">
+                <div class="card__content">
+                  <!-- front -->
+                  <div class="card__front">
+                    <img src="https://images.unsplash.com/photo-1540582685196-7f031fa5354e?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Njc4Mzc0MzJ8&ixlib=rb-4.1.0&q=85" alt="" class="card__img" width="405" height="396">
+                    <p class="card__caption">01 / ホームページ制作</p>
+                  </div>
+                  <!-- back -->
+                  <div class="card__back">
+                    <span class="card__number">01</span>
+                    <div>
+                      <span class="card__category">WordPress</span>
+                      <p class="card__title">ホームページ制作</p>
+                      <p class="card__description">コーポレートサイトから採用サイト、Shopify構築まで対応。<br>
+                        デザイン意図を正確に汲み取り、保守性を意識したコーディングを行います。<br>
+                        Git運用・テーマカスタマイズにも対応可能。<br>
+                        安心して任せられる実装パートナーを目指しています。</p>
+                    </div>
+                  
+                  </div>
+                </div>
+              </a>
+              </div><!-- /card -->
+             
 
-              <div class="c-ch__card --deep">
-                <div class="c-ch__card-top">
-                  <p class="c-ch__card-desc">STAGE <span>02</span></p><!-- /.c-ch__card-desc -->
-                  <h3 class="c-ch__card-title">自分のアイデアを形にする</h3><!-- /.c-ch__card-desc -->
-                </div><!-- /.c-ch__card-top -->
-                <p class="c-ch__card-text">研修に慣れてきたら、クライアント企業への提案やプログラム改善など、自分の考えを実際のプロジェクトに反映していくステージです。 <br> 小さな提案でもしっかり受け止めてもらえる文化があり、「自分のアイデアで誰かが成長する」そんな瞬間にやりがいを感じられます。</p><!-- /.c-ch__card-text -->
-                <picture class="c-ch__card-image">
-                  <img src="./assets/img/chal-2.jpg" alt="">
-                </picture><!-- /.c-ch__card-image -->
-              </div><!-- /.c-ch__card -->
+              <div class="card">
+                <a href="#">
+                <div class="card__content">
+                  <!-- front -->
+                  <div class="card__front">
+                    <img src="https://images.unsplash.com/photo-1577344954422-cb7b40658f67?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Njc4Mzc1MTh8&ixlib=rb-4.1.0&q=85" alt="" class="card__img" width="405" height="396">
+                    <p class="card__caption">02 / ECサイト構築</p>
+                  </div>
+                  <!-- back -->
+                  <div class="card__back">
+                    <span class="card__number">02</span>
+                    <div>
+                      <span class="card__category">Shopify</span>
+                      <p class="card__title">ECサイト構築</p>
+                      <p class="card__description">Dawnをはじめとしたテーマカスタマイズ、セクション開発、Liquid実装に対応。<br>
+                        デザイン再現性と表示速度を両立したECサイト構築を行います。<br>
+                        制作会社様のリソース不足を補う実装支援も可能です。</p>
+                    </div>
 
-              <div class="c-ch__card --green">
-                <div class="c-ch__card-top">
-                  <p class="c-ch__card-desc">STAGE <span>03</span></p><!-- /.c-ch__card-desc -->
-                  <h3 class="c-ch__card-title">グローバルな舞台で挑戦する</h3><!-- /.c-ch__card-desc -->
-                </div><!-- /.c-ch__card-top -->
-                <p class="c-ch__card-text">経験を重ねた先には、海外拠点の立ち上げや国際プロジェクトなど、グローバルな環境で活躍するチャンスがあります。 <br> 語学力だけでなく、異なる文化や考え方に触れることで、自分自身の成長を実感できます。<br> 世界を舞台にした挑戦も、ここから始まります。</p><!-- /.c-ch__card-text -->
-                <picture class="c-ch__card-image">
-                  <img src="./assets/img/chal-3.jpg" alt="">
-                </picture><!-- /.c-ch__card-image -->
-              </div><!-- /.c-ch__card -->
+                  </div>
+                </div>
+                </a>
+              </div><!-- /card -->
 
-              <div class="c-ch__card --bk">
-                <div class="c-ch__card-top">
-                  <p class="c-ch__card-desc">STAGE <span>04</span></p><!-- /.c-ch__card-desc -->
-                  <h3 class="c-ch__card-title">キャリアを自分の手で描く</h3><!-- /.c-ch__card-desc -->
-                </div><!-- /.c-ch__card-top -->
-                <p class="c-ch__card-text">Global Standardでは、年齢や年次に関わらず、自分のキャリアを自分で設計していく文化があります。<br> 評価は“挑戦したかどうか”を重視。 <br>半年ごとの面談では、上司と一緒に次の目標をすり合わせながら、成長の方向性を明確にしていきます。海外拠点への異動、マネジメント、教育設計など、キャリアの選択肢は一つではありません。</p><!-- /.c-ch__card-text -->
-                <picture class="c-ch__card-image">
-                  <img src="./assets/img/chal-4.jpg" alt="">
-                </picture><!-- /.c-ch__card-image -->
-              </div><!-- /.c-ch__card -->
             </div><!-- /.l-ch__grid -->
           </div>
         </section>
 
-        <section class="p-member" id="member">
+        <section class="p-member" id="works">
           <div class="l-mem__bg"><img src="./assets/img/w-bg.png" alt=""></div><!-- /.l-ch__bg -->
           <div class="l-inner">
-            <h2 class="c-heading__lv2 --gradation"><span class="heading__en">Member Stories </span><span class="heading__ja">先輩社員の声</span></h2><!-- /.c-heading__lv2 -->
+            <div class="view-wrapper">
+           
             <div class="l-member__container">
-              <div class="member__swiper-container">
-                <div class="swipermember member__swiper">
-                  <div class="swiper-wrapper member__swiper-wrapper">
-                    <div class="swiper-slide member__swiper-slide">
+              
+              <h2 class="c-heading__lv2 --gradation"><span class="heading__en">Works </span><span class="heading__ja">制作実績</span></h2><!-- /.c-heading__lv2 -->
+              <div class="l-member__swiper-container">
+                
                         <div class="c-member__card">
+                          <div class="c-member__top">
                           <span class="c-member__copy">01</span><!-- /.c-member__copy -->
+                          <span class="c-member__site">Global Standard 採用サイト</span><!-- /.c-member__site -->
+                        </div><!-- /.c-member__top -->
                           <div class="c-member__container">
                             <div class="c-member__image">
                               <picture>
                                 <img src="./assets/img/member-1.jpg" alt="">
                               </picture>
                               <div class="c-member__block">
-                                <p class="p-member__desc">研修コンサルティング部</p>
-                                <p class="p-member__desc">入社3年目 <span>S.U</span></p>
+                                <p class="p-member__desc">HTML</p>
+                                <p class="p-member__desc">コーポレートサイト</p>
                               </div><!-- /.c-member__block -->
                             </div><!-- /.c-member__image -->
                             <div class="c-member__text">
-                              <p class="c-member__txt">入社2年目で大手メーカーのグローバル研修を担当しました。<br>
-                                自分の提案がそのままプログラムに採用され、クライアントから高い評価をいただいたときの達成感は格別でした。<br>
-                                若手でも裁量を持って挑戦できる環境です。</p><!-- /.c-member__txt -->
+                              <p class="c-member__txt">グローバル教育企業の採用サイト制作。研修職種紹介やキャリアパスを整理し、ユーザーに選考意欲を高める構成とレスポンシブ実装を行いました。
+                             </p><!-- /.c-member__txt -->
+                               <h3 class="c-member__ttl">実装のポイント</h3><!-- /.c_member__ttl -->
+                                <ul class="c-member__tec">
+                                  <li>Swiperを使用したヒーローセクションのカルーセル実装</li>
+                                  <li>GSAP ScrollTriggerによるサービスセクションのフェードインアニメーション</li>
+                                  <li>PC / タブレット / スマートフォンに対応したレスポンシブ設計</li>
+                                </ul><!-- /.c-member__tec -->
                             </div><!-- /.c-member__text -->
                           </div><!-- /.c-member__container -->
                         </div><!-- /.c-member__card -->
-                    </div>
+                    
 
-                    <div class="swiper-slide member__swiper-slide">
+                   
                       <div class="c-member__card">
-                        <span class="c-member__copy">02</span><!-- /.c-member__copy -->
+                        <div class="c-member__top">
+                          <span class="c-member__copy">02</span><!-- /.c-member__copy -->
+                          <span class="c-member__site">採用特設サイト | 株式会社TETOTE</span><!-- /.c-member__site -->
+                        </div><!-- /.c-member__top -->
                         <div class="c-member__container">
                           <div class="c-member__image">
                             <picture>
                               <img src="./assets/img/member-2.jpg" alt="">
                             </picture>
                             <div class="c-member__block">
-                              <p class="p-member__desc">研修コンサルティング部</p>
-                              <p class="p-member__desc">入社3年目 <span>T.M</span></p>
+                              <p class="p-member__desc">WOPRDPRESS</p>
+                              <p class="p-member__desc">コーポレートサイト</p>
                             </div><!-- /.c-member__block -->
                           </div><!-- /.c-member__image -->
                           <div class="c-member__text">
-                            <p class="c-member__txt">研修当日の進行や受講者のフォローは大変ですが、『充実した時間だった』と参加者から感謝されたとき、この仕事のやりがいを強く感じます。
-                              チームで支え合いながら、成果を出せる環境が気に入っています。</p><!-- /.c-member__txt -->
+                            <p class="c-member__txt">WordPressを用いたブログサイトを構築。テーマカスタマイズや投稿機能、カテゴリ管理などCMS機能を実装し、更新しやすいサイト設計を行いました。</p><!-- /.c-member__txt -->
+                              <h3 class="c-member__ttl">実装のポイント</h3><!-- /.c_member__ttl -->
+                              <ul class="c-member__tec">
+                                <li>Swiperを使用したおすすめ記事カルーセルの実装</li>
+                                <li>PHPテンプレートを用いて投稿一覧・記事ページを実装</li>
+                                <li>BEM設計による再利用性の高いスタイル設計</li>
+                              </ul><!-- /.c-member__tec -->
                           </div><!-- /.c-member__text -->
                         </div><!-- /.c-member__container -->
                       </div><!-- /.c-member__card -->
-                  </div>
+                
 
-                  <div class="swiper-slide member__swiper-slide">
+
                     <div class="c-member__card">
-                      <span class="c-member__copy">03</span><!-- /.c-member__copy -->
+                      <div class="c-member__top">
+                        <span class="c-member__copy">03</span><!-- /.c-member__copy -->
+                        <span class="c-member__site">Rich Life(リッチライフ) <br>家具家電レンタル・サブスク</span><!-- /.c-member__site -->
+                      </div><!-- /.c-member__top -->
                       <div class="c-member__container">
                         <div class="c-member__image">
                           <picture>
                             <img src="./assets/img/member-3.jpg" alt="">
                           </picture>
                           <div class="c-member__block">
-                            <p class="p-member__desc">グローバルキャリア支援部</p>
-                            <p class="p-member__desc">入社3年目 <span>T.N</span></p>
+                            <p class="p-member__desc">HTML</p>
+                            <p class="p-member__desc">LPサイト</p>
                           </div><!-- /.c-member__block -->
                         </div><!-- /.c-member__image -->
                         <div class="c-member__text">
-                          <p class="c-member__txt">渡航前のカウンセリングから現地滞在サポートまで一貫して担当しています。
-                            帰国後に受講生から『人生の転機になった』と感謝されたとき、この仕事を選んでよかったと心から思いました。
-                            受講生と一緒に自分自身も成長しています。</p><!-- /.c-member__txt -->
+                          <p class="c-member__txt">豊かな暮らしをテーマにした情報サイトを制作。視認性の高いレイアウトとシンプルなUI設計により、ユーザーがコンテンツを直感的に読み進められる構成を意識しました</p><!-- /.c-member__txt -->
+                          <h3 class="c-member__ttl">実装のポイント</h3><!-- /.c_member__ttl -->
+                          <ul class="c-member__tec">
+                            <li>GSAP ScrollTriggerによる画像のパララックスアニメーション</li>
+                            <li>GSAP ScrollTriggerによるスクロール時のフェードイン演出</li>
+                            <li>コンテンツを整理したレイアウト設計</li>
+                          </ul><!-- /.c-member__tec -->
                         </div><!-- /.c-member__text -->
                       </div><!-- /.c-member__container -->
                     </div><!-- /.c-member__card -->
-                </div>
+                
 
-                <div class="swiper-slide member__swiper-slide">
+        
                   <div class="c-member__card">
-                    <span class="c-member__copy">04</span><!-- /.c-member__copy -->
+                    <div class="c-member__top">
+                      <span class="c-member__copy">04</span><!-- /.c-member__copy -->
+                      <span class="c-member__site">株式会社AROUTECH（アルーテック）</span><!-- /.c-member__site -->
+                    </div><!-- /.c-member__top -->
                     <div class="c-member__container">
                       <div class="c-member__image">
                         <picture>
                           <img src="./assets/img/member-4.jpg" alt="">
                         </picture>
                         <div class="c-member__block">
-                          <p class="p-member__desc">教育推進部</p>
-                          <p class="p-member__desc">入社5年目 <span>J.L</span></p>
+                          <p class="p-member__desc">HTML</p>
+                          <p class="p-member__desc">LPサイト</p>
                         </div><!-- /.c-member__block -->
                       </div><!-- /.c-member__image -->
                       <div class="c-member__text">
-                        <p class="c-member__txt">授業の中で、受講者が“自分にもできる”と気づいた瞬間の表情を見るのが一番嬉しいです。
-                          教える立場でありながら、毎回私自身も刺激を受け、成長しています。
-                          グローバル教育は学び合いの場だと実感しています。</p><!-- /.c-member__txt -->
+                        <p class="c-member__txt">タスク管理サービスを想定したWebサイトを制作。シンプルで視認性の高いデザインを採用し、機能紹介や導線設計を通してサービスの特徴を分かりやすく伝える構成にしました。 </p><!-- /.c-member__txt -->
+                        <h3 class="c-member__ttl">実装のポイント</h3><!-- /.c_member__ttl -->
+                        <ul class="c-member__tec">
+                          <li>各デバイスでも見やすい設計を意識</li>
+                          <li>GSAP ScrollTriggerによるステップセクションの順次表示アニメーション</li>
+                          <li>Swiperを使用したユーザーボイススライダーの実装</li>
+                        </ul><!-- /.c-member__tec -->
                       </div><!-- /.c-member__text -->
                     </div><!-- /.c-member__container -->
                   </div><!-- /.c-member__card -->
-              </div>
+              
 
-              <div class="swiper-slide member__swiper-slide">
+             
                 <div class="c-member__card">
-                  <span class="c-member__copy">05</span><!-- /.c-member__copy -->
+                  <div class="c-member__top">
+                    <span class="c-member__copy">05</span><!-- /.c-member__copy -->
+                    <span class="c-member__site">ブライダルプランナーのポータル</span><!-- /.c-member__site -->
+                  </div><!-- /.c-member__top -->
                   <div class="c-member__container">
                     <div class="c-member__image">
                       <picture>
                         <img src="./assets/img/member-5.jpg" alt="">
                       </picture>
                       <div class="c-member__block">
-                        <p class="p-member__desc">教育推進部</p>
-                        <p class="p-member__desc">入社3年目 <span>G.U</span></p>
+                        <p class="p-member__desc">HTML</p>
+                        <p class="p-member__desc">LPサイト</p>
                       </div><!-- /.c-member__block -->
                     </div><!-- /.c-member__image -->
                     <div class="c-member__text">
-                      <p class="c-member__txt">受講者が自信を持ち始める瞬間に立ち会えることが、教育者として何よりの喜びです。
-                        グローバル教育は、知識と経験を共有し合う“共育”の場だと感じています。</p><!-- /.c-member__txt -->
+                      <p class="c-member__txt">タスク・スケジュール管理サービスを想定したLPとして制作。サービスの特徴やメリットが伝わる構成を意識し、ユーザーが機能を理解しやすい情報設計を行いました。 </p><!-- /.c-member__txt -->
+                      <h3 class="c-member__ttl">実装のポイント</h3><!-- /.c_member__ttl -->
+                      <ul class="c-member__tec">
+                        <li>各デバイスでも見やすいレイアウト設計とUIの最適化</li>
+                        <li>Swiperを用いたユーザーボイススライダーの実装</li>
+                        <li>GSAP ScrollTriggerによるコンテンツのフェードイン演出</li>
+                      </ul><!-- /.c-member__tec -->
                     </div><!-- /.c-member__text -->
                   </div><!-- /.c-member__container -->
                 </div><!-- /.c-member__card -->
-            </div>
+
+                <div class="c-member__card">
+                  <div class="c-member__top">
+                    <span class="c-member__copy">06</span><!-- /.c-member__copy -->
+                    <span class="c-member__site">情報メディアサイト</span><!-- /.c-member__site -->
+                  </div><!-- /.c-member__top -->
+                  <div class="c-member__container">
+                    <div class="c-member__image">
+                      <picture>
+                        <img src="./assets/img/member-5.jpg" alt="">
+                      </picture>
+                      <div class="c-member__block">
+                        <p class="p-member__desc">WordPress</p>
+                        <p class="p-member__desc">コーポレートサイト</p>
+                      </div><!-- /.c-member__block -->
+                    </div><!-- /.c-member__image -->
+                    <div class="c-member__text">
+                      <p class="c-member__txt">企業情報やサービス内容を分かりやすく伝えることを目的に制作したコーポレートサイト。シンプルなレイアウトと明確な導線設計で、ユーザーが情報を探しやすい構成にしました。 </p><!-- /.c-member__txt -->
+                      <h3 class="c-member__ttl">実装のポイント</h3><!-- /.c_member__ttl -->
+                      <ul class="c-member__tec">
+                        <li>Swiperを使用した記事スライダーの実装</li>
+                        <li>ブログ閲覧を意識したレスポンシブデザイン</li>
+                        <li>BEM設計によるメンテナンス性の高いCSS構造</li>
+                      </ul><!-- /.c-member__tec -->
+                    </div><!-- /.c-member__text -->
+                  </div><!-- /.c-member__container -->
+                </div><!-- /.c-member__card -->
+
+                <div class="c-member__card">
+                  <div class="c-member__top">
+                    <span class="c-member__copy">07</span><!-- /.c-member__copy -->
+                    <span class="c-member__site">Fleur Sereine | フルール・スレーヌ</span><!-- /.c-member__site -->
+                  </div><!-- /.c-member__top -->
+                  <div class="c-member__container">
+                    <div class="c-member__image">
+                      <picture>
+                        <img src="./assets/img/member-5.jpg" alt="">
+                      </picture>
+                      <div class="c-member__block">
+                        <p class="p-member__desc">Shopify</p>
+                        <p class="p-member__desc">ECサイト</p>
+                      </div><!-- /.c-member__block -->
+                    </div><!-- /.c-member__image -->
+                    <div class="c-member__text">
+                      <p class="c-member__txt">ドライフラワーを中心としたオンラインショップとして制作。商品の世界観が伝わるデザインと、ユーザーが快適に商品を閲覧できるECサイト構成を意識しました。</p><!-- /.c-member__txt -->
+                      <h3 class="c-member__ttl">実装のポイント</h3><!-- /.c_member__ttl -->
+                      <ul class="c-member__tec">
+                        <li>ECサイトに適したレスポンシブレイアウト</li>
+                        <li>Shopifyテーマ構造を考慮したレスポンシブ設計</li>
+                        <li>Swiperを使用した商品スライダーの実装</li>
+                      </ul><!-- /.c-member__tec -->
+                    </div><!-- /.c-member__text -->
+                  </div><!-- /.c-member__container -->
+                </div><!-- /.c-member__card -->
+
+                <div class="c-member__card">
+                  <div class="c-member__top">
+                    <span class="c-member__copy">08</span><!-- /.c-member__copy -->
+                    <span class="c-member__site">daily_shop / hand&body</span><!-- /.c-member__site -->
+                  </div><!-- /.c-member__top -->
+                  <div class="c-member__container">
+                    <div class="c-member__image">
+                      <picture>
+                        <img src="./assets/img/member-5.jpg" alt="">
+                      </picture>
+                      <div class="c-member__block">
+                        <p class="p-member__desc">Shopify</p>
+                        <p class="p-member__desc">ECサイト</p>
+                      </div><!-- /.c-member__block -->
+                    </div><!-- /.c-member__image -->
+                    <div class="c-member__text">
+                      <p class="c-member__txt">ハンドソープを中心としたECサイトとして制作。商品の世界観が伝わるビジュアル設計と、ユーザーが商品を探しやすいシンプルなUIを意識したオンラインストアです。</p><!-- /.c-member__txt -->
+                      <h3 class="c-member__ttl">実装のポイント</h3><!-- /.c_member__ttl -->
+                      <ul class="c-member__tec">
+                        <li>ブランドサイトを意識したレスポンシブレイアウト</li>
+                        <li>Shopifyテーマ構造を考慮したレスポンシブ設計</li>
+                        <li>Liquidを使用したテーマカスタマイズ</li>
+                      </ul><!-- /.c-member__tec -->
+                    </div><!-- /.c-member__text -->
+                  </div><!-- /.c-member__container -->
+                </div><!-- /.c-member__card -->
+           
                   </div>
                 </div>
-               
-                <div class="progress">
-                  <span class="progress__bar"></span>
+                <p class="p-culture__profile-link mr-30">
+                  <a href="">製作実績一覧を見る<i class="fa-solid fa-arrow-right"></i></a>
+                </p><!-- /.p-culture__profile-ancour -->
                 </div>
-                
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-              </div>
-            </div><!-- /.l-member__container -->
-          </div>
+            </div><!-- /.view-wrapper -->
+           
           </section>
 
-          
+          <div class="l-culture__image-wrap">
+            <picture>
+              <img src="./assets/img/paragraf-bg.jpg" alt="" class="js-parallax" data-y="-150">
+            </picture>
+          </div><!-- /.l-culture__image-wrap -->
 
-          <section class="p-culture" id="culture">
+          <section class="p-culture" id="about">
             <div class="l-cul__bg"><img src="./assets/img/m-bg2.png" alt=""></div><!-- /.l-ch__bg -->
             <div class="l-inner">
-              <h2 class="c-heading__lv2 --gradation"><span class="heading__en">Culture</span> <span class="heading__ja">働く環境・企業文化</span></h2><!-- /.c-heading__lv2 -->
+              <h2 class="c-heading__lv2 --gradation"><span class="heading__en">Profile</span> <span class="heading__ja">私について</span></h2><!-- /.c-heading__lv2 -->
 
               <div class="l-culture__container mt-64">
-                <dl class="c-culture__block">
-                  <dt class="c-culture__title">
+                <dl class="c-culture__block ">
+                  <dt class="c-culture__title --profile-title">
                     <div class="c-culture__wrap">
-                      <picture class="c-culture__icon">
+                      <!-- <picture class="c-culture__icon">
                         <img src="./assets/img/icon1.svg" alt="">
-                      </picture><!-- /.c-culture__icon -->
+                      </picture> -->
                       <div class="c-culture_ttl">
+                        <p class="c-culture__name">KANALOGO</p><!-- /.c-culture__top -->
+                        <p class="c-culture__bottom">Web corder × Shopify Engineer</p><!-- /.c-culture__top -->
                         <p class="c-culture__top">実力主義 × 裁量ある環境</p><!-- /.c-culture__top -->
-                        <p class="c-culture__bottom">Meritocracy × Discretion</p><!-- /.c-culture__top -->
+                        <div class="c-culture__image">
+                          <picture>
+                            <img src="./assets/img/22141938.jpg" alt="" width="300" height="300">
+                          </picture>
+                        </div><!-- /.c-culture__image -->
                       </div><!-- /.c-culture_ttl -->
-                    </div><!-- /.c-culture__wrap -->
+                      
+                    </div><!-- /.c-culture__wrap -->      
                   </dt>
-                  <dd class="c-culture__txt">
-                    <p class="c-culture__text">Global Standardでは、年功序列にとらわれず、成果と挑戦を正当に評価します。入社1年目からクライアント研修の企画や提案に携わることができ、若手であっても成果を出せば20代でマネージャー職や海外案件を任されるチャンスがあります。発言や提案が通りやすく、自分のアイデアをそのまま形にできる文化が根付いており、挑戦したい人にこそ最適な環境です。</p><!-- /.c-culture__text -->
+                  <dd class="c-culture__txt --profile-txt">
+                    <table class="c-culture__profile">
+                      <tr>
+                        <th>事業主</th>
+                        <td>kanalogo</td>
+                      </tr>
+                      <tr>
+                        <th>事業形態</th>
+                        <td>個人事業主</td>
+                      </tr>
+                      <tr>
+                        <th>事業内容 </th>
+                        <td>Webサイトのコーディング・実装 <br>
+                        ECサイトの構築</td>
+                       </tr>
+                      <tr>
+                        <th>拠点</th>
+                        <td>岡山</td>
+                      </tr>
+                      <tr>
+                        <th>資格・受賞歴</th>
+                        <td> 基本情報技術者 <br>
+                          応用情報技術者
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>経歴</th>
+                        <td>デイトラshopifyコース卒業 <br>
+                          デイトラshopifyアドバンスコース卒業後、フリーランス活動
+                        </td>
+                      </tr>
+                      <tr>
+                        <th>対応可能なスキル</th>
+                        <td>HTML / CSS（Sass） / JavaScript / jQuery / GSAP Swiper.js / WordPress（PHP）/ Liquid(shopify)</td>
+                      </tr>
+                    </table><!-- /.c-culture__profile -->
                   </dd>
-                </dl><!-- /.c-culture__block -->
-                <dl class="c-culture__block">
-                  <dt class="c-culture__title">
-                    <div class="c-culture__wrap">
-                      <picture class="c-culture__icon">
-                        <img src="./assets/img/icon2.svg" alt="">
-                      </picture><!-- /.c-culture__icon -->
-                      <div class="c-culture_ttl">
-                        <p class="c-culture__top">チームワークと多様性</p><!-- /.c-culture__top -->
-                        <p class="c-culture__bottom">Teamwork and Diversity</p><!-- /.c-culture__top -->
-                      </div><!-- /.c-culture_ttl -->
-                    </div><!-- /.c-culture__wrap -->
-                  </dt>
-                  <dd class="c-culture__txt">
-                    <p class="c-culture__text">私たちの働き方は、常にプロジェクト単位での協働が基本です。社員同士の距離は近く、互いに意見を出し合いながら進めていくスタイルが確立されています。社内には日本人社員だけでなく、多国籍の講師やスタッフが在籍しており、日常的に異文化に触れながら働くことが可能です。多様な価値観に刺激を受け、自分自身の視野や考え方が自然と広がっていく職場であり、挑戦を応援し合う風土があるからこそ風通しも良く、前向きに取り組める環境が整っています。</p><!-- /.c-culture__text -->
-                  </dd>
-                </dl><!-- /.c-culture__block -->
-                <dl class="c-culture__block">
-                  <dt class="c-culture__title">
-                    <div class="c-culture__wrap">
-                      <picture class="c-culture__icon">
-                        <img src="./assets/img/icon3.svg" alt="">
-                      </picture><!-- /.c-culture__icon -->
-                      <div class="c-culture_ttl">
-                        <p class="c-culture__top">キャリア・成長機会</p><!-- /.c-culture__top -->
-                        <p class="c-culture__bottom">Career and growth opportunities</p><!-- /.c-culture__top -->
-                      </div><!-- /.c-culture_ttl -->
-                    </div><!-- /.c-culture__wrap -->
-                  </dt>
-                  <dd class="c-culture__txt">
-                    <p class="c-culture__text">社員一人ひとりの成長を全力で後押しする仕組みが整っています。社内ではビジネス英語や異文化コミュニケーションの研修を無料で受講できるほか、TOEICやIELTSといった資格取得費用も会社が支援します。成果を上げた社員には、海外研修や拠点立ち上げ、国際会議への参加といった大きなチャンスが与えられ、キャリアを一気に広げることができます。また、グローバルリーダーを育成する独自のキャリアプランも用意しており、自分の可能性を最大限に伸ばせる環境で成長を実感できます。</p><!-- /.c-culture__text -->
-                  </dd>
-                </dl><!-- /.c-culture__block -->
+                </dl>
               </div><!-- /.l-culture__container -->
+              <p class="p-culture__profile-link">
+                <a href="">詳しいプロフィールを見る<i class="fa-solid fa-arrow-right"></i></a>
+              </p><!-- /.p-culture__profile-ancour -->
 
-              <div class="l-culture__image-wrap">
-                <picture>
-                  <img src="./assets/img/paragraf-bg.jpg" alt="" class="js-parallax">
-                </picture>
-              </div><!-- /.l-culture__image-wrap -->
-
-              <h3 class="c-heading__lv3">福利厚生</h3><!-- /.c-heading__lv3 -->
              
+
+              <h2 class="c-heading__lv2 --gradation --mt24" id="flow"><span class="heading__en">FLOW</span> <span class="heading__ja">流れについて</span></h2><!-- /.c-heading__lv2 -->
+             
+              <div class="l-culture__flex-columns">
               <div class="l-culture__container --bg-blur">
+                <h3 class="c-heading__lv3">制作の流れ</h3><!-- /.c-heading__lv3 -->
+
                 <dl class="c-culture__block">
                   <dt class="c-culture__title">
                     <div class="c-culture__wrap">
@@ -1004,13 +562,13 @@
                         <img src="./assets/img/icon4.svg" alt="">
                       </picture><!-- /.c-culture__icon -->
                       <div class="c-culture_ttl">
-                        <p class="c-culture__top">語学・スキルアップ支援</p><!-- /.c-culture__top -->
+                        <p class="c-culture__top">要件確認</p><!-- /.c-culture__top -->
                         <p class="c-culture__bottom">Language and skill improvement support</p><!-- /.c-culture__top -->
                       </div><!-- /.c-culture_ttl -->
                     </div><!-- /.c-culture__wrap -->
                   </dt>
                   <dd class="c-culture__txt">
-                    <p class="c-culture__text">Global Standardでは、年功序列にとらわれず、成果と挑戦を正当に評価します。入社1年目からクライアント研修の企画や提案に携わることができ、若手であっても成果を出せば20代でマネージャー職や海外案件を任されるチャンスがあります。発言や提案が通りやすく、自分のアイデアをそのまま形にできる文化が根付いており、挑戦したい人にこそ最適な環境です。</p><!-- /.c-culture__text -->
+                    <p class="c-culture__text">いただいたデザイン・画面一覧・動き・フォーム等を確認し、不明点は質問表で即解消。合意後、着手します。</p><!-- /.c-culture__text -->
                   </dd>
                 </dl><!-- /.c-culture__block -->
                 <dl class="c-culture__block">
@@ -1020,13 +578,13 @@
                         <img src="./assets/img/icon5.svg" alt="">
                       </picture><!-- /.c-culture__icon -->
                       <div class="c-culture_ttl">
-                        <p class="c-culture__top">海外研修・キャリア挑戦の機会</p><!-- /.c-culture__top -->
+                        <p class="c-culture__top">セットアップ</p><!-- /.c-culture__top -->
                         <p class="c-culture__bottom">Overseas training and career challenges</p><!-- /.c-culture__top -->
                       </div><!-- /.c-culture_ttl -->
                     </div><!-- /.c-culture__wrap -->
                   </dt>
                   <dd class="c-culture__txt">
-                    <p class="c-culture__text">成果を出した社員には、海外拠点の立ち上げや国際会議への参加など、大きな舞台で力を試すチャンスが与えられます。単なる経験ではなく、自分の挑戦が次のキャリアにつながる「実践的な学びの場」を提供しています。グローバルリーダーを育成する独自のキャリアプランも用意し、意欲ある社員の背中を押し続けます。</p><!-- /.c-culture__text -->
+                    <p class="c-culture__text">コーディング方針（命名規則・ブレークポイント・対応ブラウザ）を確定し、確認用URLを常時公開します。</p><!-- /.c-culture__text -->
                   </dd>
                 </dl><!-- /.c-culture__block -->
                 <dl class="c-culture__block">
@@ -1036,39 +594,352 @@
                         <img src="./assets/img/icon6.svg" alt="">
                       </picture><!-- /.c-culture__icon -->
                       <div class="c-culture_ttl">
-                        <p class="c-culture__top">柔軟な働き方と安心のサポート</p><!-- /.c-culture__top -->
+                        <p class="c-culture__top">実装・レビュー</p><!-- /.c-culture__top -->
                         <p class="c-culture__bottom">Flexible working styles and reliable support</p><!-- /.c-culture__top -->
                       </div><!-- /.c-culture_ttl -->
                     </div><!-- /.c-culture__wrap -->
                   </dt>
                   <dd class="c-culture__txt">
-                    <p class="c-culture__text">フレックスタイム制を導入しており、自分の時間を有効に使いながら成果を追求できます。プロジェクトに応じてリモートワークや海外出張の機会もあり、多様な働き方に対応しています。また、語学学習やスキルアップに取り組む社員には学習手当を支給するなど、挑戦を安心して続けられる制度を整えています。</p><!-- /.c-culture__text -->
+                    <p class="c-culture__text">ページ単位で実装し、日次で反映。確認事項や修正は「情報共有シート」で管理します。</p><!-- /.c-culture__text -->
+                  </dd>
+                </dl><!-- /.c-culture__block -->
+                <dl class="c-culture__block">
+                  <dt class="c-culture__title">
+                    <div class="c-culture__wrap">
+                      <picture class="c-culture__icon">
+                        <img src="./assets/img/icon6.svg" alt="">
+                      </picture><!-- /.c-culture__icon -->
+                      <div class="c-culture_ttl">
+                        <p class="c-culture__top">検証・納品・保証 </p><!-- /.c-culture__top -->
+                        <p class="c-culture__bottom">Flexible working styles and reliable support</p><!-- /.c-culture__top -->
+                      </div><!-- /.c-culture_ttl -->
+                    </div><!-- /.c-culture__wrap -->
+                  </dt>
+                  <dd class="c-culture__txt">
+                    <p class="c-culture__text">主要ブラウザ・実機で検証し、計測タグ・フォーム送信もテスト。ZipまたはGitで納品。納品後30日間は当方起因の不具合を無償対応します。</p><!-- /.c-culture__text -->
                   </dd>
                 </dl><!-- /.c-culture__block -->
               </div><!-- /.l-culture__container -->
+
+             
+              <div class="l-culture__container  --bg-blur-bottom">
+                <h3 class="c-heading__lv3">料金について</h3><!-- /.c-heading__lv3 -->
+
+                <dl class="c-culture__block">
+                  <dt class="c-culture__title">
+                    <div class="c-culture__wrap">
+                      <picture class="c-culture__icon">
+                        <img src="./assets/img/icon4.svg" alt="">
+                      </picture><!-- /.c-culture__icon -->
+                      <div class="c-culture_ttl">
+                        <p class="c-culture__top">LPコーディング(1ページ)</p><!-- /.c-culture__top -->
+                        <p class="c-culture__bottom">Language and skill improvement support</p><!-- /.c-culture__top -->
+                      </div><!-- /.c-culture_ttl -->
+                    </div><!-- /.c-culture__wrap -->
+                  </dt>
+                  <dd class="c-culture__txt">
+                    <p class="c-culture__text">HTML・CSS・Javascriptを用いたLPサイトを構築<br>
+                    保守性のたかい設計を実現するためにBEMやFLOCSSを使用した設計や、効率的な開発の対応のためのgulp環境の使用</p><!-- /.c-culture__text -->
+                    <p class="c-culture__price">60,000円 <span>(税抜)</span>から</p><!-- /.p-cculture__price -->
+                  </dd>
+                </dl><!-- /.c-culture__block -->
+                <dl class="c-culture__block">
+                  <dt class="c-culture__title">
+                    <div class="c-culture__wrap">
+                      <picture class="c-culture__icon">
+                        <img src="./assets/img/icon5.svg" alt="">
+                      </picture><!-- /.c-culture__icon -->
+                      <div class="c-culture_ttl">
+                        <p class="c-culture__top">ホームページ制作</p><!-- /.c-culture__top -->
+                        <p class="c-culture__bottom">Overseas training and career challenges</p><!-- /.c-culture__top -->
+                      </div><!-- /.c-culture_ttl -->
+                    </div><!-- /.c-culture__wrap -->
+                  </dt>
+                  <dd class="c-culture__txt">
+                    <p class="c-culture__text">お客様の問題を解決するための丁寧なヒアリングからの最適なホームページのご提案。<br>
+                      Git環境でのコードの品質管理を実現いたします。
+                    </p><!-- /.c-culture__text -->
+                    <p class="c-culture__price">80,000円 <span>(税抜)</span>から</p><!-- /.p-cculture__price -->
+                  </dd>
+                </dl><!-- /.c-culture__block -->
+                <dl class="c-culture__block">
+                  <dt class="c-culture__title">
+                    <div class="c-culture__wrap">
+                      <picture class="c-culture__icon">
+                        <img src="./assets/img/icon6.svg" alt="">
+                      </picture><!-- /.c-culture__icon -->
+                      <div class="c-culture_ttl">
+                        <p class="c-culture__top">WordPressオリジナルテーマ制作</p><!-- /.c-culture__top -->
+                        <p class="c-culture__bottom">Flexible working styles and reliable support</p><!-- /.c-culture__top -->
+                      </div><!-- /.c-culture_ttl -->
+                    </div><!-- /.c-culture__wrap -->
+                  </dt>
+                  <dd class="c-culture__txt">
+                    <p class="c-culture__text">オリジナルデザインでのWprdpressテーマを開発します。 <br>
+                    お知らせやプログなどお客様の手で手軽に編集できる、拡張性を重視したWebサイトをご提供します。</p><!-- /.c-culture__text -->
+                    <p class="c-culture__price">100,000円 <span>(税抜)</span>から</p><!-- /.p-cculture__price -->
+                  </dd>
+                </dl><!-- /.c-culture__block -->
+                <dl class="c-culture__block">
+                  <dt class="c-culture__title">
+                    <div class="c-culture__wrap">
+                      <picture class="c-culture__icon">
+                        <img src="./assets/img/icon6.svg" alt="">
+                      </picture><!-- /.c-culture__icon -->
+                      <div class="c-culture_ttl">
+                        <p class="c-culture__top">ECサイト制作(Shopify)</p><!-- /.c-culture__top -->
+                        <p class="c-culture__bottom">Flexible working styles and reliable support</p><!-- /.c-culture__top -->
+                      </div><!-- /.c-culture_ttl -->
+                    </div><!-- /.c-culture__wrap -->
+                  </dt>
+                  <dd class="c-culture__txt">
+                    <p class="c-culture__text">お客さの環境を考慮したECサイトをShopifyを使用してご提供します。<br>
+                    商品登録から決済方法の設定やアプリを使用した構築に加えてLiquidコードのカスタマイズまでご対応いたします。</p><!-- /.c-culture__text -->
+                    <p class="c-culture__price">100,000円 <span>(税抜)</span>から</p><!-- /.p-cculture__price -->
+                  </dd>
+                </dl><!-- /.c-culture__block -->
+
+                <div class="c-culture__modal-btn js-modal-btn">
+                  <button class="c-culture__modal-link">
+                    <span>詳細を見る</span>
+                  </button><!-- /.c-bl__modal-btn -->
+                </div><!-- /.c-culture__modal-btn -->
+              </div><!-- /.l-culture__container -->
+            </div><!-- /.l-culture__flex -->
             </div><!-- /.l-culture__content -->
           
           </section>
 
-          <section class="p-faq" >
+          <div class="l-modal-bg "></div><!-- /.l-modal-bg -->
+
+          <div class="c-culture__modal-area JS-modal">
+            <div class="c-modal__swiper-container">
+              <div class="swiper c-modal__swiper">
+                <div class="swiper-wrapper c-modal__swiper-wrapper">
+
+                  <div class="swiper-slide c-modal__swiper-slide">
+                    <div class="c-member__modal" data-modal-num="1" id="1">
+                      <div class="c-member__modal-inner">
+                      <div class="c-member__modal-block">
+                        <div class="c-member__modal-close"></div><!-- / -->
+                        <p class="c-member__modal-closeText">制作料金表を閉じる</p><!-- / -->
+                      </div><!-- /.c-member__modal-block -->
+            
+                      <p class="c-member__modal-desc">Web Site Create Price</p><!-- / -->
+                      <h3 class="c-member__modal-title"> ホームページ制作料金</h3><!-- / -->
+                      
+                      <dl class="c-member__modal-list">
+                        <dt class="c-member__modal-ttl">
+                          <p class="c-member__modal-title-1">基本料金 ・・・・・¥60,000 </p><!-- / -->
+                        </dt><!-- / -->
+                        <dd class="c-member__modal-txt">
+                          <ul class="c-member__modal-text">
+                            <li>環境構築  ヒアリング サーバーアップ</li>
+                            <li>Meta情報 (title, descrition, OGP Favicon)の設定</li>
+                            <li>品質チェック 各種ブラウザチェック</li>
+                            <li>画像、テキストの差し替え作業</li>
+                          </ul><!-- / -->
+                        </dd><!-- / -->
+                      </dl><!-- / -->
+                      <dl class="c-member__modal-list">
+                        <dt class="c-member__modal-ttl">
+                          <p class="c-member__modal-title-1">下層ページ・・・・・¥20,000</p><!-- / -->
+                        </dt><!-- / -->
+                        <dd class="c-member__modal-txt">
+                          <ul class="c-member__modal-text">
+                            <li>ファーストビュー + 3 ~ 5セクション</li>
+                            <li>CMSの設定と構築 投稿記事設定 (10件以内)</li>
+                          </ul><!-- / -->
+                        </dd><!-- / -->
+                      </dl><!-- / -->
+                      <dl class="c-member__modal-list">
+                        <dt class="c-member__modal-ttl">
+                          <p class="c-member__modal-title-1">カスタムフィールド・・・・・¥10,000</p><!-- / -->
+                        </dt><!-- / -->
+                        <dd class="c-member__modal-txt">
+                          <ul class="c-member__modal-text">
+                            <li>登録フィールド数が 5個以内 (一律)</li>
+                            <li>登録フィールド数 6個目以降 (1個あたり) ¥1,000</li>
+                        
+                          </ul><!-- / -->
+                        </dd><!-- / -->
+                      </dl><!-- / -->
+                      <dl class="c-member__modal-list">
+                        <dt class="c-member__modal-ttl">
+                          <p class="c-member__modal-title-1">お問い合わせフォーム・・・・・¥20,000</p><!-- / -->
+                        </dt><!-- / -->
+                        <dd class="c-member__modal-txt">
+                          <ul class="c-member__modal-text">
+                            <li>WordPress導入 確認画面 / 完了ページコーディング</li>
+                            <li>自動返信メール作成 動作確認</li>
+                            <li>※ 基本的にはWordPressのcontact form 7のプラグインを使って実装いたします。</li>
+                          </ul><!-- / -->
+                        </dd><!-- / -->
+                      </dl><!-- / -->
+                      <dl class="c-member__modal-list">
+                        <dt class="c-member__modal-ttl">
+                          <p class="c-member__modal-title-1">LP コーディング料金・・・・・¥60,000</p><!-- / -->
+                        </dt><!-- / -->
+                        <dd class="c-member__modal-txt">
+                          <ul class="c-member__modal-text">
+                            <li>環境構築  ヒアリング サーバーアップ</li>
+                            <li>Meta情報 (title, descrition, OGP Favicon)の設定</li>
+                            <li>品質チェック 各種ブラウザチェック</li>
+                            <li>画像、テキストの差し替え作業</li>
+                          </ul><!-- / -->
+                        </dd><!-- / -->
+                      </dl><!-- / -->
+            
+                      <dl class="c-member__modal-list">
+                        <dt class="c-member__modal-ttl">
+                          <p class="c-member__modal-title-1">アニメーション・・・・・¥10,000</p><!-- / -->
+                        </dt><!-- / -->
+                        <dd class="c-member__modal-txt">
+                          <ul class="c-member__modal-text">
+                            <li>基本アニメーション (Java script / GSAP 等 を使って実装)</li>
+                            <li>ライブラリを使用したアニメーション</li>
+                            <li>その他 複雑なアニメーション 等</li>
+                          </ul><!-- / -->
+                        </dd><!-- / -->
+                      </dl><!-- / -->
+                      
+                      </div>
+                    </div><!-- /.c-member__modal -->
+                  </div>
+
+                  
+                  <div class="swiper-slide c-modal__swiper-slide">
+                    <div class="c-member__modal" data-modal-num="2" id="2">
+                      <div class="c-member__modal-inner">
+                      <div class="c-member__modal-block">
+                        <div class="c-member__modal-close"></div><!-- / -->
+                        <p class="c-member__modal-closeText">制作料金表を閉じる</p><!-- / -->
+                      </div><!-- /.c-member__modal-block -->
+            
+                      <p class="c-member__modal-desc">Shopify Develop Price</p><!-- / -->
+                      <h3 class="c-member__modal-title">ECサイト制作料金</h3><!-- / -->
+                      
+                      <dl class="c-member__modal-list">
+                        <dt class="c-member__modal-ttl">
+                          <p class="c-member__modal-title-1">基本料金 ・・・・・¥60,000 </p><!-- / -->
+                        </dt><!-- / -->
+                        <dd class="c-member__modal-txt">
+                          <ul class="c-member__modal-text">
+                            <li>環境構築  ヒアリング サーバーアップ</li>
+                            <li>Meta情報 (title, descrition, OGP Favicon)の設定</li>
+                            <li>品質チェック 各種ブラウザチェック</li>
+                            <li>画像、テキストの差し替え作業</li>
+                          </ul><!-- / -->
+                        </dd><!-- / -->
+                      </dl><!-- / -->
+                      <dl class="c-member__modal-list">
+                        <dt class="c-member__modal-ttl">
+                          <p class="c-member__modal-title-1">下層ページ(1P)・・・・・¥25,000</p><!-- / -->
+                        </dt><!-- / -->
+                        <dd class="c-member__modal-txt">
+                          <ul class="c-member__modal-text">
+                            <li>CMSの設定と構築 投稿記事設定 (10件以内)</li>
+                            <li>テーマカスタマイズ 商品登録 (10件以内)</li>
+                          </ul><!-- / -->
+                        </dd><!-- / -->
+                      </dl><!-- / -->
+                      <dl class="c-member__modal-list">
+                        <dt class="c-member__modal-ttl">
+                          <p class="c-member__modal-title-1">メタフィールド・・・・・¥5,000</p><!-- / -->
+                        </dt><!-- / -->
+                        <dd class="c-member__modal-txt">
+                          <ul class="c-member__modal-text">
+                            <li>登録フィールド数が 5個以内 (一律)</li>
+                            <li>登録フィールド数 6個目以降 (1個あたり) ¥1,000</li>
+                           
+                          </ul><!-- / -->
+                        </dd><!-- / -->
+                      </dl><!-- / -->
+                      <dl class="c-member__modal-list">
+                        <dt class="c-member__modal-ttl">
+                          <p class="c-member__modal-title-1">アプリの追加・・・・・¥30,000</p><!-- / -->
+                        </dt><!-- / -->
+                        <dd class="c-member__modal-txt">
+                          <ul class="c-member__modal-text">
+                            <li>コード編集あり</li>
+                            <li>アプリの追加のみ ¥5,000</li>
+    
+                          </ul><!-- / -->
+                        </dd><!-- / -->
+                      </dl><!-- / -->
+                      <dl class="c-member__modal-list">
+                        <dt class="c-member__modal-ttl">
+                          <p class="c-member__modal-title-1">お問い合わせフォーム・・・・・¥25,000</p><!-- / -->
+                        </dt><!-- / -->
+                        <dd class="c-member__modal-txt">
+                          <ul class="c-member__modal-text">
+                            <li>テーマカスタマイズ 動作確認</li>
+                            <li>自動返信メールの作成 チェックボックス / ラジオボタンの追加 (2種類まで)</li>
+                            <li>チェックボックスの追加 ¥10,000</li>
+                          </ul><!-- / -->
+                        </dd><!-- / -->
+                      </dl><!-- / -->
+            
+                      <dl class="c-member__modal-list">
+                        <dt class="c-member__modal-ttl">
+                          <p class="c-member__modal-title-1">その他  Shopifyの機能実装・・・・・¥20,000</p><!-- / -->
+                        </dt><!-- / -->
+                        <dd class="c-member__modal-txt">
+                          <ul class="c-member__modal-text">
+                            <li>多言語サイト (英語版の作成)</li>
+                            <li>その他 応相談</li>
+                            <li>ご予算に応じてご提案させていただきますのでまずはご相談いただければと思います。</li>
+                          </ul><!-- / -->
+                        </dd><!-- / -->
+                      </dl><!-- / -->
+                   
+                      </div>
+                    </div><!-- /.c-member__modal -->
+                  </div>
+                </div>
+              </div>
+            
+
+            </div>
+            <div class="swiper-button-prev c-modal-button-prev"></div>
+            <div class="swiper-button-next c-modal-button-next"></div>
+        
+      </div><!-- /.c-culture__modal-area -->
+
+          <section class="p-faq" id="faq">
             <div class="l-faq__bg"><img src="./assets/img/m-bg2.png" alt=""></div><!-- /.l-ch__bg -->
             <div class="l-inner">
               <div class="l-faq__container">
+                <div class="c-faq__title-wrap">
               <h2 class="c-heading__lv2 --gradation"><span class="heading__en">FAQ</span> <span class="heading__ja">よくある質問</span></h2><!-- /.c-heading__lv2 -->
-              <div class="c-faq__list">
+              <div class="c-faq__btn-wrap">
+                <button class="c-faq__button" role="tab" id="tab1" aria-controls="panel1" aria-selected="true" tabindex="0">
+                 H.P制作について
+                </button><!-- /.c-faq__button -->
+                <button class="c-faq__button" role="tab" id="tab2" aria-controls="panel2" aria-selected="false" tabindex="-1">
+                  納品・費用について
+                </button><!-- /.c-faq__button -->
+                <button class="c-faq__button" role="tab" id="tab3" aria-controls="panel3" aria-selected="false" tabindex="-1">
+                  運用・保守について
+                </button><!-- /.c-faq__button -->
+              </div><!-- /.c-faq__btn-wrap -->
+            </div><!-- /.c-faq__title-wrap -->
+
+            <div class="c-faq__list-content">
+              <div class="c-faq__list js-show" role="tabpanel" id="panel1" aria-labelledby="tab1" tabindex="0">
                 <details class="faq__item js-details">
                   <summary class="js-summary">
                     <span class="faq__question">
                  
                       <span class="faq__question-text">
-                        入社時に高い英語力は必要ですか？
+                        ホームページ制作を依頼するのが初めてでも大丈夫ですか？
                       </span>
                     </span>
                   </summary>
                   <div class="js-content">
                     <ul class="faq__answer">
                       <li class="faq__answer-text">
-                        必須ではありません。入社後に無料で受講できる社内研修や、資格取得支援制度を通じてスキルを磨いていただけます。語学力よりも「学びたい」「挑戦したい」という気持ちを大切にしています。
+                        はい、大丈夫です。ヒアリングを通して目的や必要なページ構成をご提案します。初めての方でも安心して進められるようサポートいたします。
                       </li>
                     </ul>
                   </div>
@@ -1079,14 +950,14 @@
                     <span class="faq__question">
                
                       <span class="faq__question-text">
-                        異業種からの転職でも活躍できますか？
+                        小規模なサイトでも依頼できますか？
                       </span>
                     </span>
                   </summary>
                   <div class="js-content">
                     <ul class="faq__answer">
                       <li class="faq__answer-text">
-                        はい、多くの社員が未経験や異業種から挑戦し、現在は第一線で活躍しています。研修や先輩のサポートがあるので、安心して新しいキャリアをスタートできます。
+                        もちろん可能です。1ページのLPや小規模サイトなど、目的に合わせた最適な構成をご提案します。
                       </li>
                     </ul>
                   </div>
@@ -1097,14 +968,14 @@
                     <span class="faq__question">
       
                       <span class="faq__question-text">
-                        海外勤務や出張の機会はありますか？
+                        既存サイトの改善だけお願いできますか？
                       </span>
                     </span>
                   </summary>
                   <div class="js-content">
                     <ul class="faq__answer">
                       <li class="faq__answer-text">
-                        プロジェクトや成果に応じて、海外出張や海外拠点での業務に携わるチャンスがあります。入社から数年以内に海外で経験を積む社員も少なくありません。
+                        はい。デザイン改善、表示速度改善、UI改善など部分的なリニューアルも対応可能です。
                       </li>
                     </ul>
                   </div>
@@ -1115,14 +986,14 @@
                     <span class="faq__question">
 
                       <span class="faq__question-text">
-                        どんな働き方ができますか？
+                        ECサイトの制作は可能ですか？
                       </span>
                     </span>
                   </summary>
                   <div class="js-content">
                     <ul class="faq__answer">
                       <li class="faq__answer-text">
-                        フレックスタイム制やリモートワークを導入しており、柔軟に働くことができます。プロジェクトに応じて出張や対面業務もありますが、自分らしいスタイルで働ける環境です。
+                        はい。Shopifyを使用したECサイト制作に対応しています。商品登録や基本設定もサポート可能です。
                       </li>
                     </ul>
                   </div>
@@ -1133,40 +1004,266 @@
                     <span class="faq__question">
                     
                       <span class="faq__question-text">
-                        選考ではどんな点を重視していますか？
+                        SEO対策も対応していますか？
                       </span>
                     </span>
                   </summary>
                   <div class="js-content">
                     <ul class="faq__answer">
                       <li class="faq__answer-text">
-                        これまでのキャリアやスキルも拝見しますが、それ以上に「挑戦したい気持ち」「グローバルな舞台で成長したいという意欲」を重視しています。
+                        基本的なSEO対策（構造設計・タグ設計・表示速度改善）は制作段階で対応しています。
                       </li>
                     </ul>
                   </div>
                 </details>
               </div>
+
+              <div class="c-faq__list" role="tabpanel2" id="panel2" aria-labelledby="tab2" tabindex="0">
+                <details class="faq__item js-details">
+                  <summary class="js-summary">
+                    <span class="faq__question">
+                 
+                      <span class="faq__question-text">
+                        ホームページ制作の費用はどれくらいですか？
+                      </span>
+                    </span>
+                  </summary>
+                  <div class="js-content">
+                    <ul class="faq__answer">
+                      <li class="faq__answer-text">
+                        サイト規模によって異なりますが、一般的なコーポレートサイトで10万〜30万円程度が目安です。詳細はヒアリング後にお見積もりいたします。
+                      </li>
+                    </ul>
+                  </div>
+                </details>
+
+                <details class="faq__item js-details">
+                  <summary class="js-summary">
+                    <span class="faq__question">
+               
+                      <span class="faq__question-text">
+                        見積もりは無料ですか？
+                      </span>
+                    </span>
+                  </summary>
+                  <div class="js-content">
+                    <ul class="faq__answer">
+                      <li class="faq__answer-text">
+                        はい。ヒアリング後に無料でお見積もりを作成いたします。
+                      </li>
+                    </ul>
+                  </div>
+                </details>
+
+                <details class="faq__item js-details">
+                  <summary class="js-summary">
+                    <span class="faq__question">
+      
+                      <span class="faq__question-text">
+                        制作期間はどれくらいですか？
+                      </span>
+                    </span>
+                  </summary>
+                  <div class="js-content">
+                    <ul class="faq__answer">
+                      <li class="faq__answer-text">
+                        一般的なサイトで3〜6週間程度です。ページ数や機能によって変わるため、スケジュールは事前にご相談します。
+                      </li>
+                    </ul>
+                  </div>
+                </details>
+
+                <details class="faq__item js-details">
+                  <summary class="js-summary">
+                    <span class="faq__question">
+
+                      <span class="faq__question-text">
+                        サーバーやドメインの取得はお願いできますか？
+                      </span>
+                    </span>
+                  </summary>
+                  <div class="js-content">
+                    <ul class="faq__answer">
+                      <li class="faq__answer-text">
+                        はい。取得・設定までサポート可能です。
+                      </li>
+                    </ul>
+                  </div>
+                </details>
+
+                <details class="faq__item js-details">
+                  <summary class="js-summary">
+                    <span class="faq__question">
+                    
+                      <span class="faq__question-text">
+                        納品後に修正は可能ですか？
+                      </span>
+                    </span>
+                  </summary>
+                  <div class="js-content">
+                    <ul class="faq__answer">
+                      <li class="faq__answer-text">
+                        軽微な修正であれば対応可能です。大きな変更は別途ご相談となります。
+                      </li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+              <div class="c-faq__list" role="tabpane3" id="panel3" aria-labelledby="tab3" tabindex="0">
+                <details class="faq__item js-details">
+                  <summary class="js-summary">
+                    <span class="faq__question">
+                 
+                      <span class="faq__question-text">
+                        サイト公開後のサポートはありますか？
+                      </span>
+                    </span>
+                  </summary>
+                  <div class="js-content">
+                    <ul class="faq__answer">
+                      <li class="faq__answer-text">
+                        はい。更新作業やトラブル対応などの保守サポートが可能です。
+                      </li>
+                    </ul>
+                  </div>
+                </details>
+
+                <details class="faq__item js-details">
+                  <summary class="js-summary">
+                    <span class="faq__question">
+               
+                      <span class="faq__question-text">
+                        サイト運用の相談はできますか？
+                      </span>
+                    </span>
+                  </summary>
+                  <div class="js-content">
+                    <ul class="faq__answer">
+                      <li class="faq__answer-text">
+                        はい。アクセス改善やコンテンツ改善などのご相談も可能です。
+                      </li>
+                    </ul>
+                  </div>
+                </details>
+
+                <details class="faq__item js-details">
+                  <summary class="js-summary">
+                    <span class="faq__question">
+      
+                      <span class="faq__question-text">
+                        アクセス解析は設定できますか？
+                      </span>
+                    </span>
+                  </summary>
+                  <div class="js-content">
+                    <ul class="faq__answer">
+                      <li class="faq__answer-text">
+                        Google Analyticsなどを設定し、アクセス状況の確認ができるようにします。
+                      </li>
+                    </ul>
+                  </div>
+                </details>
+
+                <details class="faq__item js-details">
+                  <summary class="js-summary">
+                    <span class="faq__question">
+
+                      <span class="faq__question-text">
+                        サイトが表示されなくなった場合は対応してもらえますか？
+                      </span>
+                    </span>
+                  </summary>
+                  <div class="js-content">
+                    <ul class="faq__answer">
+                      <li class="faq__answer-text">
+                        原因調査や復旧サポートなど対応可能です。
+                      </li>
+                    </ul>
+                  </div>
+                </details>
+
+                <details class="faq__item js-details">
+                  <summary class="js-summary">
+                    <span class="faq__question">
+                    
+                      <span class="faq__question-text">
+                        長期的なWeb運用の相談はできますか？
+                      </span>
+                    </span>
+                  </summary>
+                  <div class="js-content">
+                    <ul class="faq__answer">
+                      <li class="faq__answer-text">
+                        はい。サイト改善や集客施策など、継続的なサポートもご提案できます。
+                      </li>
+                    </ul>
+                  </div>
+                </details>
+              </div>
+
+            </div><!-- /.c-faq__lisy-wrap -->
             </div><!-- /.l-faq__container -->
               </div>
             </section>
 
-            <section class="p-cta" id="entry">
-              <div class="l-cta__container">
-                <div class="l-cta__block">
-                  <p class="c-cta__title"> Join <br>
-                    our company!</p><!-- /.c-cta__title -->
-                  <p class="c-cta__text">私たちは、挑戦する人を歓迎します。<br>
-                    あなたの挑戦が、やがて世界の新しい価値をつくる。<br>
-                    その未来を、私たちと共に描いていきませんか。</p><!-- /.c-cta__title -->
-                  <button class="c-cta__btn"><a href="">Entry</a></button><!-- /.c-cta__btn -->
-                </div><!-- /.c-cta__block -->
-                <picture class="c-cta__image --img-left">
-                  <img src="./assets/img/join-1.jpg" alt="">
-                </picture><!-- /.c-cta__image -->
-                <picture class="c-cta__image --img-right">
-                  <img src="./assets/img/join-2.jpg" alt="">
-                </picture><!-- /.c-cta__image -->
+            <section class="p-contact" id="contact">
+              <div class="l-contact__bg"><img src="./assets/img/m-bg2.png" alt=""></div><!-- /.l-ch__bg -->
+              <div class="l-contact__container l-inner">
+                <div class="l-contact__block">
+                  <div class="p-contact__top-desc">
+                  <h2 class="c-heading__lv2 --gradation --mt24"><span class="heading__en">Contact</span> <span class="heading__ja">お問い合わせ</span></h2><!-- /.c-heading__lv2 -->
+                  <p class="contact__desc">ポートフォリオをご覧いただきありがとうございます。<br>
+                    制作のご相談やご依頼は、こちらからお気軽にどうぞ！<br>
+                    「 こんなことできますか？」といった簡単なご質問も大歓迎です。</p><!-- /.contact__desc -->
+                    </div>
+
+                <form action="" class="contact__form">
+                  <div class="contact__row">
+                    <p class="contact__head">お名前<span>(必須)</span></p>
+                    <div class="contact__data">
+                      <input type="text" placeholder="山田　太郎">
+                    </div>
+                  </div>
+                  <div class="contact__row">
+                    <p class="contact__head">メールアドレス<span>(必須)</span></p>
+                    <div class="contact__data">
+                      <input type="email" placeholder="xxx@exsample.com">
+                    </div>
+                  </div>
+                  <div class="contact__row">
+                    <p class="contact__head">お問い合わせ種別<span>(必須)</span></p>
+                    <div class="contact__data">
+                      <div class="contact__select-wrap">
+                        <select name="occupation" id="">
+                          <option disabled selected class="option_first">選択してください</option>
+                          <option value="">ホームページ制作依頼</option>
+                          <option value="">ECサイトのご相談</option>
+                          <option value="">その他ご相談がしたい</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                
+              
+                  <div class="contact__row">
+                    <p class="contact__head">お問い合わせ内容<span>(必須)</span></p>
+                    <div class="contact__data">
+                      <textarea name="message" placeholder="ご相談内容をご記入してください"></textarea>
+                    </div>
+                  </div>
+                  <div class="contact__acceptance contact__data-checkbox">
+                    <label for="acceptance">
+                      <input type="checkbox" id="acceptance" name="" value="acceptance">
+                      <span><a href="privacy.html">プライバシーポリシー</a>に同意する</span>
+                    </label>
+                  </div>
+                  <div class="contact__submit">
+                    <input type="submit" value="送信する" class="contact__submit-btn">
+                  </div>
+                </form>
               </div><!-- /.l-cta__block -->
+              </div>
             </section><!-- /.cta -->
 
 
@@ -1174,34 +1271,37 @@
     </main>
 		
     <footer class="l-footer">
-      <div class="l-foot__bg"><img src="./assets/img/m-bg1.png" alt=""></div><!-- /.l-ch__bg -->
+      <div class="l-footer_wrap">
+        <div class="l-foot__bg"><img src="./assets/img/m-bg2.png" alt=""></div><!-- /.l-ch__bg -->
       <div class="l-inner">
         <div class="l-footer__container">
           <div class="p-footer__left">
-        <div class="p-footer__logo">
-          <img src="./assets/img/footer-logo.png" alt="Global Standard" width="280" height="68">
-        </div>
+        <h1 class="p-footer__logo">
+          <a href="#header">
+          <img src="./assets/img/kanalogo-bottom-logo2.png" alt="kanalogo site" width="280" height="68">
+        </a>
+      </h1>
 
         <ul class="p-footer__desc">
-          <li>株式会社 Global Standard</li>
-          <li>〒xxx-xxxx 大阪市西区土佐堀x-x-x</li>
-          <li>TEL: 06-xxx-xxxx / FAX: 06-xxx-xxxx</li>
+          <li>KANALOGO.STUDIO</li>
+          <li>〒717-0603 岡山県真庭市</li>
+          <li>Mail:kanalogo@gmail.com</li>
         </ul><!-- /.p-footer__desc -->
-        <p class="p-footer__copy"><small>©2025 Global Standard. All Rights Reserved.</small></p><!-- /.p-footer__copy -->
+        <p class="p-footer__copy"><small>©2025 KANALOGO.STUDIO. All Rights Reserved.</small></p><!-- /.p-footer__copy -->
         </div>
 
         <div class="p-footer__right">
           <div class="p-footer__top">
             <ul class="p-footer__nav">
               <li><a href="#header">ホーム</a></li>
-              <li><a href="">サービス紹介</a></li>
-              <li><a href="">導入事例</a></li>
+              <li><a href="#about">私について</a></li>
+              <li><a href="#faq">よくある質問</a></li>
             </ul><!-- /.p-footer__nav -->
 
             <ul class="p-footer__nav">
-              <li><a href="">お知らせ</a></li>
-              <li><a href="">資料ダウンロード</a></li>
-              <li><a href="">お問い合わせ</a></li>
+              <li><a href="#works">実績紹介</a></li>
+              <li><a href="#flow">流れについて</a></li>
+              <li><a href="#contact">お問い合わせ</a></li>
             </ul><!-- /.p-footer__nav -->
           </div><!-- /.p-footer__top -->
           <div class="p-footer__bottom">
@@ -1216,13 +1316,14 @@
         </div>
 
       </div>
+    </div><!-- /.l-footer_wrap -->
     </footer>
        
 
     <!-- jsファイルの読み込み -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="./assets/js/lib/swiper-bundle.min.js"></script>
-    <script type="module" src="./assets/js/swiper.js?ver1.0"></script>
-    <script type="module" src="./assets/js/main.js?ver1.0"></script>
+    <script src="./assets/js/lib/swiper-bundle.min.js" defer></script>
+    <script src="./assets/js/swiper.js?ver1.0" defer></script>
+    <script src="./assets/js/main.js?ver1.0" defer></script>
   </body>
 </html>

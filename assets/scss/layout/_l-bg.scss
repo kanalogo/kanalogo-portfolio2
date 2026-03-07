@@ -59,12 +59,26 @@
     
     
 }
+.l-contact__bg {
+    position: absolute;
+    bottom: -125px;
+    left: -172px;
+    width: 55%;
+    height: auto;
+    translate: 0;
+    z-index: 1;
+    rotate: 180deg;
+    opacity: 0.8;
+    
+    
+}
 .l-foot__bg {
     position: absolute;
-    bottom: -68%;
+    top: -60%;
     right: 0;
-    width: 50%;
+    width: 30%;
     height: auto;
+    margin-inline: auto;
     translate: 0;
     z-index: 1;
     

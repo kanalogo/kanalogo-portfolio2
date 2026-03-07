@@ -4,15 +4,19 @@
 .p-header {
   position: fixed;
   z-index: $z-header;
-  top: 0;
-  left: 0;
-  width: 100%;
+  top: 20px;
+  left: 50%;
+  translate: -50%;
+  width: 90%;
   height: auto;
 
   &.is-active {
 
   
-  background-image: linear-gradient(to left,#0291D9, #023E78 );
+ background-color: rgba(0,0,0, 0.2);
+ backdrop-filter: blur(10px);
+ border-radius: 100vmax;
+
   }
   
 
@@ -21,6 +25,7 @@
   h1 {
     width: clamp(10.938rem, 7.804rem + 13.55vw, 20rem);
     height: auto;
+    scale: 1.1;
   }
 }
 
@@ -29,8 +34,8 @@
 
 
 .p-drawer__logo {
-  width: 175px;
-  height: 32px;
+  width: 200px;
+  height: auto;
   transition: opacity 0.3s ease;
   @media (hover: hover) {
     &:hover {
@@ -48,6 +53,8 @@
     display: inline-block;
   @include font(16, 500, 1, 0);
   line-height: 1.4;
+  color: #fff;
+  white-space: nowrap;
   position: relative;
   padding-block: rm(10);
   padding-inline: rm(24) rm(46);

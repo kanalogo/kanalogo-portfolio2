@@ -1,13 +1,16 @@
 @use "../global" as *;
 
 .l-main {
-  margin-top: rm(128);
+  margin-top: rm(0);
   // min-height: 100vh;
   @include mq(sp) {
     margin-top: rm(112);
   }
  
   
+}
+.l-mv__block {
+  background-image: linear-gradient(to left, #0291D9,#023E78 );
 }
 
 .l-mv__grid {
@@ -31,7 +34,7 @@
   visibility: hidden;
   overflow-y: hidden;
   transition: opacity 1s ease, translate 1s ease;
-  height: 556px;
+  height: 780px;
 
   &.is-active {
     opacity: 1;
@@ -51,10 +54,8 @@
 }
 
 .l-fv__container {
-  display: flex;
-  justify-content: space-between;
-  gap: 40px;
-  margin-right: calc(50% - 50vw);
+ display: grid;
+ place-items: center;
 
   @include mq(sp) {
    flex-direction: column;
@@ -65,7 +66,7 @@
 .l-bussiness__container {
   margin-top: 48px;
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   row-gap: rm(40);
   @include mq(sp) {
     margin-top: 33px;
@@ -106,13 +107,56 @@
 }
 
 .l-member__container {
-  margin-block: rm(48) rm(64);
-  margin-right: calc(50% - 50vw);
+
+	padding-block: 120px;
+	padding-inline: 40px;
+  
+	position: sticky;
+  
+  overflow: hidden;
+	top: 0;
+  height: 100vh;
+	
+
+}
+.l-member__swiper-container {
+  display: flex;
+	gap: 48px;
+ width: max-content;
+ margin-right: 120px;
+ margin-top: 80px;
+
+
+
+
+  
+
+}
+
+@keyframes slide-to-right {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% + 100vw - 80px));
+  }
+}
+
+.l-culture__flex-columns {
+  display: flex;
+  flex-direction: column;
+  margin-top: 50px;
+  row-gap: rm(80);
+  position: absolute;
+  z-index: 22;
 }
 .l-culture__container {
   padding-inline: rm(40);
   background-color: #fff;
   backdrop-filter: blur(32px);
+  margin-bottom: 24px;
+  position: relative;
+
   
   @include mq(sp) {
     padding-inline: rm(16);
@@ -122,9 +166,20 @@
     
     background: rgb(255 255 255 / 0.3);
     backdrop-filter: blur(8px);
-    margin-top: 8px;
-    position: absolute;
+    margin-top: 38px;
     z-index: 66;
+    @include mq(sp) {
+      position: static;
+        }
+  
+    
+  }
+
+  &.--bg-blur-bottom {
+    
+    background: rgb(255 255 255 / 0.3);
+    backdrop-filter: blur(8px);
+    position: relative;
     @include mq(sp) {
       position: static;
         }
@@ -135,7 +190,6 @@
 
 .l-culture__image-wrap {
   position: relative;
-  margin-block: rm(120);
   margin-inline: calc(50% - 50vw);
   overflow: hidden;
   z-index: 3;
@@ -159,46 +213,37 @@
   
 }
 
+
 .l-faq__container {
   display: flex;
   justify-content: space-between;
+  gap: 40px;
   @include mq(sp) {
    flex-direction: column;
    gap: 40px;
     }
 }
-.l-cta__container {
-  padding-block: rm(112);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  perspective-origin: center center;
-   perspective: 3000px;
-   overflow: hidden;
+.l-contact__container {
+  padding-block: rm(40) rm(40);
    @include mq(sp) {
     padding-block: 0;
      }
 
-    &.is-active {
-      .--img-left {
-        transform: rotateY(58deg) ;
-        
-      }
-      .--img-right {
-        transform: rotateY(-58deg) ;
-      }
-    }
-
 }
-.l-cta__block {
-  display: flex;
-  flex-direction: column;
-  row-gap: rm(38);
-  text-align: center;
+.l-contact__block {
+  
+  width: 100%;
+  padding-inline: 40px;
+  padding-block: 40px;
+  margin-inline: auto;
+  border-radius: 30px;
+  background-color: #fff;
+  position: relative;
+  z-index: 3;
+
+  
   @include mq(sp) {
-    row-gap: rm(24);
+    padding-inline: 20px;
      }
 }
 

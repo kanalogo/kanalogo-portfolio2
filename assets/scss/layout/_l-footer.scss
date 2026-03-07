@@ -3,15 +3,20 @@
 
 
 .l-footer {
-    padding-block: rm(128) rm(58);
-    background-color: #E4EAF1;
-    color: $color-text;
-    overflow: hidden;
-    position: relative;
+  position: sticky;
+	bottom: 0;
+	width: 100%;
+	z-index: 0;
+	background: #fff;
+   padding-block: rm(128) rm(58);
+  overflow: hidden;
 
     @include mq(sp) {
         padding-block: rm(34) rm(92);
       }
+}
+.l-footer_wrap {
+  position: relative;
 }
 .l-footer__container {
     display: flex;

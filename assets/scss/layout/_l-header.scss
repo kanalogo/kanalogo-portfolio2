@@ -2,7 +2,7 @@
 
 .l-header__inner {
    padding-block: rm(12);
-   padding-inline: rm(40);
+   padding-inline: rm(20);
    display: flex; 
    justify-content: space-between;
    align-items: center;
@@ -21,7 +21,9 @@
 .l-header__item {
     @include font(16, 500,1 ,0 );
     line-height: 1.4;
+    white-space: nowrap;
     position: relative;
+    color: #fff;
 
     &::before {
       content: '';
@@ -51,5 +53,6 @@
         display: none;
       }
 }
+
 
 

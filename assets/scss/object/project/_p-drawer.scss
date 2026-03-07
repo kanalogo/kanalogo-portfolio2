@@ -85,6 +85,7 @@
   li a {
     @include font(16, 500, 1, 0);
     line-height: 1.4;
+    color: #fff;
     padding-block: rm(16);
     display: block;
     border-bottom: 1px solid #fff;

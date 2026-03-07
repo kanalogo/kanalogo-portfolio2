@@ -244,17 +244,28 @@ document.addEventListener("DOMContentLoaded", function () {
 
 });
 
-gsap.utils.toArray('.js-parallax').forEach(wrap => {
-  const y = wrap.getAttribute('data-y') || -200;
-  gsap.to(wrap, {
-    y: y,    
-    scrollTrigger: {
-      trigger: wrap,
-      start: 'top bottom',
-      end: 'bottom top',
-      scrub: 0.9,
-    }
-  })
+   // パララックス
+gsap.registerPlugin(ScrollTrigger);
+
+window.addEventListener("load", () => {
+
+  gsap.utils.toArray('.js-parallax').forEach(el => {
+
+    const y = parseInt(el.dataset.y) || -200;
+
+    gsap.to(el, {
+      y: y,
+      ease: "none",
+      scrollTrigger: {
+        trigger: el,
+        start: "top bottom",
+        end: "bottom top",
+        scrub: true,
+      }
+    });
+
+  });
+
 });
 
     // ナビゲーションが押されたらスクロール位置まで移動する
@@ -299,9 +310,11 @@ document.addEventListener("DOMContentLoaded", () => {
 document.addEventListener("DOMContentLoaded", () => {
   const mainImage = document.querySelector(".l-mv__scroll-animation");
   const mainText = document.querySelectorAll(".section__title-en");
+  const fvText = document.querySelector(".c-fv__headingLv2 span");
 
   mainImage.classList.add('is-active');
-  
+  fvText.classList.add('is-active');
+
   mainText.forEach((element, index) => {
     element.style.animationDelay = `${index * 0.2}s`;
   
@@ -328,6 +341,19 @@ window.addEventListener('load',function(){
      });
    });
 
+    //見出しの文字が下から出現
+    const underModalBtnItem = document.querySelector('.js-modal-btn');
+    
+      ScrollTrigger.create({
+        trigger: underModalBtnItem,
+        start: "top 70%", // 要素が上部から70%の位置で発火
+        onEnter: () => {
+          // 要素内に入ったら、js-showクラスをつける
+          underModalBtnItem.classList.add("is-active");
+        }
+      });
+ 
+
      //見出しの文字が下から出現
      const openDoorImage = document.querySelector('.l-cta__container');
      
@@ -347,85 +373,144 @@ window.addEventListener('load',function(){
    
  });
 
+ //worksの横スクロール
+ gsap.registerPlugin(ScrollTrigger);
+
+ const container = document.querySelector(".l-member__swiper-container");
+ 
+ function horizontalScroll() {
+ 
+   const totalWidth = container.scrollWidth;
+   const visibleWidth = document.querySelector(".l-member__container").offsetWidth;
+ 
+   const moveDistance = totalWidth - visibleWidth + 48;
+ 
+   gsap.to(container, {
+     x: -moveDistance,
+     ease: "none",
+     scrollTrigger: {
+       trigger: ".view-wrapper",
+       start: "top top",
+       end: () => "+=" + moveDistance,
+       scrub: true,
+       pin: ".l-member__container",
+       invalidateOnRefresh: true
+     }
+   });
+ }
+ 
+ horizontalScroll();
+
+
+  //Faqのタブの切替
+
+  jQuery(function($) {
+
+    $('.c-faq__button').on('click', function () {
+      // tabの切り替え
+      $('.c-faq__button').attr('aria-selected', 'false');
+      $(this).attr('aria-selected', 'true');
+  
+      // tab panelの切り替え
+      $('.c-faq__list').removeClass('js-show');
+      $('#' + $(this).attr("aria-controls")).addClass('js-show');
+  
+      return false;
+    });
+  
+  });
+
+  //料金表のモーダル
+
  document.addEventListener('DOMContentLoaded', function() {
   
-  const modal = document.querySelectorAll('.c-member__modal');
+  const modal = document.querySelector('.JS-modal');
   // ダイアログを開く
-  const open = document.querySelectorAll('.c-bl__modal-btn');
+  const open = document.querySelector('.c-culture__modal-link');
   const bg = document.querySelector('.l-modal-bg');
   const body = document.querySelector('body');
-  open.forEach(button => {
-    button.addEventListener('click', (target) => {
-      target.preventDefault();
-      const dialogId = button.getAttribute('data-modal');
-      const dialog = document.getElementById(dialogId);
-     
-
-      modal.forEach(item => {
+  
+    open.addEventListener('click', (target) => {
+  
         bg.classList.add('is-active');
-        item.classList.remove('is-active');
         body.style.overflowY = 'hidden';
-        if(item.id == dialogId) {
-          item.classList.add('is-active');
-        }
-        
-      });
-     
-    });
+          modal.classList.add('is-active');
+          initModalSwiper();
 
-      // ダイアログを閉じる
+    });
+         // ダイアログを閉じる
+   bg.addEventListener('click', () => {
+    bg.classList.remove('is-active');
+    body.style.overflowY = 'auto';
+   
+      modal.classList.remove('is-active');
+   
+  });
+
+  // ダイアログを閉じる
   const close = document.querySelectorAll('.c-member__modal-block');
   close.forEach(button => {
     button.addEventListener('click', () => {
       bg.classList.remove('is-active');
       body.style.overflowY = 'auto';
-      modal.forEach(item => {
-        item.classList.remove('is-active');
-      });
+       modal.classList.remove('is-active');
+     
     });
   });
   });
 
-     // ダイアログを閉じる
-   bg.addEventListener('click', () => {
-      bg.classList.remove('is-active');
-      body.style.overflowY = 'auto';
-      modal.forEach(item => {
-        item.classList.remove('is-active');
+   // キャッチコピーが一文字ずつ下から出現
+      window.addEventListener("load", function () {
+      const slideUpText2 = document.querySelectorAll(".p-fv__text");
+      new SplitType(slideUpText2);
+      slideUpText2.forEach((element) => {
+        const chars = element.querySelectorAll(".char");
+        gsap.to(chars, {
+          opacity: 1, //最終の状態
+          stagger: 0.06, //次のアニメーションまでの時間
+          delay: 1, //遅延
+        });
       });
     });
-  });
 
-  //  // オーバーレイクリックで変化させる
-  // document.addEventListener('DOMContentLoaded', function() {
-  
-  //    const card_button = document.querySelectorAll('.c-bl__btn');
-  //     card_button.forEach(button => {
+     // マウスストーカーの実装
+    document.addEventListener("DOMContentLoaded", function () {
+      const cursor = document.querySelector("#js-cursor");
+      if (!cursor) return;
+    
+      // アニメーション用の変数
+      let mouseX = 0;
+      let mouseY = 0;
+      let scale = 0;
+    
+      // マウス移動時に座標を更新
+      document.addEventListener("mousemove", function (e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+      });
+    
+      document.querySelectorAll(".js-link").forEach(function (link) {
+        link.addEventListener("mouseenter", function () {
+          scale = "1";
+        });
       
-  //     button.addEventListener('click', (target) => {
-  //       card_button.forEach(button => {
-  //         button.classList.remove('is-active');
-  //       });
-  //       target.preventDefault();
-  //       button.classList.add('is-active');
-  //     })
-  //   });
-  // });
+        link.addEventListener("mouseleave", function () {
+          scale = "0";
+        });
+      });
+    
+    
+      // requestAnimationFrameでスタイルを更新
+      function updateCursor() {
+        cursor.style.transform = "translate3d(" + mouseX + "px, " + mouseY + "px, 0) translate(-50%, -50%) scale(" + scale + ")";
+        requestAnimationFrame(updateCursor);
+      }
+    
+      // アニメーションループを開始（初回）
+      updateCursor();
+    });
 
 
-
-
-  // オーバーレイクリックでダイアログを閉じる
-  // dialogs.forEach(dialog => {
-  //   dialog.addEventListener('click', (event) => {
-  //     if (event.target.closest('.modal__inner') === null) {
-  //       dialog.classList.remove('js-show');
-  //       dialog.close();
-  //     }
-  //   });
-  // });
-
-  
 
   
 
