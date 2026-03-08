@@ -459,6 +459,46 @@ window.addEventListener('load',function(){
   });
   });
 
+    //プライバシーのモーダル
+
+ document.addEventListener('DOMContentLoaded', function() {
+  
+  const modal = document.querySelector('.JS-privacy-modal');
+  // ダイアログを開く
+  const open = document.querySelector('.p-privacy__btn');
+  const bg = document.querySelector('.l-modal-bg');
+  const body = document.querySelector('body');
+  
+    open.addEventListener('click', (target) => {
+  
+        target.preventDefault();
+        bg.classList.add('is-active');
+        body.style.overflowY = 'hidden';
+          modal.classList.add('is-active');
+          initModalSwiper();
+
+    });
+         // ダイアログを閉じる
+   bg.addEventListener('click', () => {
+    bg.classList.remove('is-active');
+    body.style.overflowY = 'auto';
+   
+      modal.classList.remove('is-active');
+   
+  });
+
+  // ダイアログを閉じる
+  const close = document.querySelector('.c-privacy__modal-closeText');
+  
+    close.addEventListener('click', () => {
+      bg.classList.remove('is-active');
+      body.style.overflowY = 'auto';
+       modal.classList.remove('is-active');
+     
+    });
+  });
+
+
    // キャッチコピーが一文字ずつ下から出現
       window.addEventListener("load", function () {
       const slideUpText2 = document.querySelectorAll(".p-fv__text");

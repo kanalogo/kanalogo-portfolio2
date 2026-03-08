@@ -294,3 +294,126 @@
       font-size: 32px;
     }
   }
+
+  // プライバシーのモーダル　　　　　　------------------------------------------
+
+  .c-privacy__modal{
+    padding: 48px;
+    border-radius: 12px;
+    background-color: #fff;
+    border: 1px solid #023E78;
+    color: #023E78;
+    display: grid;
+    width: 94%;
+    height: 92%;
+  
+    margin-inline: auto;
+    place-items: center;
+    position: relative;
+    height: auto;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+  
+    translate: -50% -50%;
+    z-index: -8;
+    width: min(1200px, 80%);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease,visibility 0.3s ease;
+  
+    
+    &.is-active {
+      z-index: 333;
+      opacity: 1;
+      visibility: visible; 
+  }
+  
+
+    @include mq(sp) {
+        padding: 64px 16px 16px;
+      }
+
+   
+}
+.c-privacy__modal-inner {
+    overflow-y: scroll;
+    max-height: 85vh;
+    
+   
+}
+.c-privacy__modal-block {
+    position: absolute;
+    top: 53px;
+    right: 44px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    row-gap: rm(8);
+    @include mq(sp) {
+        flex-direction: row-reverse;
+        top: 22px;
+        right: 16px;
+        align-items: start;
+        column-gap: 8px;
+       }
+}
+
+.c-privacy__modal-closeText {
+    @include font(16, 500, 1, 0);
+    line-height: 1.7;
+    text-decoration: underline;
+    @include mq(sp) {
+        font-size: 12px;
+       }
+}
+
+.c-privacy__modal-desc {
+    @include font(18, 500, 1, 0);
+    line-height: 1.6;
+    font-style: italic;
+    font-family: $ff-en;
+    color: $stage-color-dark;
+    text-align: center;
+    @include mq(sp) {
+        font-size: 14px;
+       }
+}
+.c-privacy__modal-title {
+    @include font(28, 700, 1, 0);
+    line-height: 1.6;
+    text-align: center;
+    @include mq(sp) {
+       font-size: 20px;
+      }
+
+    span {
+        font-size: 30px;
+        font-weight: 500;
+        margin-right: 16px;
+        font-style: italic;
+    font-family: $ff-en;
+    color: $color-text-accent;
+    @include mq(sp) {
+        font-size: 18px;
+        margin-left: 1px;
+       }
+    }
+}
+
+.c-privacy__modal-info {
+  margin-top: 40px;
+  
+}
+.c-privacy__modal-text {
+  @include font(16, 500, 1, 0);
+    line-height: 1.6;
+    margin-bottom: 30px;
+}
+
+.c-privacy__modal-ttl {
+  @include font(20, 700, 1, 0);
+    line-height: 1.6;
+    margin-bottom: 8px;
+}

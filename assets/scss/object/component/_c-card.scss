@@ -1000,3 +1000,56 @@ img {
 	color: #666;
 	letter-spacing: 0.2em;
 }
+
+.c-relation__card {
+  background-color: #fff;
+  padding: 8px 16px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+}
+.c-relation__image {
+  width: 100%;
+  
+}
+.c-relation__desc {
+  display: flex;
+  flex-direction: column;
+  row-gap: 6px;
+  color: #222
+}
+.c-relation__txt {
+  @include font(22, 700, 1, 0);
+  line-height: 1.6;
+  color: $stage-color-dark;
+  span {
+    @include font(14, 500, 1, 0);
+    line-height: 1.6;
+    color: #222;
+  }
+}
+.c-relation__cats {
+  display: flex;
+  column-gap: 8px;
+  flex-wrap: wrap;
+  width: 90%;
+  
+}
+.c-relation__cat {
+  display: flex;
+  align-items: center;
+  column-gap: 8px;
+  margin-block: rm(6);
+}
+.c-relation__cat-ttl {
+  display: inline-block;
+  padding: 4px;
+  color: #fff;
+  background-color: #0961B6;
+  @include font(14, 700, 1, 0);
+  line-height: 1.6;
+}
+.c-relation__cat-txt {
+  @include font(16, 700, 1, 0);
+  line-height: 1.6;
+}

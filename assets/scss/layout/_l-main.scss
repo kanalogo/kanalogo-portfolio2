@@ -9,6 +9,17 @@
  
   
 }
+
+.l-child-main {
+
+  margin-block: rm(240) rm(60);
+  
+  @include mq(sp) {
+    margin-top: rm(112);
+  }
+ 
+  
+}
 .l-mv__block {
   background-image: linear-gradient(to left, #0291D9,#023E78 );
 }
@@ -266,4 +277,73 @@
   opacity: 1;
   visibility: visible;
   }
+}
+
+
+  // ===================================
+  // 実績詳細のページ
+  // ===================================
+
+    //　実績詳細　の　セクション　-------------------------------------------
+.l-works-detail {
+     background-color: #E4EAF1;
+}
+.l-detail-top {
+  display: flex;
+  gap: 30px;
+  align-items: flex-start;
+  margin-bottom: 50px;
+}
+
+.l-detail-mid {
+  margin-block: rm(40) rm(40);
+  background-color: #f9f8f8;
+  color: #222;
+  padding: 18px;
+}
+
+.l-detail-bottom {
+  margin-block: rm(40) rm(40);
+  background-color: #f9f8f8;
+  color: #222;
+  padding: 18px;
+  display: flex;
+  column-gap: 30px;
+}
+
+
+
+    // ===================================
+  // 実績一覧のページ
+  // ===================================
+
+    //　実績一覧の　セクション　-------------------------------------------
+
+.l-works__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+}
+
+    // ===================================
+  // プロフィールのページ
+  // ===================================
+
+    //　プロフィールの　セクション　-------------------------------------------
+
+.l-profile__bottom {
+  padding-block: rm(40) rm(40);
+  background-color: #F5EDE9;
+  color: #222;
+}
+
+.l-profile__container {
+  display: flex;
+  column-gap: 30px;
+}
+.l-profile__area {
+  padding-block: rm(40) rm(40);
+}
+.l-profile__menu {
+  margin-top: 40px;
 }

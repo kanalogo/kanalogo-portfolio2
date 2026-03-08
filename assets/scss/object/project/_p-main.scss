@@ -743,3 +743,363 @@ details[open].faq__item::after {
     padding: 8px;
   }
   
+
+
+  // ===================================
+  // 実績詳細のページ
+  // ===================================
+
+    //　実績詳細　の　セクション　-------------------------------------------
+
+    .p-detail {
+        padding-block: rm(120) rm(40);
+        position: relative;
+    }
+
+    .p-detail__image {
+     width: min(700px, 100%);
+    height: auto;
+     flex-shrink: 0;
+    }
+
+    .p-detail__txt {
+      color: #222;
+      display: flex;
+      flex-direction: column;
+      row-gap: 14px;
+    }
+    .p-deatil__title {
+      @include font(28, 400, 1, 0);
+      line-height: 1.6;
+      color: $stage-color-dark;
+      font-family: "Yu Mincho", "YuMincho", serif;
+    }
+
+    .p-detail__desc {
+      @include font(16, 500, 1, 0);
+      line-height: 2;
+    
+    }
+   .p-detail__url {
+    @include font(16, 500, 1, 0);
+    line-height: 2;
+    text-decoration: underline;
+
+    span {
+      @include font(18, 500, 1, 0);
+      color: $stage-color-dark;
+      margin-right: 10px;
+    vertical-align: baseline;
+    }
+   }
+
+   .p-detail__copy{
+    @include font(14, 700, 1, 0);
+    line-height: 1.6;
+    color: $stage-color-dark;
+  }
+
+  .p-detail__list {
+    display: flex;
+    align-items: center;
+    padding-block: rm(20);
+    border-bottom: 1px dotted #222;
+
+    &:last-of-type {
+      border-bottom: none;
+    }
+  }
+
+  .p-detail__list-title {
+    @include font(18, 500, 1, 0);
+    line-height: 1.6;
+    color: $stage-color-dark;
+    position: relative;
+    margin-left: 1.2em;
+    flex-basis: 200px;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #023E78;
+      top: 50%;
+      translate: 0 -50%;
+      left: -1em;
+    }
+  }
+  .p-detail__list-txt{
+    @include font(16, 500, 1, 0);
+    line-height: 1.6;
+ 
+  }
+
+  .p-detail__list-link {
+    text-decoration: underline;
+  }
+
+  .p-detail__info {
+    display: flex;
+    flex-direction: column;
+    row-gap: 20px;
+    
+    
+  }
+  .p-detail__info-title {
+    @include font(18, 500, 1, 0);
+    line-height: 1.6;
+    color: $stage-color-dark;
+  }
+  .p-detail__info-text {
+    @include font(16, 500, 1, 0);
+    line-height: 1.6;
+
+  }
+
+  .p-detail__move {
+    width: min(800px, 100%);
+    margin-inline: auto;
+    margin-top: 140px;
+  }
+
+  .p-relation {
+    padding-block: rm(180) rm(80);
+    
+  }
+
+  .p-relation__title {
+    @include font(22, 500, 1, 0);
+    line-height: 1.6;
+    color: $stage-color-dark;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #023E78;
+    margin-bottom: 30px;
+  }
+
+  .p-detail__back-link {
+    display: block;
+    @include font(16, 700, 1, 0);
+    line-height: 1.6;
+    color: $stage-color-dark;
+    text-align: center;
+    position: relative;
+    margin-top: 120px;
+
+    a {
+      line-height: 2;
+      text-decoration: underline;
+    }
+
+    .fa-arrow-left {
+      @include font(18, 700, 1, 0);
+      color: $stage-color-dark;
+      margin-right: 1em;
+    }
+
+    @media (hover: hover) {
+    
+      &:hover {
+        .fa-arrow-left {
+          animation: arrow-left-animation 1s ease both;
+        }
+      }
+    }
+   }
+   @keyframes arrow-left-animation {
+    0% {
+      translate: 0;
+    }
+    50% {
+     translate: -8px;
+   }
+    100% {
+     translate: 0;
+    }
+  }
+
+  .c-relation-swiper-prev,
+  .c-relation-swiper-next {
+    width: 50px ;
+    height: 50px ;
+    top: -20px;
+  }
+  .c-relation-swiper-prev {
+    right: 10%;
+  }
+  .c-relation-swiper-next {
+    right:4%;
+  }
+
+    // ===================================
+  // 実績一覧のページ
+  // ===================================
+
+    //　実績一覧の　セクション　-------------------------------------------
+
+    .p-works {
+      padding-block: rm(60) rm(120);
+      position: relative;
+    }
+
+        // ===================================
+  // プロフィールのページ
+  // ===================================
+
+    //　プロフィールの　セクション　-------------------------------------------
+
+.p-profile__list-item {
+  @include font(16, 700, 1, 0);
+  line-height: 1.8;
+  color: $stage-color-dark;
+  position: relative;
+  margin-bottom: 10px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background-color: $stage-color-dark;
+    top: 50%;
+    translate: 0 -50%;
+    left: -1em;
+  }
+
+  &.current {
+    color: $color-text;
+    &::before {
+      background-color: $color-text;
+    }
+   
+  }
+}
+.p-profile__list {
+  position: sticky;
+  top: 30px;
+}
+.p-proffile__txt {
+  @include font(16, 500, 1, 0);
+  line-height: 1.8;
+}
+.p-profile__ttl {
+  border-bottom: 1px solid $stage-color-dark;
+}
+.p-profile__desc {
+  @include font(16, 500, 1, 0);
+  line-height: 1.8;
+  color: $stage-color-dark;
+  margin-top: 8px;
+}
+
+.p-profile__ttl,
+.p-proffile__ttl2 {
+  @include font(22, 500, 1, 0);
+  line-height: 1.8;
+  font-family: "Yu Mincho", "YuMincho", serif; 
+  color: $stage-color-dark;
+  padding-bottom: 6px;
+}
+.p-proffile__text-wrap {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+}
+.p-profile__block {
+  padding: 16px;
+
+  &.--area1-block {
+    border: 2px solid #fff;
+  }
+  &.--area2-block {
+    border: 2px solid #fff;
+  }
+}
+.p-profile__block-wrap {
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  margin-top: 30px;
+}
+.p-profile__info {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+}
+.p-profile__info-left,
+.p-profile__info-right {
+  flex-basis: 45%;
+}
+.p-proffile__info-list1 li,
+.p-proffile__info-list2 li,
+.p-proffile__info-list3 li {
+  @include font(15, 500, 1, 0);
+  line-height: 1.8;
+  margin-top: 10px;
+  margin-left: 1em;
+  list-style: disc;
+  }
+  .p-proffile__info-list2 li {
+    list-style: none;
+    margin-top: 0;
+    margin-left: 0;
+    margin-bottom: 10px;
+  }
+  .p-proffile__info-list3 li {
+    list-style: none;
+    position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background-color: #222;
+      top: 50%;
+      translate: 0 -50%;
+      left: -1em;
+    }
+  }
+  .p-proffile__info-list3 {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 12px;
+    width: 70%;
+  }
+  .p-proffile__info-ttl {
+    @include font(15, 500, 1, 0);
+  line-height: 1.8;
+  margin-left: 1em;
+  color: $stage-color-dark;
+  position: relative;
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 6px;
+      height: 6px;
+      background-color: $stage-color-dark;
+      top: 50%;
+      translate: 0 -50%;
+      left: -1em;
+    }
+  }
+  .p-profile__image-wrap {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  .p-profile__image-block {
+    flex-basis: 45%;
+  }
+  .p-profile__image-ttl {
+    @include font(18, 500, 1, 0);
+    line-height: 1.8;
+    color: $stage-color-dark;
+    text-align: center;
+  }
+  .p-profile__image {
+    margin-top: 10px;
+    width: 100%;
+  }

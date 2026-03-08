@@ -111,3 +111,11 @@
   }
 }
 }
+
+.p-header-child {
+  position: absolute;
+  background-color: rgba(0,0,0, 0.2);
+  backdrop-filter: blur(10px);
+  border-radius: 100vmax;
+  margin-inline: auto;
+}
