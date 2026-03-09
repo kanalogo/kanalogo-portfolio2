@@ -13,7 +13,7 @@
 
     @include mq(sp) {
 			left: 19px;
-      bottom: -5px;
+      bottom: 49px;
 		}
   span {
     display: inline-block;
@@ -154,6 +154,7 @@
   overflow: hidden;
   span {
   @include font(36, 700, 1, 0);
+  font-size: clamp(1.375rem, 1.125rem + 1.25vw, 2.25rem);
   line-height: 1.6;
   letter-spacing: 0.1em;
   color: #fff;

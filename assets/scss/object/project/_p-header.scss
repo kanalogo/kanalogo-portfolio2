@@ -113,7 +113,8 @@
 }
 
 .p-header-child {
-  position: absolute;
+  position: fixed;
+  top: 30px;
   background-color: rgba(0,0,0, 0.2);
   backdrop-filter: blur(10px);
   border-radius: 100vmax;

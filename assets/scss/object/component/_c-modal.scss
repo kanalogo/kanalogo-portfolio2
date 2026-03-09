@@ -41,7 +41,7 @@
 }
 .c-member__modal-inner {
     overflow-y: scroll;
-    max-height: 100vh;
+    max-height: 85vh;
 }
 .c-member__modal-block {
     position: absolute;
@@ -193,6 +193,8 @@
     transition: scale 0.3s ease,opacity 0.3s ease-in,translate 0.3s ease-in;
     z-index: 3;
 
+    
+
     @media (hover: hover) {
         
         &:hover {
@@ -271,6 +273,11 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     cursor: pointer;
     transition: scale 0.3s ease-in-out;
+
+    @include mq(sp) {
+      width: 80px;
+      height: 80px;
+		}
     @media (hover: hover) {
         
       &:hover {
@@ -282,6 +289,9 @@
     span {
       @include font(12, 500, 1, 0);
       margin-top: 30px;
+      @include mq(sp) {
+        font-size: 11px;
+      }
     }
     &::before {
       content: '+';
@@ -410,10 +420,16 @@
   @include font(16, 500, 1, 0);
     line-height: 1.6;
     margin-bottom: 30px;
+    @include mq(sp) {
+      font-size: 14px;
+    }
 }
 
 .c-privacy__modal-ttl {
   @include font(20, 700, 1, 0);
     line-height: 1.6;
     margin-bottom: 8px;
+    @include mq(sp) {
+      font-size: 18px;
+    }
 }

@@ -352,8 +352,9 @@ img {
     width: fit-content;
     display: inline-block;
     @include mq(sp) {
-        font-size: 19px;
+        font-size: 15px;
         letter-spacing: 0.08em;
+        padding: 4px 8px;
         }
 
     & + p {
@@ -372,17 +373,27 @@ img {
     display: flex;
     flex-direction: column;
     align-items: end;
+    @include mq(sp) {
+      top: -32px;
+      }
   }
   .c-member__copy,
   .c-member__site {
     @include font(56, 500, 1, 1.4);
+
     line-height: 1.5;
     font-family: $ff-en;
     color: #023E78;
     font-style: italic;
+    @include mq(sp) {
+      font-size: 36px;
+      }
     }
     .c-member__site {
       font-size: 22px;
+      @include mq(sp) {
+        font-size: 18px;
+        }
     }
    
 
@@ -400,6 +411,9 @@ img {
   .c-member__txt {
     @include font(16, 500, 1, 1.3);
     line-height: 2;
+    @include mq(sp) {
+      line-height: 1.4;
+      }
   }
   .c-member__ttl {
     @include font(18, 700, 1, 1.3);
@@ -414,6 +428,10 @@ img {
     list-style: disc;
     @include font(15, 500, 1, 1.3);
     line-height: 1.8;
+
+    @include mq(sp) {
+      line-height: 1.4;
+      }
 
   }
 
@@ -531,11 +549,11 @@ img {
 }
 .c-modal-button-prev {
   right: auto;
-  left: -4%;
+  left: -10%;
 }
 .c-modal-button-next {
   left: auto;
-  right: -4%;
+  right: -10%;
 }
 .swiper-button-prev {
    
@@ -616,6 +634,10 @@ img {
   .--profile-txt {
     width: 100%;
     margin-left: rm(60);
+    @include mq(sp) {
+      margin-left: rm(0);
+       }
+    
   }
 
 
@@ -679,6 +701,9 @@ img {
     width: 100%;
     max-width: 350px;
     aspect-ratio: 1;
+    @include mq(sp) {
+      aspect-ratio: unset;
+       }
 
     img {
       width: 100%;
@@ -721,7 +746,10 @@ img {
     }
 
     th {
-      width: 250px;
+      width: 172px;
+      @include mq(sp) {
+        width: 128px;
+          }
     }
   }
 
@@ -883,6 +911,10 @@ img {
 	transform: translateY(0);
 	transition: all 0.6s ease;
 	box-sizing: border-box;
+
+  @include mq(sp) {
+    font-size: 24px;
+    }
 }
 
 .card__number {

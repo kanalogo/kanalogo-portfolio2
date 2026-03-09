@@ -110,6 +110,32 @@ document.addEventListener("DOMContentLoaded", () => {
       linkScroll(targetItem);
     });
   
+        // スクロールに合わせてフォーカス移動
+        document.addEventListener('DOMContentLoaded', () => {
+
+          const sections = document.querySelectorAll('.js-section');
+          const navLinks = document.querySelectorAll('.js-link');
+          
+          const spyObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+              if (entry.isIntersecting) {
+                navLinks.forEach(link => {
+                  link.classList.remove('is-active');
+                  if (link.dataset.target === entry.target.id) {
+                    link.classList.add('is-active');
+                  }
+                });
+              }
+            });
+          }, {
+              root: null,
+              threshold: 0.5 
+          });
+      
+          sections.forEach(section => spyObserver.observe(section));
+      
+          
+      });
 
 
 jQuery(function($) {
@@ -373,6 +399,108 @@ window.addEventListener('load',function(){
    
  });
 
+    // オープニングアニメーション
+  
+
+document.addEventListener("DOMContentLoaded", () => {
+  const opening = document.querySelector("#js-opening");
+  const zoomText = document.querySelector("#js-zoom-text");
+  const counter = document.querySelector("#js-count");
+
+    // すでに表示済みかチェック
+    if (sessionStorage.getItem("openingPlayed")) {
+
+      // 2回目以降は即非表示
+      opening.style.display = "none";
+      document.body.style.overflow = "";
+  
+      return;
+    }
+  
+    // 初回表示フラグ
+    sessionStorage.setItem("openingPlayed", "true");
+
+  document.body.style.overflow = "hidden";
+
+  // 2桁表示
+  const formatNumber = (num) => String(num).padStart(2, "0");
+
+  // ランダム加速カウント
+  function randomAcceleratedCount(start, end, callback) {
+    let current = start;
+
+    function updateCount() {
+      callback(current);
+
+      if (current >= end) return;
+
+      current++;
+
+      // 進行度
+      const progress = current / end;
+
+      // 最初は遅く、後半ほど速く
+      // さらに少しランダム性を加える
+      let delay;
+
+      if (progress < 0.2) {
+        delay = 120 + Math.random() * 80; // 遅め
+      } else if (progress < 0.5) {
+        delay = 70 + Math.random() * 50;  // 少し速く
+      } else if (progress < 0.8) {
+        delay = 35 + Math.random() * 30;  // かなり速い
+      } else {
+        delay = 10 + Math.random() * 15;  // 一気に加速
+      }
+
+      setTimeout(updateCount, delay);
+    }
+
+    updateCount();
+  }
+
+  randomAcceleratedCount(1, 100, (value) => {
+    counter.textContent = formatNumber(value) + "%";
+
+    if (value === 100) {
+      const tl = gsap.timeline({
+        onComplete: () => {
+          document.body.style.overflow = "";
+        }
+      });
+      if(value === 100){
+
+        gsap.fromTo(counter,
+          {scale:1},
+          {scale:1.4,duration:0.25}
+        );
+      
+      }
+
+      tl.to(counter, {
+        opacity: 0,
+        duration: 0.3
+      })
+      .to(zoomText, {
+        scale: 25,
+        duration: 1.5,
+        ease: "power3.inOut",
+        transformOrigin: "center center"
+      })
+      .to(opening, {
+        opacity: 0,
+        duration: 0.8,
+        ease: "power2.out"
+      })
+      .set(opening, {
+        display: "none"
+      });
+    }
+  });
+});
+
+
+
  //worksの横スクロール
  gsap.registerPlugin(ScrollTrigger);
 
@@ -550,7 +678,4 @@ window.addEventListener('load',function(){
       updateCursor();
     });
 
-
-
   
-

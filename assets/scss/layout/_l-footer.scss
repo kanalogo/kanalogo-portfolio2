@@ -13,6 +13,7 @@
 
     @include mq(sp) {
         padding-block: rm(34) rm(92);
+        position: static;
       }
 }
 .l-footer_wrap {

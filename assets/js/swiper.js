@@ -279,23 +279,17 @@ const relation = new Swiper('.relation__swiper', { //swiperの名前
   loop: true,
   //自動スライドについて
   autoplay: { 
-    delay: 3000, //何秒ごとにスライドを動かすか
+    delay: 1000, //何秒ごとにスライドを動かすか
     stopOnLastSlide: false, //最後のスライドで自動再生を終了させるか
     disableOnInteraction: true, //ユーザーの操作時に止める
     reverseDirection: false, //自動再生を逆向きにする
   },
 
    //表示について
-  centeredSlides: true, //中央寄せにする
-  slidesPerView: "3",
-  spaceBetween: 30,
+  centeredSlides: false, //中央寄せにする
+  slidesPerView: "1",
+  spaceBetween: 20,
 
-  //ページネーション
-  pagination: {
-    el: ".swiper-pagination", //paginationのclass
-    clickable: true, //クリックでの切り替えを有効に
-    type: "bullets" //paginationのタイプ (※2)
-  },
   //ナビゲーション
   navigation: {
     prevEl: ".c-relation-swiper-prev", //戻るボタンのclass
@@ -308,17 +302,17 @@ const relation = new Swiper('.relation__swiper', { //swiperの名前
     draggable: true //スクロールバーを直接表示できるようにする
   },
 
-  //ブレイクポイントによって変える
-  // breakpoints: { 
-  //   768: {
-  //     slidesPerView: 1.2,
-  //     spaceBetween: 15,
-  //   },
-  //   1500: {
-  //     slidesPerView: 3,
-  //     spaceBetween: 40,
-  //   },
-  // }
+
+  breakpoints: { 
+    390: {
+      slidesPerView: 2,
+      spaceBetween: 20,
+    },
+    768: {
+      slidesPerView: 3,
+      spaceBetween: 20,
+    },
+  }
 });
 
 /* =================================================== 

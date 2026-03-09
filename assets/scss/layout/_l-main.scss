@@ -2,10 +2,10 @@
 
 .l-main {
   margin-top: rm(0);
+  position: relative;
+  z-index: 1;
   // min-height: 100vh;
-  @include mq(sp) {
-    margin-top: rm(112);
-  }
+  
  
   
 }
@@ -15,7 +15,7 @@
   margin-block: rm(240) rm(60);
   
   @include mq(sp) {
-    margin-top: rm(112);
+    margin-top: rm(180);
   }
  
   
@@ -47,6 +47,10 @@
   transition: opacity 1s ease, translate 1s ease;
   height: 780px;
 
+  @include mq(sp) {
+    height: 540px;
+   }
+
   &.is-active {
     opacity: 1;
     translate: 0 0;
@@ -70,7 +74,7 @@
 
   @include mq(sp) {
    flex-direction: column;
-   gap: 127px;
+   gap: 0px;
   }
 }
 
@@ -160,6 +164,10 @@
   row-gap: rm(80);
   position: absolute;
   z-index: 22;
+
+  @include mq(sp) {
+    position: static;
+      }
 }
 .l-culture__container {
   padding-inline: rm(40);
@@ -293,6 +301,10 @@
   gap: 30px;
   align-items: flex-start;
   margin-bottom: 50px;
+
+  @include mq(sp) {
+    flex-direction: column;
+   }
 }
 
 .l-detail-mid {
@@ -309,6 +321,10 @@
   padding: 18px;
   display: flex;
   column-gap: 30px;
+  @include mq(sp) {
+    flex-direction: column;
+    gap: 30px;
+   }
 }
 
 
@@ -340,10 +356,15 @@
 .l-profile__container {
   display: flex;
   column-gap: 30px;
+  @include mq(sp) {
+    flex-direction: column;
+    gap: 10px;
+     }
 }
 .l-profile__area {
   padding-block: rm(40) rm(40);
 }
 .l-profile__menu {
   margin-top: 40px;
+  flex-shrink: 0;
 }

@@ -44,7 +44,8 @@
     z-index: 3;
 
     @include mq(sp) {
-			padding-bottom: rm(76);
+      max-width: 100%;
+    border-radius: 0;
 		}
   }
   .p-mv__grid-item1 {
@@ -90,7 +91,7 @@
       background-image: linear-gradient(to left, #0291D9,#023E78 );
       z-index: 1;
       @include mq(sp) {
-        padding-block: rm(68) rm(163);
+        padding-block: rm(82) rm(48);
       }
     }
     .p-fv__text {
@@ -165,7 +166,7 @@
       
     
       @include mq(sp) {
-        padding-block: rm(80) rm(176);
+        padding-block: rm(0);
         }
     }
     .view-wrapper {
@@ -182,7 +183,7 @@
         position: relative;
         z-index: 1;
         @include mq(sp) {
-          padding-block: rm(32);
+          padding-block: rm(120);
           }
        }
        .p-culture__profile-link {
@@ -240,9 +241,15 @@
     position: relative;
     z-index: 1;
     @include mq(sp) {
-      padding-block: rm(178);
+      padding-block: rm(30);
+      height: 1060px;
       }
+      @include mq(sp-lg) {
+        padding-block: rm(30);
+        height: 1352px;
+        }
   }
+
 
   .c-faq__list-content {
     width: min(1100px, 100%);
@@ -269,6 +276,9 @@
       visibility: visible;
       height: 916px;
       translate: 0;
+      @include mq(sp) {
+        height: 975px;
+        }
     }
     
   }
@@ -277,6 +287,10 @@
     display: flex;
     flex-direction: column;
     row-gap: 180px;
+
+    @include mq(sp) {
+      row-gap: 30px;
+      }
   }
   .c-faq__btn-wrap {
     display: flex;
@@ -284,6 +298,9 @@
     row-gap: 30px;
     position: relative;
     z-index: 10;
+    @include mq(sp) {
+      row-gap: 18px;
+      }
   }
 
   .c-faq__button {
@@ -294,6 +311,10 @@
       line-height: 1.6;
       color: #023E78;
       border: 1px solid $stage-color-dark;
+
+      @include mq(sp) {
+        padding-block: 12px;
+        }
     
 
     &[aria-selected="true"] {
@@ -406,6 +427,8 @@ details[open].faq__item::after {
     z-index: 3;
     @include mq(sp) {
       font-size: 22px;
+      left: 5px;
+      top: 65%;
     }
   }
   &::after {
@@ -449,6 +472,7 @@ details[open].faq__item::after {
   @include mq(sp) {
     font-size: 15px;
     padding-inline: 0px;
+    margin-left: 3em;
   }
  
   &::before {
@@ -467,6 +491,7 @@ details[open].faq__item::after {
     z-index: 3;
     @include mq(sp) {
       font-size: 22px;
+      left: -37px;
     }
   }
   &::after {
@@ -483,6 +508,7 @@ details[open].faq__item::after {
     @include mq(sp) {
       width: 28px;
       height: 28px;
+      left: -43px;
     }
   }
 }
@@ -499,7 +525,7 @@ details[open].faq__item::after {
     z-index: 1;
 
       @include mq(sp) {
-      height: 403px;
+      height: unset;
       padding-block: rm(56);
        }
        
@@ -679,6 +705,10 @@ details[open].faq__item::after {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    @include mq(sp) {
+     flex-direction: column;
+     gap: 30px;
+    }
   }
   .contact__desc {
     @include font(16, 500, 1, 0);
@@ -701,13 +731,24 @@ details[open].faq__item::after {
     align-items: center;
     gap: 24px;
     margin-bottom: 20px;
+    @include mq(sp) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 30px;
+     }
   }
   .contact__head {
     flex-basis: 250px;
+    @include mq(sp) {
+      flex-basis: 100%;
+     }
     
   }
   .contact__data {
     flex-basis: 100%;
+    @include mq(sp) {
+      width: 100%;
+     }
   }
   .contact__form {
     margin-top: 40px;
@@ -754,12 +795,16 @@ details[open].faq__item::after {
     .p-detail {
         padding-block: rm(120) rm(40);
         position: relative;
+
+        @include mq(sp) {
+          padding-block: rm(60) rm(20);
+         }
     }
 
     .p-detail__image {
-     width: min(700px, 100%);
+     flex-basis: 54%;
     height: auto;
-     flex-shrink: 0;
+
     }
 
     .p-detail__txt {
@@ -767,6 +812,9 @@ details[open].faq__item::after {
       display: flex;
       flex-direction: column;
       row-gap: 14px;
+      flex-basis: 40%;
+      flex-shrink: 0;
+      
     }
     .p-deatil__title {
       @include font(28, 400, 1, 0);
@@ -805,10 +853,17 @@ details[open].faq__item::after {
     padding-block: rm(20);
     border-bottom: 1px dotted #222;
 
+    @include mq(sp) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 10px;
+     }
+
     &:last-of-type {
       border-bottom: none;
     }
   }
+ 
 
   .p-detail__list-title {
     @include font(18, 500, 1, 0);
@@ -818,6 +873,9 @@ details[open].faq__item::after {
     margin-left: 1.2em;
     flex-basis: 200px;
 
+    @include mq(sp) {
+      flex-basis: unset;
+     }
     &::before {
       content: '';
       position: absolute;
@@ -861,10 +919,19 @@ details[open].faq__item::after {
     width: min(800px, 100%);
     margin-inline: auto;
     margin-top: 140px;
+    @include mq(sp) {
+      margin-top: 45px;
+     }
+
+    
   }
 
   .p-relation {
     padding-block: rm(180) rm(80);
+
+    @include mq(sp) {
+      padding-block: rm(100) rm(80);
+     }
     
   }
 
@@ -926,6 +993,12 @@ details[open].faq__item::after {
   }
   .c-relation-swiper-prev {
     right: 10%;
+    @include mq(sp) {
+      right: 17%;
+       }
+       @include mq(sp) {
+        right: 19%;
+         }
   }
   .c-relation-swiper-next {
     right:4%;
@@ -965,9 +1038,13 @@ details[open].faq__item::after {
     top: 50%;
     translate: 0 -50%;
     left: -1em;
+
+    @include mq(sp) {
+      content: none;
+       }
   }
 
-  &.current {
+  &.is-active {
     color: $color-text;
     &::before {
       background-color: $color-text;
@@ -977,7 +1054,7 @@ details[open].faq__item::after {
 }
 .p-profile__list {
   position: sticky;
-  top: 30px;
+  top: 180px;
 }
 .p-proffile__txt {
   @include font(16, 500, 1, 0);
@@ -1026,6 +1103,11 @@ details[open].faq__item::after {
   margin-top: 20px;
   display: flex;
   justify-content: space-between;
+
+  @include mq(sp) {
+    flex-direction: column;
+    gap: 20px;
+     }
 }
 .p-profile__info-left,
 .p-profile__info-right {
@@ -1089,9 +1171,18 @@ details[open].faq__item::after {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
+
+    @include mq(sp) {
+      flex-direction: column;
+      gap: 20px;
+       }
   }
   .p-profile__image-block {
     flex-basis: 45%;
+
+    @include mq(sp) {
+      flex-basis: 100%;
+       }
   }
   .p-profile__image-ttl {
     @include font(18, 500, 1, 0);
