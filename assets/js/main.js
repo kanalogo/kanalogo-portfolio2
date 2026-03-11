@@ -502,15 +502,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
  //worksの横スクロール
+ 
  gsap.registerPlugin(ScrollTrigger);
+ 
 
  const container = document.querySelector(".l-member__swiper-container");
  
  function horizontalScroll() {
+  if(!container) return;
  
    const totalWidth = container.scrollWidth;
    const visibleWidth = document.querySelector(".l-member__container").offsetWidth;
- 
+ console.log('totalWidth');
    const moveDistance = totalWidth - visibleWidth + 48;
  
    gsap.to(container, {
@@ -530,23 +533,7 @@ document.addEventListener("DOMContentLoaded", () => {
  horizontalScroll();
 
 
-  //Faqのタブの切替
-
-  jQuery(function($) {
-
-    $('.c-faq__button').on('click', function () {
-      // tabの切り替え
-      $('.c-faq__button').attr('aria-selected', 'false');
-      $(this).attr('aria-selected', 'true');
   
-      // tab panelの切り替え
-      $('.c-faq__list').removeClass('js-show');
-      $('#' + $(this).attr("aria-controls")).addClass('js-show');
-  
-      return false;
-    });
-  
-  });
 
   //料金表のモーダル
 
@@ -677,5 +664,23 @@ document.addEventListener("DOMContentLoaded", () => {
       // アニメーションループを開始（初回）
       updateCursor();
     });
+
+    //Faqのタブの切替
+
+  jQuery(function($) {
+
+    $('.c-faq__button').on('click', function () {
+      // tabの切り替え
+      $('.c-faq__button').attr('aria-selected', 'false');
+      $(this).attr('aria-selected', 'true');
+  
+      // tab panelの切り替え
+      $('.c-faq__list').removeClass('js-show');
+      $('#' + $(this).attr("aria-controls")).addClass('js-show');
+  
+      return false;
+    });
+  
+  });
 
   

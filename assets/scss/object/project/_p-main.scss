@@ -753,19 +753,30 @@ details[open].faq__item::after {
   .contact__form {
     margin-top: 40px;
   }
-  .contact__submit {
-    @include font(16, 700, 1, 0);
-    line-height: 1.6;
-    width: 200px;
-    margin-inline: auto;
+  .contact__submit-btn {
+   
     text-align: center;
     display: block;
+    
+
+    input {
+      @include font(16, 700, 1, 0);
+      line-height: 1.6;
+      width: 200px;
+      margin-inline: auto;
+    color: $stage-color-dark;
     padding-block: 8px;
     padding-inline: 16px;
     border: 2px solid $stage-color-dark;
+    transition: color 0.3s ease,background-color 0.3s ease;
 
-    input {
-    color: $stage-color-dark;
+    @media (hover: hover) {
+    
+      &:hover {
+        color: #fff;
+        background-color: $stage-color-dark;
+      }
+    }
     }
     
   }
@@ -783,7 +794,9 @@ details[open].faq__item::after {
   .option_first {
     padding: 8px;
   }
-  
+  .wpcf7-form-control-wrap {
+    width: 100%;
+  }
 
 
   // ===================================

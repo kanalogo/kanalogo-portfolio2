@@ -18,7 +18,7 @@
 
     
 }
-.l-header__item {
+.l-header__list li {
     @include font(16, 500,1 ,0 );
     line-height: 1.4;
     white-space: nowrap;

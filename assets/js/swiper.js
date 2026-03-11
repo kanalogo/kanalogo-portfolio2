@@ -255,18 +255,7 @@ custom：自由にカスタマイズ
 
 =====================================================*/
 
-window.addEventListener("load", function () {
-  const slideUpText = document.querySelectorAll(".animation__text");
-  new SplitType(slideUpText);
-  slideUpText.forEach((element) => {
-    const chars = element.querySelectorAll(".char");
-    gsap.to(chars, {
-      opacity: 1, //最終の状態
-      stagger: 0.06, //次のアニメーションまでの時間
-      delay: 1, //遅延
-    });
-  });
-});
+
 
 
 const relation = new Swiper('.relation__swiper', { //swiperの名前
@@ -287,19 +276,13 @@ const relation = new Swiper('.relation__swiper', { //swiperの名前
 
    //表示について
   centeredSlides: false, //中央寄せにする
-  slidesPerView: "1",
+  slidesPerView: 1,
   spaceBetween: 20,
 
   //ナビゲーション
   navigation: {
     prevEl: ".c-relation-swiper-prev", //戻るボタンのclass
     nextEl: ".c-relation-swiper-next" //進むボタンのclass
-  },
-  //スクロールバー
-  scrollbar: { //スクロールバーを表示したいとき
-    el: ".swiper-scrollbar", //スクロールバーのclass
-    hide: true, //操作時のときのみ表示
-    draggable: true //スクロールバーを直接表示できるようにする
   },
 
 
@@ -337,3 +320,16 @@ progressbar：スライドの進捗に応じてプログレスバーが伸びる
 custom：自由にカスタマイズ
 
 =====================================================*/
+
+window.addEventListener("load", function () {
+  const slideUpText = document.querySelectorAll(".animation__text");
+  new SplitType(slideUpText);
+  slideUpText.forEach((element) => {
+    const chars = element.querySelectorAll(".char");
+    gsap.to(chars, {
+      opacity: 1, //最終の状態
+      stagger: 0.06, //次のアニメーションまでの時間
+      delay: 1, //遅延
+    });
+  });
+});
