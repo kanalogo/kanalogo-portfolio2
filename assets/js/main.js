@@ -157,6 +157,19 @@ jQuery(function($) {
 });
 });
 
+//クリックしたら動画を再生/停止する
+const video = document.getElementById("video");
+
+video.addEventListener("click", function () {
+
+  if (video.paused) {
+    video.play();
+  } else {
+    video.pause();
+  }
+
+});
+
 
 //スクロールしたらヘッダーにクラスを付与
 window.addEventListener('scroll', function() {

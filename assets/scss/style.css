@@ -2872,6 +2872,44 @@ picture {
   line-height: 1.6;
 }
 
+.c-relation__tags {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  column-gap: 14px;
+  margin-block: 0.375rem;
+}
+
+.c-relation__tag {
+  display: inline-block;
+  padding: 4px;
+  color: #ccc;
+  font-size: max(0.875rem, 11.2px);
+}
+@media screen and (max-width: 767px) {
+  .c-relation__tag {
+    font-size: 0.875rem;
+  }
+}
+.c-relation__tag {
+  font-weight: 700;
+  line-height: 0.0714285714;
+  letter-spacing: 0em;
+  line-height: 1.6;
+  position: relative;
+}
+.c-relation__tag::before {
+  content: "#";
+  position: absolute;
+  top: 50%;
+  translate: 0 -50%;
+  left: -0.5em;
+  font-size: 14px;
+  color: #ccc;
+  font-weight: 700;
+  font-style: italic;
+}
+
 .progress {
   position: absolute;
   top: calc(100% + 67px);
@@ -4744,14 +4782,20 @@ input[type=button]::-webkit-search-decoration {
 }
 
 .p-detail__move {
-  width: min(800px, 100%);
+  width: min(1000px, 100%);
   margin-inline: auto;
   margin-top: 140px;
+  box-shadow: 0 0 4px 4px rgba(0, 0, 0, 0.1254901961);
+  cursor: pointer;
 }
 @media screen and (max-width: 767px) {
   .p-detail__move {
     margin-top: 45px;
   }
+}
+.p-detail__move video {
+  width: 100%;
+  height: 100%;
 }
 
 .p-relation {

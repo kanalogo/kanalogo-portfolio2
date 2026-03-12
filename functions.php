@@ -173,3 +173,25 @@ function wpcf7_autop_return_false() {
 //     }
 //     }
 //     add_action( 'wp_enqueue_scripts', 'load_recaptcha_js',100 );
+
+
+function remove_archive_title_prefix($title) {
+
+    if (is_category()) {
+      $title = single_cat_title('', false);
+  
+    } elseif (is_tag()) {
+      $title = single_tag_title('', false);
+  
+    } elseif (is_tax()) {
+      $title = single_term_title('', false);
+  
+    } elseif (is_post_type_archive()) {
+      $title = post_type_archive_title('', false);
+  
+    }
+  
+    return $title;
+  }
+  
+  add_filter('get_the_archive_title', 'remove_archive_title_prefix');

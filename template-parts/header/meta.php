@@ -1,6 +1,6 @@
 <?php 
-  $title = "サイトタイトル";
-  $description = "サイトディスクリプション";
+  $title = "新たな価値を提供する | Kanalogo Studio";
+  $description = "Kanalogo Studioのポートフォリオ デザインカンプの再現、CMS設計、レスポンシブ対応、アニメーション実装、公開までの進行管理意識 shopifyでのEC構築も請負います";
 ?>
 
 <!-- meta情報 -->

@@ -929,13 +929,18 @@ details[open].faq__item::after {
   }
 
   .p-detail__move {
-    width: min(800px, 100%);
+    width: min(1000px, 100%);
     margin-inline: auto;
     margin-top: 140px;
+    box-shadow: 0 0 4px 4px #00000020;
+    cursor: pointer;
     @include mq(sp) {
       margin-top: 45px;
      }
-
+     video {
+      width: 100%;
+      height: 100%;
+     }
     
   }
 

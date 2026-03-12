@@ -6,19 +6,14 @@
           <div class="c-relation__card">
             <picture class="c-relation__image">
               <?php if( has_post_thumbnail()): ?>
-                <?php the_post_thumbnail(''); ?>
+                <?php the_post_thumbnail('large'); ?>
               <?php else: ?>
               <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/chal-4.jpg" alt="">
               <?php endif; ?>
             </picture><!-- /.c-relation__image -->
             <div class="c-relation__desc">
               <p class="c-relation__txt"><?php
-                $title = get_the_title();
-                $words = explode(' ', $title);
-
-                foreach ($words as $word) {
-                  echo '<span>' . esc_html($word) . '</span> ';
-                }
+               echo get_the_title();
                 ?></p><!-- /.c-relation__txt -->
                 <?php if (have_rows('site_card')) : ?>
                <ul class="c-relation__cats">
@@ -38,6 +33,19 @@
                 </li><!-- /.c-relation__cat -->
                 <?php endwhile; ?>
               </ul><!-- /.c-relation__cats -->
+              <?php endif; ?>
+              <?php
+                $terms = get_the_terms(get_the_ID(), 'contents-type');
+
+                if ($terms && !is_wp_error($terms)) :
+                ?>
+              <ul class="c-relation__tags">
+              <?php foreach ($terms as $term) : ?>
+                <li class="c-relation__tag">
+                <?php echo esc_html($term->name); ?>
+                </li><!-- /.c-relation__tag -->
+                <?php endforeach; ?>
+              </ul><!-- /.c_relation__tags -->
               <?php endif; ?>
             </div><!-- /.c-relation__desc -->
           </div><!-- /.c-relation__card -->

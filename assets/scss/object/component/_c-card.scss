@@ -1087,3 +1087,30 @@ img {
   @include font(16, 700, 1, 0);
   line-height: 1.6;
 }
+.c-relation__tags {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  column-gap: 14px;
+  margin-block: rm(6);
+}
+.c-relation__tag {
+  display: inline-block;
+  padding: 4px;
+  color: #ccc;
+  @include font(14, 700, 1, 0);
+  line-height: 1.6;
+  position: relative;
+
+  &::before {
+    content: '#';
+    position: absolute;
+    top: 50%;
+    translate: 0 -50%;
+    left: -0.5em;
+    font-size: 14px;
+    color: #ccc;
+    font-weight: 700;
+    font-style: italic;
+  }
+}

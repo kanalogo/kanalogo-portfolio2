@@ -14,7 +14,7 @@
           <div class="l-detail-top">
             <div class="p-detail__txt">
             <?php $site_title = get_field('site_title'); ?>
-              <h3 class="p-deatil__title"><?php if ($period) : ?>
+              <h3 class="p-deatil__title"><?php if ($site_title) : ?>
                  <?php echo esc_html($site_title); ?>
                 <?php endif; ?></h3><!-- /.p-deatil__title -->
                 <?php $description = get_the_excerpt(); ?>
@@ -25,7 +25,7 @@
             </p><!-- /.p-detail__desc -->
             <?php $site_url = get_field('site_url'); ?>
             <?php if ($site_url) : ?>
-            <a class="p-detail__url"><span>URL</span><?php echo esc_url($site_url); ?></a><!-- /.p-detail__url -->
+            <a class="p-detail__url"><span>URL</span><?php echo esc_html($site_url); ?></a><!-- /.p-detail__url -->
             <?php endif; ?>
             <span class="p-detail__copy">※架空サイトです</span><!-- /.p-detail__copy -->
             </div><!-- /.p-detail__txt -->
@@ -118,8 +118,10 @@
           <?php $site_move = get_field('site_move'); ?>
             <?php if ($site_move) : ?>
             <div class="p-detail__move">
-            <?php echo esc_html($site_move); ?>
-              <img src="./assets/img/chal-3.jpg" alt="">
+            
+            <video class="fv-video" id="video" muted loop playsinline>
+            <source src="<?php echo esc_url($site_move['url']); ?>" type="video/mp4">
+          </video>
             </div><!-- /.p-detail__move -->
             <?php endif; ?>
 
