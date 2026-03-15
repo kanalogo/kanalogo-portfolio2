@@ -25,7 +25,7 @@
             </p><!-- /.p-detail__desc -->
             <?php $site_url = get_field('site_url'); ?>
             <?php if ($site_url) : ?>
-            <a class="p-detail__url"><span>URL</span><?php echo esc_html($site_url); ?></a><!-- /.p-detail__url -->
+            <a class="p-detail__url" href="<?php echo esc_url($site_url); ?>"><span>URL</span><?php echo esc_html($site_url); ?><i class="fa-solid fa-arrow-right"></i></a><!-- /.p-detail__url -->
             <?php endif; ?>
             <span class="p-detail__copy">※架空サイトです</span><!-- /.p-detail__copy -->
             </div><!-- /.p-detail__txt -->
@@ -39,7 +39,11 @@
              </picture>
             </div><!-- /.p-detail__image -->
           </div><!-- /.p-detail-top -->
+
+          
          
+
+
           <?php if (have_rows('site_description')) : ?>
           <div class="l-detail-mid">
           <?php while (have_rows('site_description')) : the_row(); ?>
@@ -72,7 +76,7 @@
                 Github URL
               </dt><!-- /.p-detail__list--title -->
               <dd class="p-detail__list-txt">
-               <a href="" class="p-detail__list-link"> <?php echo esc_html(get_sub_field('git_url')); ?></a
+               <a href="<?php echo esc_url(get_sub_field('git_url')); ?>" class="p-detail__list-link"> <?php echo esc_html(get_sub_field('git_url')); ?><i class="fa-solid fa-arrow-right"></i></a>
               </dd><!-- /.p-detail__list-txt -->
             </dl><!-- /.p-detail__list -->
             <dl class="p-detail__list">

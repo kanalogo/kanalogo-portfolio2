@@ -104,38 +104,49 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   
-    drawerSearchItem.addEventListener("click", event => {
-      event.preventDefault();
-      const targetItem = document.querySelector(drawerSearchItem.getAttribute("href"));
-      linkScroll(targetItem);
-    });
+  
   
         // スクロールに合わせてフォーカス移動
-        document.addEventListener('DOMContentLoaded', () => {
+        window.addEventListener("scroll", () => {
 
-          const sections = document.querySelectorAll('.js-section');
-          const navLinks = document.querySelectorAll('.js-link');
-          
-          const spyObserver = new IntersectionObserver((entries) => {
+          const sections = document.querySelectorAll(".js-section");
+          const navLinks = document.querySelectorAll(".js-link");
+        
+          const observer = new IntersectionObserver((entries) => {
+        
             entries.forEach(entry => {
+        
               if (entry.isIntersecting) {
+        
+                const id = entry.target.id;
+        
                 navLinks.forEach(link => {
-                  link.classList.remove('is-active');
-                  if (link.dataset.target === entry.target.id) {
-                    link.classList.add('is-active');
+                  link.classList.remove("is-active");
+        
+                  if (link.dataset.target === id) {
+                    link.classList.add("is-active");
                   }
                 });
+        
               }
+        
             });
+        
           }, {
-              root: null,
-              threshold: 0.5 
+            root: null,
+            threshold: 0.6,
+            rootMargin: "-10% 0px -40% 0px"
           });
-      
-          sections.forEach(section => spyObserver.observe(section));
-      
-          
-      });
+        
+          sections.forEach(section => observer.observe(section));
+        
+        });
+
+        drawerSearchItem.addEventListener("click", event => {
+          event.preventDefault();
+          const targetItem = document.querySelector(drawerSearchItem.getAttribute("href"));
+          linkScroll(targetItem);
+        });
 
 
 jQuery(function($) {
@@ -157,18 +168,6 @@ jQuery(function($) {
 });
 });
 
-//クリックしたら動画を再生/停止する
-const video = document.getElementById("video");
-
-video.addEventListener("click", function () {
-
-  if (video.paused) {
-    video.play();
-  } else {
-    video.pause();
-  }
-
-});
 
 
 //スクロールしたらヘッダーにクラスを付与
@@ -695,5 +694,22 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   
   });
+
+  //クリックしたら動画を再生/停止する
+const video = document.getElementById("video");
+const video_cursor = document.querySelector(".p-detail__move");
+
+video.addEventListener("click", function () {
+
+  if (video.paused) {
+    video.play();
+    video_cursor.classList.add("is-play");
+  } else {
+    video.pause();
+    video_cursor.classList.remove("is-play");
+  }
+
+});
+
 
   

@@ -2,7 +2,7 @@
 
 <header class="l-header p-header l-inner <?php if(!is_front_page()): ?>p-header-child  <?php endif; ?>" id="header">
       <div class="l-header__inner">
-        <a href="<?php esc_url(home_url('home')); ?>"" class="p-header__logo">
+        <a href="<?php echo esc_url(home_url('/home')); ?>" class="p-header__logo">
           <h1>
           <picture>
             <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/kanalogo-top-logo2.png" alt="" width="320" height="59">

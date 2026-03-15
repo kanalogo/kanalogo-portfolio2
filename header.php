@@ -26,8 +26,8 @@
 
          <div class="p-drawer">
 		<div class="p-drawer__body">
-        <a href="#top" class="p-drawer__logo --drawer">
-         <img src="<?php esc_url(get_template_directory_uri()); ?>/assets/img/kanalogo-top-logo3.png" alt="">
+        <a href="<?php echo esc_url(home_url('/home')); ?>" class="p-drawer__logo --drawer">
+         <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/kanalogo-top-logo3.png" alt="">
         </a>
         <?php if ( is_front_page()):?>
         <nav class="p-drawer__nav">
@@ -39,7 +39,7 @@
           ];
           wp_nav_menu($args);
           ?>
-          <button class="p-header__btn --full"><a href="ndex.html#contact" class="">お問い合わせ</a></button>
+          <button class="p-header__btn --full"><a href="#contact" class="">お問い合わせ</a></button>
         </nav><!-- /.p-drawer__nav -->
        
 			</div>
@@ -67,7 +67,7 @@
           ];
           wp_nav_menu($args);
           ?>
-          <button class="p-header__btn --full"><a href="index.html#contact" class="">お問い合わせ</a></button>
+          <button class="p-header__btn --full"><a href="#contact" class="">お問い合わせ</a></button>
         </nav><!-- /.p-drawer__nav -->
         <?php endif; ?>
         </div>

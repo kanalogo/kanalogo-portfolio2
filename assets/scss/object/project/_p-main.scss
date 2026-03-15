@@ -817,6 +817,7 @@ details[open].faq__item::after {
     .p-detail__image {
      flex-basis: 54%;
     height: auto;
+    box-shadow: 0px 0px 8px 4px rgba(0,0,0, 0.4);
 
     }
 
@@ -837,21 +838,49 @@ details[open].faq__item::after {
     }
 
     .p-detail__desc {
-      @include font(16, 500, 1, 0);
+      font-weight: 400;
+      font-size: 18px;
+      line-height: 0.0625;
+      letter-spacing: 0em;
       line-height: 2;
+      padding-block: 20px;
     
     }
    .p-detail__url {
     @include font(16, 500, 1, 0);
     line-height: 2;
     text-decoration: underline;
+    display: inline-block;
+    width: fit-content;
+    position: relative;
 
+    @media (hover: hover) {
+    
+      &:hover {
+        .fa-arrow-right {
+          animation: arrow-right-animation 1s ease both;
+        }
+      }
+    }
+    
     span {
-      @include font(18, 500, 1, 0);
+      @include font(20, 500, 1, 0);
       color: $stage-color-dark;
       margin-right: 10px;
+    letter-spacing: 0.05em;
     vertical-align: baseline;
+    position: relative;
+
+    
     }
+   }
+
+   .fa-arrow-right {
+    margin-left: 0.5em;
+    font-size: 18px;
+    font-weight: 700;
+    rotate: -35deg;
+
    }
 
    .p-detail__copy{
@@ -903,6 +932,17 @@ details[open].faq__item::after {
   .p-detail__list-txt{
     @include font(16, 500, 1, 0);
     line-height: 1.6;
+
+    a {
+      @media (hover: hover) {
+    
+        &:hover {
+          .fa-arrow-right {
+            animation: arrow-right-animation 1s ease both;
+          }
+        }
+      }
+    }
  
   }
 
@@ -923,7 +963,7 @@ details[open].faq__item::after {
     color: $stage-color-dark;
   }
   .p-detail__info-text {
-    @include font(16, 500, 1, 0);
+    @include font(18, 400, 1, 0);
     line-height: 1.6;
 
   }
@@ -932,8 +972,51 @@ details[open].faq__item::after {
     width: min(1000px, 100%);
     margin-inline: auto;
     margin-top: 140px;
-    box-shadow: 0 0 4px 4px #00000020;
+    box-shadow: 0px 0px 8px 4px rgba(0,0,0, 0.4);
     cursor: pointer;
+    position: relative;
+
+    &.is-play {
+
+      &::before,
+      &::after {
+        opacity: 0;
+      }
+    }
+    
+
+    &::before {
+      content: '';
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      border: 3px solid #fff;
+      box-shadow: 0px 0px 8px 4px rgba(0,0,0, 0.4);
+      top: 50%;
+      left: 50%;
+      opacity: 1;
+      translate: -50% -50%; 
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    &::after {
+      content: '';
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      background-color: #fff;
+      clip-path: polygon(0 0, 100% 0px, 100% 100%);
+      rotate: 45deg;
+      //多角形を作るclip-path
+      //clip-path: polygon(多角形の頂点の座標)
+      pointer-events: none;
+      top: 50%;
+      left: 49%;
+      opacity: 1;
+      translate: -50% -50%; 
+      transition: opacity 0.3s ease;
+    }
     @include mq(sp) {
       margin-top: 45px;
      }
@@ -951,6 +1034,10 @@ details[open].faq__item::after {
       padding-block: rm(100) rm(80);
      }
     
+  }
+
+  .relation__swiper {
+    padding-block: 20px;
   }
 
   .p-relation__title {
@@ -997,6 +1084,17 @@ details[open].faq__item::after {
     }
     50% {
      translate: -8px;
+   }
+    100% {
+     translate: 0;
+    }
+  }
+  @keyframes arrow-right-animation {
+    0% {
+      translate: 0;
+    }
+    50% {
+     translate: 6px -4px;
    }
     100% {
      translate: 0;
@@ -1061,14 +1159,14 @@ details[open].faq__item::after {
       content: none;
        }
   }
+}
 
-  &.is-active {
-    color: $color-text;
-    &::before {
-      background-color: $color-text;
-    }
-   
+.js-link.is-active {
+  color: $color-text;
+  &::before {
+    background-color: $color-text;
   }
+ 
 }
 .p-profile__list {
   position: sticky;
@@ -1077,6 +1175,7 @@ details[open].faq__item::after {
 .p-proffile__txt {
   @include font(16, 500, 1, 0);
   line-height: 1.8;
+  margin-top: 30px;
 }
 .p-profile__ttl {
   border-bottom: 1px solid $stage-color-dark;
@@ -1211,4 +1310,6 @@ details[open].faq__item::after {
   .p-profile__image {
     margin-top: 10px;
     width: 100%;
+    filter: blur(3px);
+
   }

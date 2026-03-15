@@ -195,3 +195,15 @@ function remove_archive_title_prefix($title) {
   }
   
   add_filter('get_the_archive_title', 'remove_archive_title_prefix');
+
+
+  /*  ====================================
+    自動挿入されるPタグを消す
+    ==================================== */
+
+  function remove_wpautop_on_page_content() {
+    if (is_page()) {
+      remove_filter('the_content', 'wpautop');
+    }
+  }
+  add_action('wp', 'remove_wpautop_on_page_content');

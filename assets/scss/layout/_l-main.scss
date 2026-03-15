@@ -12,10 +12,10 @@
 
 .l-child-main {
 
-  margin-block: rm(240) rm(60);
+  margin-block: rm(180) rm(40);
   
   @include mq(sp) {
-    margin-top: rm(180);
+    margin-top: rm(120);
   }
  
   
@@ -123,7 +123,7 @@
 
 .l-member__container {
 
-	padding-block: 120px;
+	padding-block: 40px;
 	padding-inline: 40px;
   
 	position: sticky;
@@ -139,7 +139,14 @@
 	gap: 48px;
  width: max-content;
  margin-right: 120px;
- margin-top: 80px;
+ margin-top: 158px;
+
+ a {
+  flex: 0 0 clamp(280px, 30vw, 420px) !important;
+
+ }
+
+ 
 
 
 
@@ -318,7 +325,7 @@
   margin-block: rm(40) rm(40);
   background-color: #f9f8f8;
   color: #222;
-  padding: 18px;
+  padding: 40px 18px;
   display: flex;
   column-gap: 30px;
   @include mq(sp) {

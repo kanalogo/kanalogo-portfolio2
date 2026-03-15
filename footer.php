@@ -8,7 +8,7 @@
         <div class="l-footer__container">
           <div class="p-footer__left">
         <h1 class="p-footer__logo">
-          <a href="<?php esc_url(home_url('home')); ?>"">
+          <a href="<?php echo esc_url(home_url('/home')); ?>"">
           <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/kanalogo-bottom-logo2.png" alt="kanalogo site" width="280" height="68">
         </a>
       </h1>
