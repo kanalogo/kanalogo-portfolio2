@@ -73,7 +73,7 @@ pointer-events: none;
     justify-content: center;
     width: 100%;
     font-size: clamp(64px, 10vw, 168px);
-    font-family: 'Inter', sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 900;
     line-height: 1;
     white-space: nowrap;
@@ -92,8 +92,100 @@ pointer-events: none;
     font-weight: 700;
     color: #18181b;
   }
+
+
+
+  // ===================================
+  // スクロールアニメーション
+  // ===================================
+
+  //片側から出現
+.animated__clipView {
+  // before (出現前)
+  clip-path: inset(0 100% 0 0);
+  transition: clip-path 1s ease;
   
+  // after (出現後)
+  &.js-show {
+    clip-path: inset(0 0 0 0);
+  }
+}
+
+  //下側に出現
+  .animated__clipDownView {
+    // before (出現前)
+    clip-path: inset(0 0 100% 0);
+    transition: clip-path 1s ease;
+
+     // after (出現後)
+     &.js-show {
+      clip-path: inset(-50px 0 0 0);
+    }
+
+    &.--delay1 {
+      transition-delay: 1s;
+      transition-timing-function: 1.6s;
+
+      &.js-show {
+        clip-path: inset(0 0 0 0);
+      }
+    }
+    
+   
+  }
+
+  //片側から出現
+  .animated__circleView {
+    // before (出現前)
+    clip-path: circle(0 at 50% 50%);
+    transition: clip-path 1s ease;
+    
+    // after (出現後)
+    &.js-show {
+      clip-path: circle(100% at 50% 50%);
+    }
+  }
   
+  .animated__fadeIn {
+    // before (出現前)
+    opacity: 0;
+    translate: 0 40px;
+    transition: opacity 0.3s ease, translate 0.3s ease;
+  
+    // after (出現後)
+    &.js-show {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+
+   
+  .animated__fadeIn2 {
+    // before (出現前)
+    opacity: 0;
+    translate: 0 40px;
+    transition: opacity 0.3s 1s ease, translate 0.3s ease;
+  
+    // after (出現後)
+    &.js-show {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
+  
+
+  .animated__fadeIn_delay {
+    // before (出現前)
+    opacity: 0;
+    translate: 0 40px;
+    transition: opacity 0.3s ease, translate 0.3s ease;
+  
+    // after (出現後)
+    &.js-show {
+      opacity: 1;
+      translate: 0 0;
+    }
+  }
   
 
 

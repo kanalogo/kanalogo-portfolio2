@@ -242,42 +242,27 @@
     margin-left: 8px;
     margin-left: auto;
     width: fit-content;
-  }
-  .c-breadcrumb {
-    position: relative;
-    display: flex;
-    gap: 16px;
     @include font(14, 400, 1, 0);
     line-height: 1.4;
     color: #222;
 
-
-    
-
-    
-  }
-  .c-breadcrumb__item {
-    position: relative;
-
-    &::before {
-      content: '>';
-      position: absolute;
-      font-size: 14px;
-      color: #222;
-      top: 50%;
-      translate: 0 -50%;
-      right: -13px;
+    span a span,
+     span span {
+      margin-inline: 6px;
+    font-size: 14px;
+    color: rgb(9, 97, 182);
+    font-weight: 400;
+    font-family: serif;
     }
+   .fas {
+      color: #023E78;
 
-    &.current {
-      text-decoration: underline;
-    }
-    &:last-of-type {
       &::before {
-        display: none;
+        color: #023E78;
       }
     }
   }
+ 
 
   .c-profile__headingLv3 {
     @include font(18, 500, 1, 0);

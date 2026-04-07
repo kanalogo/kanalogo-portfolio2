@@ -16,6 +16,30 @@ const switchViewport = (maxWidth) => {
 addEventListener("resize", () => switchViewport(375));
 switchViewport(375);
 
+const submenus = document.querySelectorAll(".--sub-menu");
+const submenu_items = document.querySelectorAll(".l-header__sub-menu");
+let submenu_flag = false;         
+        
+submenus.forEach(submenu => {
+ submenu.addEventListener("click", () => {
+  submenu_items.forEach( item => {
+    item.classList.remove("is-active");
+  });
+  const target = submenu.querySelector(".l-header__sub-menu");
+
+  if (submenu_flag) {
+    target.classList.remove("is-active");
+    submenu_flag = false;
+    return false;
+  }
+ 
+   if (target) {
+     target.classList.toggle("is-active");
+     submenu_flag = true;
+   }
+ });   
+});
+
 
 
 // ハンバーガーメニュー
@@ -104,38 +128,49 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   
-    drawerSearchItem.addEventListener("click", event => {
-      event.preventDefault();
-      const targetItem = document.querySelector(drawerSearchItem.getAttribute("href"));
-      linkScroll(targetItem);
-    });
+  
   
         // スクロールに合わせてフォーカス移動
-        document.addEventListener('DOMContentLoaded', () => {
+        window.addEventListener("scroll", () => {
 
-          const sections = document.querySelectorAll('.js-section');
-          const navLinks = document.querySelectorAll('.js-link');
-          
-          const spyObserver = new IntersectionObserver((entries) => {
+          const sections = document.querySelectorAll(".js-section");
+          const navLinks = document.querySelectorAll(".js-link");
+        
+          const observer = new IntersectionObserver((entries) => {
+        
             entries.forEach(entry => {
+        
               if (entry.isIntersecting) {
+        
+                const id = entry.target.id;
+        
                 navLinks.forEach(link => {
-                  link.classList.remove('is-active');
-                  if (link.dataset.target === entry.target.id) {
-                    link.classList.add('is-active');
+                  link.classList.remove("is-active");
+        
+                  if (link.dataset.target === id) {
+                    link.classList.add("is-active");
                   }
                 });
+        
               }
+        
             });
+        
           }, {
-              root: null,
-              threshold: 0.5 
+            root: null,
+            threshold: 0.6,
+            rootMargin: "-10% 0px -40% 0px"
           });
-      
-          sections.forEach(section => spyObserver.observe(section));
-      
-          
-      });
+        
+          sections.forEach(section => observer.observe(section));
+        
+        });
+
+        drawerSearchItem.addEventListener("click", event => {
+          event.preventDefault();
+          const targetItem = document.querySelector(drawerSearchItem.getAttribute("href"));
+          linkScroll(targetItem);
+        });
 
 
 jQuery(function($) {
@@ -156,6 +191,7 @@ jQuery(function($) {
 
 });
 });
+
 
 
 //スクロールしたらヘッダーにクラスを付与
@@ -502,15 +538,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
  //worksの横スクロール
+ 
  gsap.registerPlugin(ScrollTrigger);
+ 
 
  const container = document.querySelector(".l-member__swiper-container");
  
  function horizontalScroll() {
+  if(!container) return;
  
    const totalWidth = container.scrollWidth;
    const visibleWidth = document.querySelector(".l-member__container").offsetWidth;
- 
+ console.log('totalWidth');
    const moveDistance = totalWidth - visibleWidth + 48;
  
    gsap.to(container, {
@@ -530,23 +569,7 @@ document.addEventListener("DOMContentLoaded", () => {
  horizontalScroll();
 
 
-  //Faqのタブの切替
-
-  jQuery(function($) {
-
-    $('.c-faq__button').on('click', function () {
-      // tabの切り替え
-      $('.c-faq__button').attr('aria-selected', 'false');
-      $(this).attr('aria-selected', 'true');
   
-      // tab panelの切り替え
-      $('.c-faq__list').removeClass('js-show');
-      $('#' + $(this).attr("aria-controls")).addClass('js-show');
-  
-      return false;
-    });
-  
-  });
 
   //料金表のモーダル
 
@@ -677,5 +700,48 @@ document.addEventListener("DOMContentLoaded", () => {
       // アニメーションループを開始（初回）
       updateCursor();
     });
+
+    //Faqのタブの切替
+
+  jQuery(function($) {
+
+    $('.c-faq__button').on('click', function () {
+      // tabの切り替え
+      $('.c-faq__button').attr('aria-selected', 'false');
+      $(this).attr('aria-selected', 'true');
+  
+      // tab panelの切り替え
+      $('.c-faq__list').removeClass('js-show');
+      $('#' + $(this).attr("aria-controls")).addClass('js-show');
+  
+      return false;
+    });
+  
+  });
+
+  //クリックしたら動画を再生/停止する
+const video = document.getElementById("video");
+const video_cursor = document.querySelector(".p-detail__move");
+const video_bg = document.querySelector(".p-deail__bg");
+
+
+video.addEventListener("click", function () {
+
+  if (video.paused) {
+    video.play();
+    video_cursor.classList.add("is-play");
+    video_bg.classList.add("is-play");
+  } else {
+    video.pause();
+    video_cursor.classList.remove("is-play");
+    video_bg.classList.remove("is-play");
+  }
+
+});
+
+        // スクロールに合わせてフォーカス移動
+   
+
+      
 
   
