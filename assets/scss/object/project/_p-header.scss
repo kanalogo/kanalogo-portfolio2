@@ -14,7 +14,7 @@
   &.is-active {
 
   
- background-color: rgba(0,0,0, 0.2);
+ background-color: rgba(0,0,0, 0.5);
  backdrop-filter: blur(10px);
  border-radius: 100vmax;
 
@@ -120,4 +120,14 @@
   backdrop-filter: blur(10px);
   border-radius: 100vmax;
   margin-inline: auto;
+
+  
+}
+
+.--child-drawer.p-drawer__icon {
+  top: 54px;
+
+  &.js-active {
+    top: 54px;
+  }
 }

@@ -9,7 +9,7 @@
 
        <?php esc_url( get_template_part('template-child/child' , 'top') ); ?>
 
-      <section class="p-works">
+      <section class="p-works --mt0">
         
         <div class="l-inner">
            
@@ -25,7 +25,12 @@
       <?php endif; ?>
 
   
-
+        <section class="p-contact-banner">
+        
+          <button class="p-contact-banner__btn">
+            <a href="<?php echo home_url('/home#contact'); ?>">お問い合わせはこちら</a>
+          </button><!-- /.p-contact-banner__btn -->
+        </section><!-- /.p-contact-banner -->
 
           
     </main>

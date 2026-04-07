@@ -19,14 +19,14 @@
     <?php esc_url( get_template_part('template-parts/header/content') ); ?>
 
    
-    <button class="p-drawer__icon">
+    <button class="p-drawer__icon <?php if (!is_front_page()):?> --child-drawer <?php endif; ?>">
 			<div class="p-drawer__icon--bar"></div>
 			<div class="p-drawer__icon--bar"></div>
 		</button>
 
          <div class="p-drawer">
 		<div class="p-drawer__body">
-        <a href="<?php echo esc_url(home_url('/home')); ?>" class="p-drawer__logo --drawer">
+        <a href="<?php echo esc_url(home_url('/')); ?>" class="p-drawer__logo --drawer">
          <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/kanalogo-top-logo3.png" alt="">
         </a>
         <?php if ( is_front_page()):?>

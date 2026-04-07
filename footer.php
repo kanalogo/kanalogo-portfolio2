@@ -3,7 +3,7 @@
 <?php wp_footer(); ?>
 
       <div class="l-footer_wrap">
-        <div class="l-foot__bg"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/m-bg2.png" alt=""></div><!-- /.l-ch__bg -->
+        <div class="l-foot__bg animated__clipDownView --delay1"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/m-bg2.png" alt=""></div><!-- /.l-ch__bg -->
       <div class="l-inner">
         <div class="l-footer__container">
           <div class="p-footer__left">

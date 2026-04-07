@@ -16,6 +16,30 @@ const switchViewport = (maxWidth) => {
 addEventListener("resize", () => switchViewport(375));
 switchViewport(375);
 
+const submenus = document.querySelectorAll(".--sub-menu");
+const submenu_items = document.querySelectorAll(".l-header__sub-menu");
+let submenu_flag = false;         
+        
+submenus.forEach(submenu => {
+ submenu.addEventListener("click", () => {
+  submenu_items.forEach( item => {
+    item.classList.remove("is-active");
+  });
+  const target = submenu.querySelector(".l-header__sub-menu");
+
+  if (submenu_flag) {
+    target.classList.remove("is-active");
+    submenu_flag = false;
+    return false;
+  }
+ 
+   if (target) {
+     target.classList.toggle("is-active");
+     submenu_flag = true;
+   }
+ });   
+});
+
 
 
 // ハンバーガーメニュー
@@ -698,18 +722,26 @@ document.addEventListener("DOMContentLoaded", () => {
   //クリックしたら動画を再生/停止する
 const video = document.getElementById("video");
 const video_cursor = document.querySelector(".p-detail__move");
+const video_bg = document.querySelector(".p-deail__bg");
+
 
 video.addEventListener("click", function () {
 
   if (video.paused) {
     video.play();
     video_cursor.classList.add("is-play");
+    video_bg.classList.add("is-play");
   } else {
     video.pause();
     video_cursor.classList.remove("is-play");
+    video_bg.classList.remove("is-play");
   }
 
 });
 
+        // スクロールに合わせてフォーカス移動
+   
+
+      
 
   

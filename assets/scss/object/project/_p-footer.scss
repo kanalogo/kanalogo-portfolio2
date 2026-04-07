@@ -117,7 +117,8 @@
 .p-footer-child {
     position: relative;
     border: 1px solid $stage-color-dark;
-    border-radius: 46px 46px 0 0;
+    border-radius: 14px 14px 0 0;
+    margin-top: -15px;
     border-bottom: none;
     box-shadow: 0 -2px 8px  rgba(0, 0, 0, 0.1);
 }

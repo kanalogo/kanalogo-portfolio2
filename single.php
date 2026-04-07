@@ -25,7 +25,7 @@
             </p><!-- /.p-detail__desc -->
             <?php $site_url = get_field('site_url'); ?>
             <?php if ($site_url) : ?>
-            <a class="p-detail__url" href="<?php echo esc_url($site_url); ?>"><span>URL</span><?php echo esc_html($site_url); ?><i class="fa-solid fa-arrow-right"></i></a><!-- /.p-detail__url -->
+            <a class="p-detail__url" href="<?php echo esc_url($site_url); ?>"><span>URL</span><?php echo esc_html($site_url); ?></a><!-- /.p-detail__url -->
             <?php endif; ?>
             <span class="p-detail__copy">※架空サイトです</span><!-- /.p-detail__copy -->
             </div><!-- /.p-detail__txt -->
@@ -122,7 +122,7 @@
           <?php $site_move = get_field('site_move'); ?>
             <?php if ($site_move) : ?>
             <div class="p-detail__move">
-            
+            <span class="p-deail__bg"></span><!-- /.p-deail__bg -->
             <video class="fv-video" id="video" muted loop playsinline>
             <source src="<?php echo esc_url($site_move['url']); ?>" type="video/mp4">
           </video>
@@ -170,7 +170,12 @@
         </div><!-- /.l-inner -->
       </section><!-- /.relation -->
 
-  
+      <section class="p-contact-banner">
+        
+        <button class="p-contact-banner__btn">
+          <a href="<?php echo home_url('/home#contact'); ?>">お問い合わせはこちら</a>
+        </button><!-- /.p-contact-banner__btn -->
+    </section><!-- /.p-contact-banner -->
 
 
           

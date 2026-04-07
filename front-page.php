@@ -51,7 +51,7 @@
     </div><!-- /.l-mv__block -->
 
       <section class="p-fv" id="message">
-        <div class="l-busi__bg"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/w-bg.png" alt="">
+        <div class="l-busi__bg animated__clipDownView --delay1"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/w-bg.png" alt="">
           <img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/w-bg.png" alt=""></div><!-- /.l-ch__bg -->
         <div class="l-inner">
           <div class="l-fv__container">
@@ -82,7 +82,7 @@
        
 
          <section class="p-challenge">
-          <div class="l-ch__bg"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/w-bg.png" alt=""></div><!-- /.l-ch__bg -->
+          <div class="l-ch__bg animated__clipDownView --delay1"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/w-bg.png" alt=""></div><!-- /.l-ch__bg -->
           <div class="l-inner">
             <h2 class="c-heading__lv2 "><span class="heading__en">SERVICE</span> <span class="heading__ja">提供内容</span></h2><!-- /.c-heading__lv2 -->
 
@@ -95,7 +95,8 @@
         </section>
 
         <section class="p-member" id="works">
-          <div class="l-mem__bg"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/w-bg.png" alt=""></div><!-- /.l-ch__bg -->
+          <div class="l-mem__bg animated__clipDownView --delay1"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/w-bg.png" alt=""></div><!-- /.l-ch__bg -->
+          <div class="l-mem__bg-bottom animated__clipDownView --delay1"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/w-bg.png" alt=""></div><!-- /.l-ch__bg -->
           <div class="l-inner">
             <div class="view-wrapper">
            
@@ -178,11 +179,11 @@
           </div><!-- /.l-culture__image-wrap -->
 
           <section class="p-culture" id="about">
-            <div class="l-cul__bg"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/m-bg2.png" alt=""></div><!-- /.l-ch__bg -->
+            <div class="l-cul__bg animated__clipDownView --delay1"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/m-bg2.png" alt=""></div><!-- /.l-ch__bg -->
             <div class="l-inner">
               <h2 class="c-heading__lv2 --gradation"><span class="heading__en">Profile</span> <span class="heading__ja">私について</span></h2><!-- /.c-heading__lv2 -->
 
-              <div class="l-culture__container mt-64">
+              <div class="l-culture__container mt-64 animated__circleView">
 
               <?php esc_url( get_template_part('template-contents/profile' , 'info') ); ?>
 
@@ -198,6 +199,11 @@
               <?php esc_url( get_template_part('template-contents/flow' , 'info') ); ?>
               <?php esc_url( get_template_part('template-contents/flow' , 'price') ); ?>
              
+              <div class="c-culture__modal-btn js-modal-btn">
+                  <button class="c-culture__modal-link">
+                    <span>詳細を見る</span>
+                  </button><!-- /.c-bl__modal-btn -->
+                </div><!-- /.c-culture__modal-btn -->
          
             </div><!-- /.l-culture__flex -->
             </div><!-- /.l-culture__content -->
@@ -207,7 +213,7 @@
          
 
           <section class="p-faq" id="faq">
-            <div class="l-faq__bg"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/m-bg2.png" alt=""></div><!-- /.l-ch__bg -->
+            <div class="l-faq__bg animated__clipDownView --delay1"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/m-bg2.png" alt=""></div><!-- /.l-ch__bg -->
             <div class="l-inner">
     
             <?php esc_url( get_template_part('template-contents/faq' , 'content' ) ); ?>
@@ -215,9 +221,9 @@
             </section>
 
             <section class="p-contact" id="contact">
-              <div class="l-contact__bg"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/m-bg2.png" alt=""></div><!-- /.l-ch__bg -->
+              <div class="l-contact__bg animated__clipDownView --delay1"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/assets/img/m-bg2.png" alt=""></div><!-- /.l-ch__bg -->
               <div class="l-contact__container l-inner">
-                <div class="l-contact__block">
+                <div class="l-contact__block animated__fadeIn">
                   <div class="p-contact__top-desc">
                   <h2 class="c-heading__lv2 --gradation --mt24"><span class="heading__en">Contact</span> <span class="heading__ja">お問い合わせ</span></h2><!-- /.c-heading__lv2 -->
                   <p class="contact__desc">お問い合わせありがとうございます。<br>

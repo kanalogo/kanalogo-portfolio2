@@ -35,6 +35,17 @@
     rotate: 180deg;
     opacity: 0.4;
 }
+.l-mem__bg-bottom {
+    position: absolute;
+    bottom: 0px;
+    right: 0;
+    width: 62%;
+    height: auto;
+    translate: 0;
+    z-index: -1;
+    rotate: 180deg;
+    opacity: 0.4;
+}
 .l-cul__bg {
     position: absolute;
     top: 45%;

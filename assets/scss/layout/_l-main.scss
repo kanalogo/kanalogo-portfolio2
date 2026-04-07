@@ -12,7 +12,7 @@
 
 .l-child-main {
 
-  margin-block: rm(180) rm(40);
+  margin-block: rm(180) 0;
   
   @include mq(sp) {
     margin-top: rm(120);
@@ -136,13 +136,30 @@
 }
 .l-member__swiper-container {
   display: flex;
-	gap: 48px;
+	gap: 0;
  width: max-content;
  margin-right: 120px;
  margin-top: 158px;
 
  a {
-  flex: 0 0 clamp(280px, 30vw, 420px) !important;
+  flex: 0 0 clamp(280px, 30vw, 468px) !important;
+
+  @media (hover: hover) {
+    &:hover {
+      translate: 0 -30px;
+      box-shadow: 0 0px 40px 20px rgba(0, 0, 0, 0.2);
+     
+
+      .c-member__text {
+        scale: 1;
+      }
+      .c-member__image {
+        filter: blur(2px);
+      }
+      
+    
+    }
+  }
 
  }
 
@@ -305,8 +322,10 @@
 }
 .l-detail-top {
   display: flex;
+  flex-direction: row-reverse;
   gap: 30px;
-  align-items: flex-start;
+  align-items: center;
+  justify-content: space-between;
   margin-bottom: 50px;
 
   @include mq(sp) {
@@ -344,7 +363,7 @@
 
 .l-works__grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
   gap: 30px;
 }
 
@@ -355,7 +374,7 @@
     //　プロフィールの　セクション　-------------------------------------------
 
 .l-profile__bottom {
-  padding-block: rm(40) rm(40);
+  padding-block: rm(40) 0;
   background-color: #F5EDE9;
   color: #222;
 }

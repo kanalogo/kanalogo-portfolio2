@@ -13,7 +13,7 @@
 <meta property="og:title" content="<?php echo $title; ?>" />
 <meta property="og:description" content="<?php echo $description; ?>" />
 <meta property="og:site_name" content="<?php echo $title; ?>" />
-<meta property="og:image" content="<?php esc_url(get_template_directory_uri()); ?>/assets/img/ogp.jpg" />
+<meta property="og:image" content="<?php esc_url(get_template_directory_uri()); ?>/assets/img/ogp_1.png" />
 <meta property="og:locale" content="ja_JP" />
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:description" content="<?php echo $description; ?>" />

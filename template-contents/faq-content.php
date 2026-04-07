@@ -2,19 +2,19 @@
                 <div class="c-faq__title-wrap">
               <h2 class="c-heading__lv2 --gradation"><span class="heading__en">FAQ</span> <span class="heading__ja">よくある質問</span></h2><!-- /.c-heading__lv2 -->
               <div class="c-faq__btn-wrap">
-                <button class="c-faq__button" role="tab" id="tab1" aria-controls="panel1" aria-selected="true" tabindex="0">
+                <button class="c-faq__button animated__fadeIn_delay --delay0" role="tab" id="tab1" aria-controls="panel1" aria-selected="true" tabindex="0">
                  H.P制作について
                 </button><!-- /.c-faq__button -->
-                <button class="c-faq__button" role="tab" id="tab2" aria-controls="panel2" aria-selected="false" tabindex="-1">
+                <button class="c-faq__button animated__fadeIn_delay --delay1" role="tab" id="tab2" aria-controls="panel2" aria-selected="false" tabindex="-1">
                   納品・費用について
                 </button><!-- /.c-faq__button -->
-                <button class="c-faq__button" role="tab" id="tab3" aria-controls="panel3" aria-selected="false" tabindex="-1">
+                <button class="c-faq__button animated__fadeIn_delay --delay2" role="tab" id="tab3" aria-controls="panel3" aria-selected="false" tabindex="-1">
                   運用・保守について
                 </button><!-- /.c-faq__button -->
               </div><!-- /.c-faq__btn-wrap -->
             </div><!-- /.c-faq__title-wrap -->
 
-            <div class="c-faq__list-content">
+            <div class="c-faq__list-content animated__fadeIn2">
               <div class="c-faq__list js-show" role="tabpanel" id="panel1" aria-labelledby="tab1" tabindex="0">
                 <details class="faq__item js-details">
                   <summary class="js-summary">

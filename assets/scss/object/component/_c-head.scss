@@ -245,6 +245,22 @@
     @include font(14, 400, 1, 0);
     line-height: 1.4;
     color: #222;
+
+    span a span,
+     span span {
+      margin-inline: 6px;
+    font-size: 14px;
+    color: rgb(9, 97, 182);
+    font-weight: 400;
+    font-family: serif;
+    }
+   .fas {
+      color: #023E78;
+
+      &::before {
+        color: #023E78;
+      }
+    }
   }
  
 

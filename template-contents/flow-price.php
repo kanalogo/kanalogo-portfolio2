@@ -1,4 +1,4 @@
-<div class="l-culture__container  --bg-blur-bottom">
+<div class="l-culture__container  --bg-blur-bottom animated__clipDownView">
                 <h3 class="c-heading__lv3">料金について</h3><!-- /.c-heading__lv3 -->
 
                 <dl class="c-culture__block">
@@ -75,9 +75,5 @@
                   </dd>
                 </dl><!-- /.c-culture__block -->
 
-                <div class="c-culture__modal-btn js-modal-btn">
-                  <button class="c-culture__modal-link">
-                    <span>詳細を見る</span>
-                  </button><!-- /.c-bl__modal-btn -->
-                </div><!-- /.c-culture__modal-btn -->
+   
               </div><!-- /.l-culture__container -->

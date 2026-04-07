@@ -1,4 +1,4 @@
-<div class="l-culture__container --bg-blur">
+<div class="l-culture__container --bg-blur animated__clipDownView">
                 <h3 class="c-heading__lv3">制作の流れ</h3><!-- /.c-heading__lv3 -->
 
                 <dl class="c-culture__block">

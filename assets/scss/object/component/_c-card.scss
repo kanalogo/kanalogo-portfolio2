@@ -321,13 +321,14 @@ img {
   .c-member__container {
     display: flex;
     flex-direction: column;
-    row-gap: rm(20);
+    row-gap: 0;
   }
   .c-member__image {
     position: relative;
+    transition: filter 0.3s ease;
 
     picture {
-        aspect-ratio: 1 / 1.2;
+        aspect-ratio: 1 / 1.8;
         box-shadow: 0 5px 15px 0 rgba(26, 150, 239, 0.15);
 
         img {
@@ -408,10 +409,19 @@ img {
    
 
   .c-member__text {
-    background-color: #fff;
-    color: #023E78;
-    padding: 12px 16px;
-    min-height: 204px;
+    @include font(32, 500, 1, 1.4);
+    line-height: 1.5;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    padding: 50px 20px;
+    inset: 0;
+    top: 50%;
+    translate: 0 -50%;
+    text-align: center;
+    scale: 0;
+    transform-origin: center;
+    transition: scale 0.3s ease;
     @include mq(sp) {
         padding: 12px 7px;
         }
@@ -1049,16 +1059,10 @@ img {
   color: #222
 }
 .c-relation__txt {
-  span{
-  @include font(22, 700, 1, 0);
+  
+  @include font(22, 400, 1, 0);
   line-height: 1.6;
-  color: $stage-color-dark;
-  }
-  span:nth-child(2) {
-    @include font(14, 500, 1, 0);
-    line-height: 1.6;
-    color: #222;
-  }
+
 }
 .c-relation__cats {
   display: flex;
@@ -1075,7 +1079,8 @@ img {
 }
 .c-relation__cat-ttl {
   display: inline-block;
-  padding: 4px;
+  padding: 4px 12px;
+  border-radius: 20px;
   color: #fff;
   background-color: #0961B6;
   @include font(14, 700, 1, 0);

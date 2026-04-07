@@ -42,6 +42,7 @@
    margin-left: auto;
     overflow-x: hidden;
     z-index: 3;
+    
 
     @include mq(sp) {
       max-width: 100%;
@@ -88,8 +89,26 @@
       padding-block: rm(138) rm(138);
       position: relative;
       overflow-x: hidden;
-      background-image: linear-gradient(to left, #0291D9,#023E78 );
+      // background-image: linear-gradient(to left, #0291D9,#023E78 );
+      background-image: url('./../img/pexels-photo-3183183.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
       z-index: 1;
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(2, 62, 120, 0.8);
+        top: 0;
+        left: 0;
+        opacity: 1;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        
+      }
       @include mq(sp) {
         padding-block: rm(82) rm(48);
       }
@@ -140,8 +159,9 @@
       padding-block: 0;
       overflow-x: hidden;
       position: relative;
-      background-image: linear-gradient(to left, #0291D9,#023E78 );
+      // background-image: linear-gradient(to left, #0291D9,#023E78 );
       z-index: 1;
+      
     }
 
     // 挑戦できるステージ　の　セクション　------------------------------------------
@@ -149,8 +169,28 @@
       position: relative;
       overflow-x: hidden;
       padding-block: rm(40) rm(122);
-      background-image: linear-gradient(to left, #0291D9,#023E78 );
+      // background-image: linear-gradient(to left, #0291D9,#023E78 );
       z-index: 1;
+      background-image: url('./../img/pexels-photo-3183153.jpeg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      z-index: 1;
+
+      &::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(2, 62, 120, 0.8);
+        top: 0;
+        left: 0;
+        opacity: 1;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+        
+      }
+     
       @include mq(sp) {
         padding-block: rm(123) rm(80);
         }
@@ -197,7 +237,11 @@
 
         a {
           line-height: 2;
-          text-decoration: underline;
+          display: inline-block;
+          padding: 8px 24px;
+          border-radius: 40px;
+          background-color: #fff;
+          box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
         }
 
         .fa-arrow-right {
@@ -765,9 +809,10 @@ details[open].faq__item::after {
       width: 200px;
       margin-inline: auto;
     color: $stage-color-dark;
-    padding-block: 8px;
+    padding-block: 16px;
     padding-inline: 16px;
-    border: 2px solid $stage-color-dark;
+    border-radius: 40px;
+    border: 3px solid $stage-color-dark;
     transition: color 0.3s ease,background-color 0.3s ease;
 
     @media (hover: hover) {
@@ -796,6 +841,9 @@ details[open].faq__item::after {
   }
   .wpcf7-form-control-wrap {
     width: 100%;
+  }
+  .wpcf7-response-output {
+    color: red;
   }
 
 
@@ -841,6 +889,7 @@ details[open].faq__item::after {
       font-weight: 400;
       font-size: 18px;
       line-height: 0.0625;
+      color: #023E78;
       letter-spacing: 0em;
       line-height: 2;
       padding-block: 20px;
@@ -848,6 +897,7 @@ details[open].faq__item::after {
     }
    .p-detail__url {
     @include font(16, 500, 1, 0);
+    color: #023E78;
     line-height: 2;
     text-decoration: underline;
     display: inline-block;
@@ -996,6 +1046,7 @@ details[open].faq__item::after {
       top: 50%;
       left: 50%;
       opacity: 1;
+      z-index: 3;
       translate: -50% -50%; 
       pointer-events: none;
       transition: opacity 0.3s ease;
@@ -1014,6 +1065,7 @@ details[open].faq__item::after {
       top: 50%;
       left: 49%;
       opacity: 1;
+      z-index: 3;
       translate: -50% -50%; 
       transition: opacity 0.3s ease;
     }
@@ -1023,9 +1075,28 @@ details[open].faq__item::after {
      video {
       width: 100%;
       height: 100%;
+
      }
     
   }
+
+  .p-deail__bg {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    top: 0;
+    left: 0;
+    opacity: 1;
+    pointer-events: none;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+
+    &.is-play {
+      opacity: 0;
+    }
+  }
+  
 
   .p-relation {
     padding-block: rm(180) rm(80);
@@ -1060,7 +1131,11 @@ details[open].faq__item::after {
 
     a {
       line-height: 2;
-      text-decoration: underline;
+      display: inline-block;
+      padding: 8px 24px;
+      border-radius: 40px;
+      background-color: #fff;
+      box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
     }
 
     .fa-arrow-left {
@@ -1106,6 +1181,12 @@ details[open].faq__item::after {
     width: 50px ;
     height: 50px ;
     top: -20px;
+    background-color: rgb(9, 97, 182);
+    border-color: #fff;
+
+    &::after {
+      border-color: #fff;
+    }
   }
   .c-relation-swiper-prev {
     right: 10%;
@@ -1129,6 +1210,64 @@ details[open].faq__item::after {
     .p-works {
       padding-block: rm(60) rm(120);
       position: relative;
+
+      &.--mt0 {
+        padding-block-end: 0;
+      }
+    }
+
+
+    .p-pagenavi__inner {
+      width: fit-content;
+      margin-inline: auto;
+      margin-block: 60px;
+    }
+    .wp-pagenavi {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+
+      span,a {
+        padding: 16px;
+        border: 1px solid $stage-color-dark;
+        color: $stage-color-dark;
+        @include font(18, 700, 1, 0);
+        line-height: 1;
+        
+      }
+      .current {
+        background-color: #fff;
+      }
+    }
+    .p-taxonomy__buttons {
+      width: fit-content;
+      margin-inline: auto;
+      margin-block: 20px 60px;
+
+      ul {
+        display: flex;
+        gap: 32px;
+        justify-content: center;
+      }
+    }
+
+    .p-taxonomy__button.current {
+      a {
+        background-color: #fff;
+      
+    }
+  }
+
+    .p-taxonomy__button a {
+      display: inline-block;
+      padding: 16px 24px;
+      border: 1px solid $stage-color-dark;
+      color: $stage-color-dark;
+      @include font(18, 700, 1, 0);
+      line-height: 1;
+    }
+     .p-taxonomy__button a.current {
+        background-color: #fff;
     }
 
         // ===================================
@@ -1138,7 +1277,7 @@ details[open].faq__item::after {
     //　プロフィールの　セクション　-------------------------------------------
 
 .p-profile__list-item {
-  @include font(16, 700, 1, 0);
+  @include font(16, 700, 1d, 0);
   line-height: 1.8;
   color: $stage-color-dark;
   position: relative;
@@ -1313,3 +1452,44 @@ details[open].faq__item::after {
     filter: blur(3px);
 
   }
+
+          // ===================================
+  // お問い合わせのバナー
+  // ===================================
+
+  .p-contact-banner {
+   width: 100%;
+   height: 350px;
+   background-image: url('./../img/pexels-photo-3183183.jpeg');
+   background-size: cover;
+   background-position: center;
+   background-repeat: no-repeat;
+   display: grid;
+   place-items: center;
+   filter: grayscale(1);
+   @include mq(sp) {
+    height: 250px;
+    
+}
+  }
+  .p-contact-banner__btn {
+  a {
+    display: inline-block;
+    padding: 11px 60px;
+    border-radius: 20px;
+    border: 2px solid #fff;
+    /* background-color: #fff; */
+    color: #fff;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 1.6;
+    letter-spacing: 0.1em;
+
+    @include mq(sp) {
+      font-size: 18px;
+      padding: 11px 40px;
+      
+  }
+  }
+}

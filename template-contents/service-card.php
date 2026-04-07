@@ -1,6 +1,6 @@
-<div class="card">
+<div class="card animated__clipView">
                 <a href="#">
-                <div class="card__content">
+                <div class="card__content ">
                   <!-- front -->
                   <div class="card__front">
                     <img src="https://images.unsplash.com/photo-1540582685196-7f031fa5354e?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Njc4Mzc0MzJ8&ixlib=rb-4.1.0&q=85" alt="" class="card__img" width="405" height="396">
@@ -24,9 +24,9 @@
               </div><!-- /card -->
              
 
-              <div class="card">
+              <div class="card animated__clipView">
                 <a href="#">
-                <div class="card__content">
+                <div class="card__content ">
                   <!-- front -->
                   <div class="card__front">
                     <img src="https://images.unsplash.com/photo-1577344954422-cb7b40658f67?crop=entropy&cs=srgb&fm=jpg&ixid=M3wzMjM4NDZ8MHwxfHJhbmRvbXx8fHx8fHx8fDE3Njc4Mzc1MTh8&ixlib=rb-4.1.0&q=85" alt="" class="card__img" width="405" height="396">
